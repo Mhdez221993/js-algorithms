@@ -1,6 +1,6 @@
 
 def chocolateFeast(n, c, m)
-    # initially divide n / c an saved in w like this we have our first starting poin, now we know he has w bar
+    # initially divide n / c an saved in w, like this we have our first starting poin, now we know he has w bar
     w = n/c
     # initialize bars with the value of w
     bars = w
