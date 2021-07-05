@@ -21,7 +21,7 @@
 
 - GitHub: [@Mhdez221993](https://github.com/Mhdez221993) 
 - Twitter: [@MoisesH42060050](https://twitter.com/MoisesH42060050) 
-- LinkedIn: [Moises Hernandez Coronado](https://www.linkedin.com/in/moises-hernandez-9bbb17145/)
+- LinkedIn: [Moises Hernandez Coronado](https://www.linkedin.com/in/moises-hdez-coronado/)
 
 ## Show your support
 
