@@ -1,4 +1,4 @@
-arr = [3, 3, 2, 1, 3]
+arr = [5, 5, 2, 1, 5]
 def equalizeArray(arr)
     # find the unique numbers
     # use map to iterate throug those uniques values
@@ -6,6 +6,7 @@ def equalizeArray(arr)
     # from the returned array take the max number and that is the most repeated number
     most_repeated_number = arr.uniq.map{|v| arr.count(v)}.max
     # substract from the array the amount of most repeated number
-    # that will geve us the minimun numbers to delete
     arr.size - most_repeated_number
 end
+
+O(n)
