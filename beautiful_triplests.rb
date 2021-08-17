@@ -14,8 +14,8 @@ end
 
 
 
-puts Benchmark.measure {
-    50_000.times do
-        beautifulTriplets(d, arr)
-    end
-}
+# puts Benchmark.measure {
+#     50_000.times do
+#         beautifulTriplets(d, arr)
+#     end
+# }
