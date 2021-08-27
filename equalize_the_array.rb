@@ -1,4 +1,7 @@
-arr = [5, 5, 2, 1, 5]
+require 'benchmark'
+
+arr = [5, 5, 2, 1, 5, 2, 2, 2]
+
 def equalizeArray(arr)
     # find the unique numbers
     # use map to iterate throug those uniques values
@@ -9,4 +12,11 @@ def equalizeArray(arr)
     arr.size - most_repeated_number
 end
 
-O(n)
+# O(n)
+
+puts Benchmark.measure {
+    50_000.times do
+        equalizeArray(arr)
+    end
+}
+
