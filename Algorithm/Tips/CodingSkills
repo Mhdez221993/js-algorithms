@@ -1,0 +1,24 @@
+During the interview focus on fundamental coding skills like
+
+1. Descriptive variable name is a must to do if you're coding in a whiteboard ask your interviewer if it's ok to abbreviate the variable name
+
+2. Abstraction, by this I mean separating chunks of code in their own methods, making use of helper methods, remove duplicates.
+   If you're coding on a whiteboard tell your interviewer that you'll write the entire algorithm and if you have time you will come back and complete the helper methods
+
+3. Documentation is important in production-ready code and also during the interview. After you finishing the algorithm, you can leave a short comment that explains how the algorithm works.
+
+4. Descriptive code
+
+5. Idiomatic coding style I.e. "All code in any code-base should look like a single person typed it, no matter how many people contributed."
+
+"Arguments over style are pointless. There should be a style guide, and you should follow it"
+Rebecca Murphey
+
+"Part of being a good steward to a successful project is realizing that writing code for yourself is a Bad Idea™. If thousands of people are using your code, then write your code for maximum clarity, not your personal preference of how to get clever within the spec."
+Idan Gazit
+
+- This is a useful link to [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js/)
+
+6. Testing, if you are on a whiteboard you can just say aloud how you'll cover edges cases.
+
+Myths: Simples mistakes like typos or cofusion with a language will not cause failure on a coding interview, (if they are not often)
