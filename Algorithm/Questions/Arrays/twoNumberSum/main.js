@@ -1,5 +1,5 @@
-// array = [3, 5, -4, 8, 11, 1, -1, 6];
-// targetSum = 10;
+// array =  [4, 6, 1]
+// targetSum = 5
 // currentNum = x
 // x + y = 10
 // y = 10 - x
@@ -39,7 +39,31 @@ function twoNumberSum2(array, targetSum) {
   return [];
 }
 
-// twoNumberSum2 is O(n) T | O(n) S
+function twoNumberSum(array, targetSum) {
+  array = array.sort((a,b) => a-b);
+  const len = array.length -1
 
-module.exports = twoNumberSum1;
-module.exports = twoNumberSum2;
+  let left = 0;
+  let righ = len;
+  for (let i = 0; i < len; i += 1) {
+    let leftNum = array[left]
+    let rightNum = array[righ]
+
+    if (leftNum + rightNum === targetSum) {
+      return [leftNum, rightNum]
+
+    } else if (leftNum + rightNum > targetSum) {
+      righ -= 1
+
+    } else {
+      left += 1
+    }
+
+  }
+
+  return [];
+}
+
+// twoNumberSum2 is O(n) T | O(1) S
+
+module.exports = twoNumberSum;
