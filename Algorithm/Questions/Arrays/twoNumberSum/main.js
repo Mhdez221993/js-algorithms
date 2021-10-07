@@ -41,18 +41,17 @@ function twoNumberSum2(array, targetSum) {
 
 function twoNumberSum(array, targetSum) {
   array = array.sort((a,b) => a-b);
-  const len = array.length -1
 
   let left = 0;
-  let righ = len;
-  for (let i = 0; i < len; i += 1) {
-    let leftNum = array[left]
-    let rightNum = array[righ]
+  let righ = array.length -1;
 
-    if (leftNum + rightNum === targetSum) {
-      return [leftNum, rightNum]
+  while(left < righ){
+		let currSum = array[left] + array[righ]
 
-    } else if (leftNum + rightNum > targetSum) {
+    if (currSum === targetSum) {
+      return [array[left], array[righ]]
+
+    } else if (currSum > targetSum) {
       righ -= 1
 
     } else {
@@ -64,6 +63,6 @@ function twoNumberSum(array, targetSum) {
   return [];
 }
 
-// twoNumberSum2 is O(n) T | O(1) S
+// twoNumberSum2 is O(nLog(n)) T | O(1) S
 
 module.exports = twoNumberSum;
