@@ -1,0 +1,14 @@
+{
+  "name": "twonumbersum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.2.4"
+  }
+}
