@@ -7,11 +7,7 @@ function isValidSubsequence(array, sequence) {
 		}
 	})
 
-	if (current === sequence.length) {
-		return true
-	}
-
-	return false
+	return current === sequence.length
 }
 
 module.exports = isValidSubsequence;
