@@ -12,8 +12,4 @@ function nonConstructibleChange(coins) {
   return currentChange+1;
 }
 
-let coins = [6, 4, 5, 1, 1, 8, 9]
-
-console.log(nonConstructibleChange(coins));
-
-// module.exports = nonConstructibleChange;
+module.exports = nonConstructibleChange;

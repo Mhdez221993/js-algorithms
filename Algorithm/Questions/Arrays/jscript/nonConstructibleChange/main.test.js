@@ -3,113 +3,105 @@ const nonConstructibleChange = require('./main');
 describe('nonConstructibleChange', () => {
   it('should return true', () => {
     const test = {
-      array: [5, 1, 22, 25, 6, -1, 8, 10],
-      sequence: [1, 6, -1, 10],
+      "coins": [5, 7, 1, 1, 2, 3, 22]
     };
-    expect(nonConstructibleChange(test.array, test.sequence)).toBeTruthy();
+    let minimunChange = 20
+    expect(nonConstructibleChange(test.coins)).toBe(minimunChange);
   });
 
   it('should return true', () => {
     const test = {
-      array: [5, 1, 22, 25, 6, -1, 8, 10],
-      sequence: [5, 1, 22, 25, 6, -1, 8, 10],
+      "coins": [1, 1, 1, 1, 1]
     };
-    expect(nonConstructibleChange(test.array, test.sequence)).toBeTruthy();
+    let minimunChange = 6
+    expect(nonConstructibleChange(test.coins)).toBe(minimunChange);
   });
 
   it('should return true', () => {
     const test = {
-      array: [5, 1, 22, 25, 6, -1, 8, 10],
-      sequence: [5, 1, 22, 6, -1, 8, 10],
+      "coins": [1, 5, 1, 1, 1, 10, 15, 20, 100]
     };
-    expect(nonConstructibleChange(test.array, test.sequence)).toBeTruthy();
+    let minimunChange = 55
+    expect(nonConstructibleChange(test.coins)).toBe(minimunChange);
   });
 
   it('should return true', () => {
     const test = {
-      array: [5, 1, 22, 25, 6, -1, 8, 10],
-      sequence: [22, 25, 6],
+      "coins": [6, 4, 5, 1, 1, 8, 9]
     };
-    expect(nonConstructibleChange(test.array, test.sequence)).toBeTruthy();
+    let minimunChange = 3
+    expect(nonConstructibleChange(test.coins)).toBe(minimunChange);
   });
 
   it('should return true', () => {
     const test = {
-      array: [5, 1, 22, 25, 6, -1, 8, 10],
-      sequence: [1, 6, 10],
+      "coins": []
     };
-    expect(nonConstructibleChange(test.array, test.sequence)).toBeTruthy();
+    let minimunChange = 1
+    expect(nonConstructibleChange(test.coins)).toBe(minimunChange);
   });
 
   it('should return true', () => {
     const test = {
-      array: [5, 1, 22, 25, 6, -1, 8, 10],
-      sequence: [5, 1, 22, 10],
+      "coins": [87]
     };
-    expect(nonConstructibleChange(test.array, test.sequence)).toBeTruthy();
+    let minimunChange = 1
+    expect(nonConstructibleChange(test.coins)).toBe(minimunChange);
   });
 
   it('should return true', () => {
     const test = {
-      array: [5, 1, 22, 25, 6, -1, 8, 10],
-      sequence: [5, -1, 8, 10],
+      "coins": [5, 6, 1, 1, 2, 3, 4, 9]
     };
-    expect(nonConstructibleChange(test.array, test.sequence)).toBeTruthy();
+    let minimunChange = 32
+    expect(nonConstructibleChange(test.coins)).toBe(minimunChange);
   });
 
   it('should return true', () => {
     const test = {
-      array: [5, 1, 22, 25, 6, -1, 8, 10],
-      sequence: [25],
+      "coins": [5, 6, 1, 1, 2, 3, 43]
     };
-    expect(nonConstructibleChange(test.array, test.sequence)).toBeTruthy();
+    let minimunChange = 19
+    expect(nonConstructibleChange(test.coins)).toBe(minimunChange);
   });
 
   it('should return true', () => {
     const test = {
-      array: [1, 1, 1, 1, 1],
-      sequence: [1, 1, 1],
+      "coins": [1, 1]
     };
-    expect(nonConstructibleChange(test.array, test.sequence)).toBeTruthy();
+    let minimunChange = 3
+    expect(nonConstructibleChange(test.coins)).toBe(minimunChange);
   });
 
   it('should return true', () => {
     const test = {
-      array: [5, 1, 22, 25, 6, -1, 8, 10],
-      sequence: [5, 1, 22, 25, 6, -1, 8, 10, 12],
+      "coins": [2]
     };
-    expect(nonConstructibleChange(test.array, test.sequence)).toBeFalsy();
+    let minimunChange = 1
+    expect(nonConstructibleChange(test.coins)).toBe(minimunChange);
   });
 
   it('should return true', () => {
     const test = {
-      array: [5, 1, 22, 25, 6, -1, 8, 10],
-      sequence: [4, 5, 1, 22, 25, 6, -1, 8, 10],
+      "coins": [1]
     };
-    expect(nonConstructibleChange(test.array, test.sequence)).toBeFalsy();
+    let minimunChange = 2
+    expect(nonConstructibleChange(test.coins)).toBe(minimunChange);
   });
 
   it('should return true', () => {
     const test = {
-      array: [5, 1, 22, 25, 6, -1, 8, 10],
-      sequence: [5, 1, 22, 23, 6, -1, 8, 10],
+      "coins": [109, 2000, 8765, 19, 18, 17, 16, 8, 1, 1, 2, 4]
     };
-    expect(nonConstructibleChange(test.array, test.sequence)).toBeFalsy();
+    let minimunChange = 87
+    expect(nonConstructibleChange(test.coins)).toBe(minimunChange);
   });
 
   it('should return true', () => {
     const test = {
-      array: [5, 1, 22, 25, 6, -1, 8, 10],
-      sequence: [5, 1, 22, 22, 25, 6, -1, 8, 10],
+      "coins": [1, 2, 3, 4, 5, 6, 7]
     };
-    expect(nonConstructibleChange(test.array, test.sequence)).toBeFalsy();
-  });
-
-  it('should return true', () => {
-    const test = {
-      array: [5, 1, 22, 25, 6, -1, 8, 10],
-      sequence: [5, 1, 22, 25, 6, -1, 8, 10, 10],
-    };
-    expect(nonConstructibleChange(test.array, test.sequence)).toBeFalsy();
+    let minimunChange = 29
+    expect(nonConstructibleChange(test.coins)).toBe(minimunChange);
   });
 });
