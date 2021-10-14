@@ -1,3 +1,4 @@
+// Time O(n^2) | Space O(n)
 function threeNumberSum(array, targetSum) {
   // Write your code here.
   array.sort((a,b) => a-b)
@@ -11,15 +12,15 @@ function threeNumberSum(array, targetSum) {
     while(right > left){
       let currSum = array[i] + array[left] + array[right]
 
-      if (currSum > targetSum) {
+      if (currSum === targetSum) {
+        triples.push([array[i], array[left], array[right]])
+        left++
         right--
 
       } else if (currSum < targetSum) {
         left++
 
-      } else {
-        triples.push([array[i], array[left], array[right]])
-        left++
+      } else if (currSum > targetSum) {
         right--
       }
     }
@@ -28,5 +29,6 @@ function threeNumberSum(array, targetSum) {
 
   return triples
 }
+
 
 module.exports = threeNumberSum;
