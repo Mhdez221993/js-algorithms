@@ -1,28 +1,22 @@
+// O(n) Time | O(1) Space
 function moveElementToEnd(array, toMove) {
   let left = 0
   let right = array.length -1
 
   while (left < right){
 
-    if (array[left] === toMove && array[right] !== toMove) {
-      array = swap(left, right, array)
-
-    } else if (array[left] !== toMove) {
-      left++
-
-    } else if (array[right] === toMove) {
+    while(left < right && array[right] === toMove){
       right--
     }
 
+    if (array[left] === toMove) {
+      [array[left], array[right]] = [array[right], array[left]]
+    }
+
+    left++
+
   }
 
-  return array
-}
-
-const swap = (left, right, array) => {
-  let temp = array[left]
-  array[left] = array[right]
-  array[right] = temp
   return array
 }
 
