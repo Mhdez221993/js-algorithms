@@ -1,7 +1,4 @@
-const diff = (a, b) => {
-  return (a > b) ? (a - b) : (b - a);
-}
-
+// O(nlog(n) + mlog(m)) time | O(1) space
 function smallestDifference(arrayOne, arrayTwo) {
   arrayOne.sort((a,b) => a-b)
   arrayTwo.sort((a,b) => a-b)
@@ -9,31 +6,34 @@ function smallestDifference(arrayOne, arrayTwo) {
   let one = 0
   let two = 0
   let smallestDiff = Infinity
-  let result = []
-  let len = (arrayOne.length -1) + (arrayTwo.length)
+  let current = Infinity
+  let smallestPair = []
 
-  for(let i = 0; i < len; i++){
-    let currentDifference = diff(arrayOne[one], arrayTwo[two])
+  while(one < arrayOne.length && two < arrayTwo.length){
+    let first = arrayOne[one]
+    let second = arrayTwo[two]
 
-    if (currentDifference < smallestDiff) {
-      smallestDiff = currentDifference
-      result = [arrayOne[one], arrayTwo[two]]
+    if (first < second) {
+      current = second - first
+      one += 1
+
+    } else if (second < first) {
+      current = first - second
+      two += 1
+
+    } else {
+      return [first, second]
 
     }
 
-    if (arrayOne[one] < arrayTwo[two] && one < arrayOne.length-1) {
-      one++
+    if (smallestDiff > current) {
+      smallestDiff = current
+      smallestPair = [first, second]
 
-    } else if (arrayTwo[two] < arrayOne[one] && two < arrayTwo.length-1) {
-      two++
     }
+
   }
-  return result
+  return smallestPair
 }
-
-let arrayOne = [-1, 5, 10, 20, 28, 3]
-let arrayTwo = [26, 134, 135, 15, 17]
-
-console.log(smallestDifference(arrayOne, arrayTwo));
 
 module.exports = smallestDifference;
