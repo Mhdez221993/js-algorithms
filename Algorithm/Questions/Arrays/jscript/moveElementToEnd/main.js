@@ -1,19 +1,28 @@
 function moveElementToEnd(array, toMove) {
-  let len = array.length
-  let i = 0
-  while (len >= 0){
-    console.log(array[i]);
-    if (array[i] === toMove) {
-      array.splice(i, 1)
-      array.push(toMove)
+  let left = 0
+  let right = array.length -1
 
-    } else {
-      i++
+  while (left < right){
+
+    if (array[left] === toMove && array[right] !== toMove) {
+      array = swap(left, right, array)
+
+    } else if (array[left] !== toMove) {
+      left++
+
+    } else if (array[right] === toMove) {
+      right--
     }
 
-    len--
   }
 
+  return array
+}
+
+const swap = (left, right, array) => {
+  let temp = array[left]
+  array[left] = array[right]
+  array[right] = temp
   return array
 }
 
