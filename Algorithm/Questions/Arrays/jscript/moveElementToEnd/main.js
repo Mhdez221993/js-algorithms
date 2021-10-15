@@ -26,8 +26,5 @@ const swap = (left, right, array) => {
   return array
 }
 
-let array = [5, 1, 2, 5, 5, 3, 4, 6, 7, 5, 8, 9, 10, 11, 5, 5, 12]
-let toMove = 5
-console.log(moveElementToEnd(array, toMove));
 module.exports = moveElementToEnd;
 
