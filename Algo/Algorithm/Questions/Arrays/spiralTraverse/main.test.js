@@ -10,7 +10,7 @@ describe('spiralTraverse', () => {
         [10, 9, 8, 7]
       ]
     };
-    let result = true
+    let result = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
     expect(spiralTraverse(test.array)).toStrictEqual(result);
   });
 
@@ -20,7 +20,7 @@ describe('spiralTraverse', () => {
         [1]
       ]
     };
-    let result = true
+    let result = [1]
     expect(spiralTraverse(test.array)).toStrictEqual(result);
   });
 
@@ -31,7 +31,7 @@ describe('spiralTraverse', () => {
         [4, 3]
       ]
     };
-    let result = true
+    let result = [1, 2, 3, 4]
     expect(spiralTraverse(test.array)).toStrictEqual(result);
   });
 
@@ -43,7 +43,7 @@ describe('spiralTraverse', () => {
         [7, 6, 5]
       ]
     };
-    let result = true
+    let result = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     expect(spiralTraverse(test.array)).toStrictEqual(result);
   });
 
@@ -58,7 +58,7 @@ describe('spiralTraverse', () => {
         [17, 30, 29, 28, 27, 10]
       ]
     };
-    let result = true
+    let result = [19, 32, 33, 34, 25, 8, 11, 9, 6, 7, 10, 27, 28, 29, 30, 17, 20, 1, 18, 16, 15, 14, 13, 12, 26, 5, 24, 23, 22, 21, 2, 31, 36, 35, 4, 3]
     expect(spiralTraverse(test.array)).toStrictEqual(result);
   });
 
@@ -69,7 +69,7 @@ describe('spiralTraverse', () => {
         [12, 19, 15, 16, 20, 18, 13, 17, 11, 14]
       ]
     };
-    let result = true
+    let result = [4, 2, 3, 6, 7, 8, 1, 9, 5, 10, 14, 11, 17, 13, 18, 20, 16, 15, 19, 12]
     expect(spiralTraverse(test.array)).toStrictEqual(result);
   });
 
@@ -84,7 +84,7 @@ describe('spiralTraverse', () => {
         [93, 11, 90, 16]
       ]
     };
-    let result = true
+    let result = [27, 12, 35, 26, 11, 56, 18, 94, 16, 90, 11, 93, 96, 55, 19, 25, 21, 94, 43, 10, 31, 83, 36, 96]
     expect(spiralTraverse(test.array)).toStrictEqual(result);
   });
 
@@ -96,7 +96,7 @@ describe('spiralTraverse', () => {
         [9, 8, 7, 6]
       ]
     };
-    let result = false
+    let result = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     expect(spiralTraverse(test.array)).toStrictEqual(result);
   });
 
@@ -110,7 +110,7 @@ describe('spiralTraverse', () => {
         [9, 8, 7]
       ]
     };
-    let result = false
+    let result = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
     expect(spiralTraverse(test.array)).toStrictEqual(result);
   });
 
@@ -129,7 +129,7 @@ describe('spiralTraverse', () => {
         [10, 20]
       ]
     };
-    let result = false
+    let result = [1, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 10, 9, 8, 7, 6, 5, 4, 3, 2]
     expect(spiralTraverse(test.array)).toStrictEqual(result);
   });
 
@@ -139,7 +139,23 @@ describe('spiralTraverse', () => {
         [1, 3, 2, 5, 4, 7, 6]
       ]
     };
-    let result = true
+    let result = [1, 3, 2, 5, 4, 7, 6]
+    expect(spiralTraverse(test.array)).toStrictEqual(result);
+  });
+
+  it('should return result', () => {
+    const test = {
+      "array": [
+        [1],
+        [3],
+        [2],
+        [5],
+        [4],
+        [7],
+        [6]
+      ]
+    };
+    let result = [1, 3, 2, 5, 4, 7, 6]
     expect(spiralTraverse(test.array)).toStrictEqual(result);
   });
 });
