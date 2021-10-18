@@ -1,8 +1,6 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# Interview Preparation
 
-# Hackerrank Solutions
-
-> This project contains the solutions to coding challenges that I will be solving on my way to be better at problem-solving
+> This project contains resources to prepare you for coding interviews.
 
 ## Built With
 
