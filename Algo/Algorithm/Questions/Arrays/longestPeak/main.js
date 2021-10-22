@@ -1,36 +1,34 @@
 function longestPeak(array) {
-  let currentPeak = 1
-  let hightestPeak = 0
-  let peak = false
-  let atleatOnePeak = false;
+  let longestPeak = 0
+  let i = 1
 
-  for(let i = 1; i < array.length; i++) {
-    let curr = array[i]
-    let prev = array[i - 1]
+  while(i < array.length - 1){
+    let peak = array[i] > array[i - 1] && array[i] > array[i + 1]
 
-    if(curr > prev) {
-
-      if(peak){
-        currentPeak = 2
-        peak = false
-
-      } else {
-        currentPeak++
-      }
-
-    } else if(curr < prev && currentPeak > 1) {
-      currentPeak++
-      peak = true
-      atleatOnePeak = true
-
-    } else {
-      currentPeak = 1
+    if (!peak){
+      i++
+      continue
     }
 
-    hightestPeak = currentPeak > hightestPeak ? currentPeak : hightestPeak
-  };
+    let leftIndx = i - 2
+    while(leftIndx >= 0 && array[leftIndx] < array[leftIndx + 1]){
+      leftIndx--
+    }
 
-  return atleatOnePeak ? hightestPeak : 0
+    let rightIndx = i + 2
+    while(rightIndx < array.length && array[rightIndx] < array[rightIndx - 1]){
+      rightIndx++
+    }
+
+    let currentPeak = rightIndx - leftIndx - 1
+    longestPeak = Math.max(currentPeak, longestPeak)
+    i = rightIndx
+  }
+
+  return longestPeak
 }
 
-module.exports = spiralTraverse;
+let array = [1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]
+console.log(longestPeak(array));
+
+// module.exports = longestPeak;
