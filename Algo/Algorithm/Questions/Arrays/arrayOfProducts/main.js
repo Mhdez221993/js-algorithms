@@ -1,22 +1,25 @@
 function arrayOfProducts(array) {
   let products = []
+  let rigthProduct = []
+  let leftProduct = []
+
+  let leftCurrentProduct = 1
+  for(let i = 0; i < array.length; i++){
+    leftProduct[i] = leftCurrentProduct
+    leftCurrentProduct *= array[i]
+  }
+
+  let rigthCurrentProduct = 1
+  for(let i = array.length - 1; i >= 0; i--){
+    rigthProduct[i] = rigthCurrentProduct
+    rigthCurrentProduct *= array[i]
+  }
 
   for(let i = 0; i < array.length; i++){
-    let product = 1
-    for(let j = 0; j < array.length; j++){
-
-      if(j !== i){
-        product *= array[j]
-      }
-
-    }
-
-    products[i] = product
+    products[i] = rigthProduct[i] * leftProduct[i]
   }
 
   return products
 }
 
-let array = [5, 1, 4, 2]
-console.log(arrayOfProducts(array));
-// module.exports = arrayOfProducts;
+module.exports = arrayOfProducts;
