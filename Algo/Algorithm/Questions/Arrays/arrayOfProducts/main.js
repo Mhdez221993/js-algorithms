@@ -1,21 +1,20 @@
 function arrayOfProducts(array) {
-  let newArr = []
+  let products = []
 
   for(let i = 0; i < array.length; i++){
     let product = 1
     for(let j = 0; j < array.length; j++){
 
-      if(j === i){
-        continue
+      if(j !== i){
+        product *= array[j]
       }
 
-      product *= array[j]
     }
 
-    newArr.push(product)
+    products[i] = product
   }
 
-  return newArr
+  return products
 }
 
 let array = [5, 1, 4, 2]
