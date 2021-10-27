@@ -1,6 +1,19 @@
 function firstDuplicateValue(array) {
-  // Write your code here.
-  return [];
+  let duplicates = {}
+  for (let i = 0 ; i < array.length; i++) {
+    let element = array[i]
+
+    if (duplicates[element]){
+      return element
+
+    } else {
+      duplicates[element] = true
+    }
+  }
+  return -1
 }
 
-module.exports = firstDuplicateValue;
+let array = [2, 1, 5, 2, 3, 3, 4]
+console.log(firstDuplicateValue(array));
+
+// module.exports = firstDuplicateValue;
