@@ -6,7 +6,7 @@ function firstDuplicateValue(array) {
       return curr + 1
 
     } else {
-      array[curr] = -array[curr]
+      array[curr] *= -1
     }
   }
   return -1
