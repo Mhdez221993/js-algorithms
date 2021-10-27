@@ -1,13 +1,12 @@
 function firstDuplicateValue(array) {
-  let duplicates = {}
-  for (let i = 0 ; i < array.length; i++) {
-    let element = array[i]
+  for (let i =  0; i < array.length; i++) {
+    let curr = Math.abs(array[i]) - 1
 
-    if (duplicates[element]){
-      return element
+    if (array[curr] < 0) {
+      return curr + 1
 
     } else {
-      duplicates[element] = true
+      array[curr] = -array[curr]
     }
   }
   return -1
