@@ -25,8 +25,7 @@ public class main {
   public static void main(String[] args) {
     int [] array = new int []{3, 5, -4, 8, 11, 1, -1, 6};
     int targetSum = 10;
-    Program p = new Program();
-    int[] result = p.twoNumberSum(array, targetSum);
+    int[] result = Program.twoNumberSum(array, targetSum);
     System.out.println(result[0] + " "+ result[1]);
   }
 }

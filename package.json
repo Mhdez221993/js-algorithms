@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Mhdez221993/coding-interview#readme",
   "devDependencies": {
     "babel-eslint": "10.1.x",
+    "cppunitlite": "^1.0.0",
     "eslint": "7.11.x",
     "eslint-config-airbnb": "18.1.x",
     "eslint-plugin-import": "2.22.x",
@@ -29,5 +30,8 @@
     "stylelint-config-standard": "20.0.x",
     "stylelint-csstree-validator": "^1.9.0",
     "stylelint-scss": "3.17.x"
+  },
+  "dependencies": {
+    "cppunitlite-2": "^1.0.0"
   }
 }
