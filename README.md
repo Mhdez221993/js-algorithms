@@ -3,11 +3,34 @@
 > This project contains resources to prepare you for coding interviews.
 
 ## Getting Started
-### To get a local copy run the following steps:
 
-- Open your terminal or command line
-- Run `git clone https://github.com/Mhdez221993/Interview-Preparation`
-- `cd Interview-Preparation`
+* To get a local copy open your terminal and run the following commands:
+
+```cdm
+$ git clone https://github.com/Mhdez221993/Interview-Preparation
+$ cd Interview-Preparation
+$ npm install
+```
+
+
+* You can run a C++ program by typing in the command line:
+
+```cmd
+$ g++ fileName.cpp && ./a.out
+```
+
+* You can run a Java program by typing in the command line:
+
+```cmd
+$ javac fileName.java && java fileName
+```
+
+* You can run a js program by typing in the command line:
+
+```cmd
+$ node fileName.js
+```
+
 
 ## Authors
 
