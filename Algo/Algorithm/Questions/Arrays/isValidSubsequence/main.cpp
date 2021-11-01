@@ -11,10 +11,8 @@ bool isValidSubsequence(vector<int> array, vector<int> sequence)
 
   int index = 0;
   int idx = 0;
-  int arrayLen = array.size();
-  int sequeLen = sequence.size();
 
-  while (idx < sequeLen && index < arrayLen)
+  while (idx < sequence.size() && index < array.size())
   {
     if (array[index] == sequence[idx])
     {
@@ -23,7 +21,7 @@ bool isValidSubsequence(vector<int> array, vector<int> sequence)
     index++;
   }
 
-  return idx == sequeLen;
+  return idx == sequence.size();
 }
 
 int main()
