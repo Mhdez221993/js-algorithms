@@ -12,7 +12,4 @@ function firstDuplicateValue(array) {
   return -1
 }
 
-let array = [2, 1, 5, 2, 3, 3, 4]
-console.log(firstDuplicateValue(array));
-
 module.exports = firstDuplicateValue;
