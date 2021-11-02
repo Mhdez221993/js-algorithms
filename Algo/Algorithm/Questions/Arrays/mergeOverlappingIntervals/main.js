@@ -1,4 +1,5 @@
 function mergeOverlappingIntervals(array) {
+  array = array.sort(([a],[b]) => a - b)
   let merge = [];
   let curr = undefined;
   let [lastFirst, lastSecond] = array[array.length -1]
@@ -23,11 +24,8 @@ function mergeOverlappingIntervals(array) {
 }
 
 let array = [
-  [1, 2],
-  [3, 5],
-  [4, 7],
-  [6, 8],
-  [9, 10]
+  [100, 105],
+  [1, 104]
 ]
 
 let result = [
