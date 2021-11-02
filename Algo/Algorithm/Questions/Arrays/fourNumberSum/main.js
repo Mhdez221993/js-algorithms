@@ -1,47 +1,32 @@
 function fourNumberSum(array, targetSum) {
-  array = array.sort((a, b) => a - b)
   let quadruplets = []
-  let left = 0
-  let right = array.length - 1
+  let hash = {}
 
-  while(left < right) {
-    console.log(array[left], array[right]);
-    let innerLeft = left + 1
-    let innerRight = right - 1
-    let currentQuadruplet = array[left] + array[right] + array[innerLeft] + array[innerRight]
+  for (let i = 0; i < array.length; i++) {
+    let current = array[i]
 
-    while(innerLeft < innerRight) {
-
-      if (currentQuadruplet === targetSum) {
-        quadruplets.push([array[right], array[innerRight], array[innerLeft], array[left]])
-        innerLeft++
-        innerRight--
-
-      } else if (currentQuadruplet < targetSum) {
-        innerLeft++
-
-      } else {
-        innerRight--
+    for (let j = i + 1; j < array.length; j++) {
+      let key = targetSum - (current + array[j])
+      console.log(key, current, array[j]);
+      let pairs = hash[key]
+      if (pairs) {
+        pairs.map(v => {
+          let newValue = [...v, current, array[j]]
+          quadruplets.push(newValue)
+        })
       }
     }
 
-    if(currentQuadruplet <= targetSum){
-      left++
+    for (let j = 0; j < i; j++) {
+      let key = current + array[j]
+      if (!hash[key]) {
+        hash[key] = []
+        hash[key].push([array[j], current])
 
-    } else {
-      right--
-
+      } else {
+        hash[key].push([current, array[j]])
+      }
     }
   }
-
   return quadruplets
 }
-
-let array = [7, 6, 4, -1, 1, 2]
-let targetSum = 16
-let result = [
-  [7, 6, 4, -1],
-  [7, 6, 1, 2]
-]
-
-console.log(fourNumberSum(array, targetSum));
