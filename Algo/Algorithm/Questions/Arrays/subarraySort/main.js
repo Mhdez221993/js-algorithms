@@ -30,6 +30,3 @@ function subarraySort(array) {
 
   return [letfIndex, rightIndex]
 }
-
-let array = [1, 2, 4, 7, 10, 11, 7, 12, 7, 7, 16, 18, 19]
-console.log(subarraySort(array));
