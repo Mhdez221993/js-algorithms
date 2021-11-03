@@ -26,3 +26,5 @@ function fourNumberSum(array, targetSum) {
   }
   return quadruplets
 }
+
+module.exports = fourNumberSum;
