@@ -30,3 +30,5 @@ function subarraySort(array) {
 
   return [letfIndex, rightIndex]
 }
+
+module.exports = subarraySort;
