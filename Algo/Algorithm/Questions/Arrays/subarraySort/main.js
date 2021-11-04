@@ -5,8 +5,8 @@ function subarraySort(array) {
     let breakingPoint = array[i] > array[i + 1]
 
     if (breakingPoint) {
-      highest = array[i] > highest ? array[i] : highest
-      lowest = array[i + 1] < lowest ? array[i + 1] : lowest
+      highest =Math.max(highest, array[i])
+      lowest = Math.min(array[i + 1], lowest)
     }
   }
 
@@ -31,6 +31,4 @@ function subarraySort(array) {
 
 }
 
-let array = [1, 2, 3, 4, 5, 6, 18, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19]
-console.log(subarraySort(array));
-// module.exports = subarraySort;
+module.exports = subarraySort;
