@@ -1,11 +1,13 @@
+// O(n) time | O(1) space
 function subarraySort(array) {
   let minBreakingPoint = Infinity
   let maxBreakingPoint = -Infinity
+
   for(let i = 0; i < array.length; i++){
     let breakingPoint = array[i] > array[i + 1]
 
     if (breakingPoint) {
-      maxBreakingPoint =Math.max(maxBreakingPoint, array[i])
+      maxBreakingPoint = Math.max(maxBreakingPoint, array[i])
       minBreakingPoint = Math.min(array[i + 1], minBreakingPoint)
     }
   }
