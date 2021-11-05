@@ -1,33 +1,29 @@
 function subarraySort(array) {
-  let lowest = Infinity
-  let highest = -Infinity
+  let minBreakingPoint = Infinity
+  let maxBreakingPoint = -Infinity
   for(let i = 0; i < array.length; i++){
     let breakingPoint = array[i] > array[i + 1]
 
     if (breakingPoint) {
-      highest =Math.max(highest, array[i])
-      lowest = Math.min(array[i + 1], lowest)
+      maxBreakingPoint =Math.max(maxBreakingPoint, array[i])
+      minBreakingPoint = Math.min(array[i + 1], minBreakingPoint)
     }
   }
 
-  if (lowest == Infinity) {
+  if (minBreakingPoint == Infinity) {
     return [-1, -1]
   }
 
-  let foundI = true
-  let curr = highest
-  array.forEach((element, index) => {
-    if (element > lowest && foundI){
-      lowest = index
-      foundI = false
-    }
+  let leftIndex = 0
+  while(minBreakingPoint >= array[leftIndex]) {
+    leftIndex++
+  }
 
-    if (element < curr) {
-      highest = index
-    }
-  });
-
-  return [lowest, highest]
+  let rightIndex = array.length - 1
+  while(maxBreakingPoint < array[rightIndex]) {
+    rightIndex--
+  }
+  return [leftIndex, rightIndex]
 
 }
 
