@@ -7,19 +7,19 @@ function largestRange(array) {
   });
 
   for (let i = 0; i < array.length; i++) {
-    let j = array[i] - 1
-    while(hash[j]){
+    let j = array[i]
+    while(hash[j - 1]){
       j--
     }
 
-    let k = array[i] + 1
-    while (hash[k]) {
+    let k = array[i]
+    while (hash[k + 1]) {
       k++
     }
 
     if (k - j > second - first) {
-      first = j + 1
-      second = k - 1
+      first = j
+      second = k
     }
   }
   return [first, second]
