@@ -1,34 +1,37 @@
 function largestRange(array) {
-  let first = array[0]
-  let second = array[0]
-  let hash = {}
+  let bestRange = []
+  let longestRange = 0
+  let nums = {}
   array.forEach(element => {
-    hash[element] = true
+    nums[element] = true
   });
 
-  for (let i = 0; i < array.length; i++) {
-    let j = array[i]
-    if(!hash[j]) continue
-    hash[j] = false
-    while(hash[j - 1]){
-      hash[j - 1] = false
-      j--
+  for (const num  of array) {
+    if(!nums[num]) continue
+
+    nums[num] = false
+    let currLongestRange = 1
+    let left = num - 1
+    let right = num + 1
+
+    while(left in nums){
+      nums[left] = false
+      currLongestRange++
+      left--
     }
 
-    let k = array[i]
-    hash[k] = false
-    while (hash[k + 1]) {
-      hash[k + 1] = false
-      k++
+    while (right in nums) {
+      nums[right] = false
+      currLongestRange++
+      right++
     }
 
-    if (k - j > second - first) {
-      first = j
-      second = k
-
+    if (currLongestRange > longestRange) {
+      longestRange = currLongestRange
+      bestRange = [left + 1, right - 1]
     }
   }
-  return [first, second]
+  return bestRange
 }
 
 module.exports = largestRange;
