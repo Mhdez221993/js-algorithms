@@ -8,6 +8,7 @@ function largestRange(array) {
 
   for (let i = 0; i < array.length; i++) {
     let j = array[i]
+    if(!hash[j]) continue
     hash[j] = false
     while(hash[j - 1]){
       hash[j - 1] = false
@@ -29,6 +30,3 @@ function largestRange(array) {
   }
   return [first, second]
 }
-
-let array = [1, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6]
-console.log(largestRange(array));
