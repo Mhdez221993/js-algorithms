@@ -30,3 +30,5 @@ function largestRange(array) {
   }
   return [first, second]
 }
+
+module.exports = largestRange;
