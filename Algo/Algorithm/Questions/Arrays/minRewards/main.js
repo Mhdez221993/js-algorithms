@@ -1,18 +1,25 @@
 function minRewards(scores) {
-  let currentReward = 0
+  let biggest = 1
+  let smallest = 1
   let reward = 0
 
-  for(let i = 0; i < scores.length; i++) {
+  for (let i = 0; i < scores.length; i++) {
     reward++
+
     if (scores[i] < scores[i - 1]) {
-      let left = i - 1
-      while(scores[left] > scores[left + 1]) {
-        currentReward++
-        left--
+
+      if(i === scores.length - 1){
+        return reward
+      } else {
+        reward += smallest
+        smallest++
+        biggest = 1
       }
-    } else {
-      currentReward++
-      reward += currentReward
+
+    } else if(scores[i] > scores[i - 1]) {
+      reward += biggest
+      biggest++
+      smallest = 1
     }
   }
   return reward
