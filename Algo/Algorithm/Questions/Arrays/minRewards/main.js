@@ -1,6 +1,6 @@
+// O(n) Time | O(n) Space
 function minRewards(scores) {
    let rewards = new Array(scores.length).fill(1)
-   let sum = 0
 
    for(let i = 1; i < scores.length; i++) {
       if (scores[i] > scores[i - 1]) {
