@@ -34,8 +34,9 @@ function zigzagTraverse(array) {
     row--
     col++
 
-    console.log(row, col);
   }
 
   return newArr
 }
+
+module.exports = zigzagTraverse
