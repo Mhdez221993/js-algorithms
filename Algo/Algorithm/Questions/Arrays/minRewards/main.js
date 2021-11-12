@@ -1,31 +1,19 @@
 function minRewards(scores) {
-  let biggest = 1
-  let smallest = 1
-  let reward = 0
-  let accending = false
+   let rewards = new Array(scores.length).fill(1)
+   let sum = 0
 
-  for (let i = 0; i < scores.length; i++) {
-    reward++
-
-    if (scores[i] < scores[i - 1]) {
-      if (accending) {
-
-        accending = false
-        continue
+   for(let i = 1; i < scores.length; i++) {
+      if (scores[i] > scores[i - 1]) {
+         rewards[i] = rewards[i - 1] + 1
       }
-      reward += smallest
-      smallest++
-      biggest = 1
+   }
 
-    } else if(scores[i] > scores[i - 1]) {
-      reward += biggest
-      biggest++
-      smallest = 1
-      accending = true
-    }
-  }
-  return reward
+   for(let i = scores.length - 2; i >= 0; i--) {
+      if (scores[i] > scores[i + 1]) {
+         rewards[i] = Math.max(rewards[i], rewards[i + 1] + 1)
+      }
+   }
+
+   return rewards.reduce((acc, curr) => acc + curr)
+
 }
-
-let scores = [0, 4, 2, 1, 3]
-console.log(minRewards(scores));
