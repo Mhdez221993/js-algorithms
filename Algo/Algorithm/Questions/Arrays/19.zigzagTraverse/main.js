@@ -1,42 +1,53 @@
+// O(n) Time | O(n) Space where n is the length of the array
+const outOfBounds = (row, col, height, width) => {
+  return (row < 0 || row > height) || (col < 0 || col > width)
+}
+
 function zigzagTraverse(array) {
-  let newArr = []
+  let result = []
   let row = 0
   let col = 0
-  newArr.push(array[row][col])
+  let height = array.length - 1
+  let width = array[0].length - 1
+  let goinDown = true
 
-  while(row <= array.length - 1 || col <= array.length - 1) {
+  while(!outOfBounds(row, col, height, width)) {
+    result.push(array[row][col])
 
-    if (row < array.length - 1) {
-      row++
+    if (goinDown) {
+      if (col === 0 || row === height) {
+        goinDown = false
+
+        if (row === height) {
+          col++
+        } else {
+          row++
+        }
+
+      } else {
+        row++
+        col--
+      }
+
     } else {
-      col++
-    }
 
-    while (row >= 0 && col <= array[0].length - 1) {
-      newArr.push(array[row][col]);
-      row--
-      col++
-    }
-    row++
-    col--
+      if (col === width || row === 0) {
+        goinDown = true
 
-    if(col < array[0].length - 1){
-      col++
-    } else {
-      row++
-    }
+        if (col === width) {
+          row++
+        } else {
+          col++
+        }
 
-    while (col >= 0 && row < array.length) {
-      newArr.push(array[row][col])
-      row++
-      col--
+      } else {
+        row--
+        col++
+      }
     }
-    row--
-    col++
-
   }
 
-  return newArr
+  return result
 }
 
 module.exports = zigzagTraverse
