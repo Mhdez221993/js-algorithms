@@ -2,10 +2,6 @@
 
 > This project contains resources to prepare you for coding interviews.
 
-## Built with
-JavaScript
-C++
-Java
 ## Getting Started
 
 * To get a local copy open your terminal and run the following commands:
