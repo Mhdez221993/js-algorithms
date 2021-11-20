@@ -22,13 +22,13 @@ function sortedSquaredArray(array) {
 
     if (endAbs > startAbs) {
       newArr[curr] = endAbs;
-      endIdx--;
+      endIdx -= 1;
     } else {
       newArr[curr] = startAbs;
       startIdx++;
     }
 
-    curr--;
+    curr -= 1;
   }
 
   return newArr;

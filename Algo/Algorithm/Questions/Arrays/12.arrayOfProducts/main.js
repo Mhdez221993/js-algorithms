@@ -8,7 +8,7 @@ function arrayOfProducts(array) {
   }
 
   let rigthCurrentProduct = 1;
-  for (let i = array.length - 1; i >= 0; i--) {
+  for (let i = array.length - 1; i >= 0; i -= 1) {
     products[i] *= rigthCurrentProduct;
     rigthCurrentProduct *= array[i];
   }

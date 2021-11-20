@@ -17,7 +17,7 @@ vector<int> twoNumberSum(vector<int> array, int targetSum)
     }
     else if (first + second > targetSum)
     {
-      right--;
+      right -= 1;
     }
     else
     {

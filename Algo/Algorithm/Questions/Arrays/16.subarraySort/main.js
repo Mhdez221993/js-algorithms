@@ -23,7 +23,7 @@ function subarraySort(array) {
 
   let rightIndex = array.length - 1;
   while (maxBreakingPoint < array[rightIndex]) {
-    rightIndex--;
+    rightIndex -= 1;
   }
   return [leftIndex, rightIndex];
 }

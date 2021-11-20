@@ -12,7 +12,7 @@ function longestPeak(array) {
 
     let leftIndx = i - 2;
     while (leftIndx >= 0 && array[leftIndx] < array[leftIndx + 1]) {
-      leftIndx--;
+      leftIndx -= 1;
     }
 
     let rightIndx = i + 2;

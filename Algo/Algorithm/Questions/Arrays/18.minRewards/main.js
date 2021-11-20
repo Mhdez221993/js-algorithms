@@ -8,7 +8,7 @@ function minRewards(scores) {
     }
   }
 
-  for (let i = scores.length - 2; i >= 0; i--) {
+  for (let i = scores.length - 2; i >= 0; i -= 1) {
     if (scores[i] > scores[i + 1]) {
       rewards[i] = Math.max(rewards[i], rewards[i + 1] + 1);
     }

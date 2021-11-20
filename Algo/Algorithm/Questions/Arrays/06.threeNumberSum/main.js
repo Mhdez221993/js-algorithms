@@ -15,11 +15,11 @@ function threeNumberSum(array, targetSum) {
       if (currSum === targetSum) {
         triples.push([array[i], array[left], array[right]]);
         left++;
-        right--;
+        right -= 1;
       } else if (currSum < targetSum) {
         left++;
       } else if (currSum > targetSum) {
-        right--;
+        right -= 1;
       }
     }
   }

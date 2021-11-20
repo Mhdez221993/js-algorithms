@@ -17,7 +17,7 @@ function largestRange(array) {
     while (left in nums) {
       nums[left] = false;
       currLongestRange++;
-      left--;
+      left -= 1;
     }
 
     while (right in nums) {

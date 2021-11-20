@@ -15,20 +15,20 @@ function spiralTraverse(array) {
       result.push(array[row][endCol]);
     }
 
-    for (let col = endCol - 1; col >= startCol; col--) {
+    for (let col = endCol - 1; col >= startCol; col -= 1) {
       if (startRow === endRow) break;
       result.push(array[endRow][col]);
     }
 
-    for (let row = endRow - 1; row > startRow; row--) {
+    for (let row = endRow - 1; row > startRow; row -= 1) {
       if (startCol === endCol) break;
       result.push(array[row][startCol]);
     }
 
     startRow++;
     startCol++;
-    endRow--;
-    endCol--;
+    endRow -= 1;
+    endCol -= 1;
   }
 
   return result;
@@ -55,12 +55,12 @@ function spiralTraverse(array) {
 //     result.push(array[row][endCol])
 //   }
 
-//   for(let col = endCol - 1; col >= startCol; col--){
+//   for(let col = endCol - 1; col >= startCol; col -= 1){
 //     if(startRow === endRow) break
 //     result.push(array[endRow][col])
 //   }
 
-//   for(let row = endRow - 1; row > startRow; row--){
+//   for(let row = endRow - 1; row > startRow; row -= 1){
 //     if(startCol === endCol) break
 //     result.push(array[row][startCol])
 //   }

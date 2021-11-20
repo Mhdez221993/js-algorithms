@@ -23,7 +23,7 @@ function zigzagTraverse(array) {
         }
       } else {
         row++;
-        col--;
+        col -= 1;
       }
     } else if (col === width || row === 0) {
       goinDown = true;
@@ -34,7 +34,7 @@ function zigzagTraverse(array) {
         col++;
       }
     } else {
-      row--;
+      row -= 1;
       col++;
     }
   }
