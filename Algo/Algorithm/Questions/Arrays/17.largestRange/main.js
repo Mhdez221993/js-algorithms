@@ -6,9 +6,14 @@ function largestRange(array) {
     nums[element] = true;
   });
 
-  for (const num of array) {
-    // eslint-disable-next-line no-continue
-    if (!nums[num]) continue;
+  // for (const num of array) {
+  for (let i = 0; i < array.length; i += 1) {
+    const num = array[i];
+
+    if (!nums[num]) {
+      // eslint-disable-next-line no-continue
+      continue;
+    }
 
     nums[num] = false;
     let currLongestRange = 1;
@@ -32,6 +37,7 @@ function largestRange(array) {
       bestRange = [left + 1, right - 1];
     }
   }
+
   return bestRange;
 }
 

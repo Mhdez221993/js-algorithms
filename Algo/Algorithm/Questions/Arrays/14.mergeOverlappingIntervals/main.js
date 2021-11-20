@@ -4,8 +4,8 @@ function mergeOverlappingIntervals(array) {
   let currentInterval = array[0];
   merge.push(currentInterval);
 
-  for (const nextInterval of array) {
-    const [_, second] = currentInterval;
+  array.forEach(nextInterval => {
+    const [, second] = currentInterval;
     const [firstNext, secondNext] = nextInterval;
 
     if (second >= firstNext) {
@@ -14,7 +14,7 @@ function mergeOverlappingIntervals(array) {
       currentInterval = nextInterval;
       merge.push(nextInterval);
     }
-  }
+  });
 
   return merge;
 }
