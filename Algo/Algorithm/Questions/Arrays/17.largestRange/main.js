@@ -7,6 +7,7 @@ function largestRange(array) {
   });
 
   for (const num of array) {
+    // eslint-disable-next-line no-continue
     if (!nums[num]) continue;
 
     nums[num] = false;

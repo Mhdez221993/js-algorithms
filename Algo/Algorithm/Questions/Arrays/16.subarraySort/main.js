@@ -12,7 +12,7 @@ function subarraySort(array) {
     }
   }
 
-  if (minBreakingPoint == Infinity) {
+  if (minBreakingPoint === Infinity) {
     return [-1, -1];
   }
 
