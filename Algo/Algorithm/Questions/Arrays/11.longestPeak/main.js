@@ -7,6 +7,7 @@ function longestPeak(array) {
 
     if (!peak) {
       i += 1;
+      // eslint-disable-next-line no-continue
       continue;
     }
 
