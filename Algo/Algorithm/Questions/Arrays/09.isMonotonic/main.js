@@ -1,21 +1,19 @@
 // O(n) Time | O(1) Space
 function isMonotonic(array) {
+  let isNonIncreaseaing = true;
+  let isNonDecreaseaing = true;
 
-  let isNonIncreaseaing = true
-  let isNonDecreaseaing = true
-
-  for(let i = 1; i < array.length; i++) {
-
+  for (let i = 1; i < array.length; i++) {
     if (array[i] > array[i - 1]) {
-      isNonDecreaseaing = false
+      isNonDecreaseaing = false;
     }
 
-    if (array[i] < array[i -1]) {
-      isNonIncreaseaing = false
+    if (array[i] < array[i - 1]) {
+      isNonIncreaseaing = false;
     }
   }
 
-  return isNonDecreaseaing || isNonIncreaseaing
+  return isNonDecreaseaing || isNonIncreaseaing;
 }
 
 module.exports = isMonotonic;
