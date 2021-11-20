@@ -1,6 +1,7 @@
 // O(n) Time | O(n) Space where n is the length of the array
-const outOfBounds = (row, col, height, width) => (row < 0 || row > height) || (col < 0 || col > width);
-
+function outOfBounds(row, col, height, width) {
+  return (row < 0 || row > height) || (col < 0 || col > width);
+}
 function zigzagTraverse(array) {
   const result = [];
   let row = 0;
