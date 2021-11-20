@@ -3,10 +3,10 @@ function fourNumberSum(array, targetSum) {
   const quadruplets = [];
   const hash = {};
 
-  for (let i = 1; i < array.length - 1; i++) {
+  for (let i = 1; i < array.length - 1; i += 1) {
     const current = array[i];
 
-    for (let j = i + 1; j < array.length; j++) {
+    for (let j = i + 1; j < array.length; j += 1) {
       const key = targetSum - (current + array[j]);
       const pairs = hash[key];
       if (pairs) {
@@ -14,7 +14,7 @@ function fourNumberSum(array, targetSum) {
       }
     }
 
-    for (let j = 0; j < i; j++) {
+    for (let j = 0; j < i; j += 1) {
       const key = current + array[j];
       if (!hash[key]) {
         hash[key] = [[array[j], current]];

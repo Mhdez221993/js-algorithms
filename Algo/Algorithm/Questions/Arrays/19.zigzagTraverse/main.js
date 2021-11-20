@@ -17,25 +17,25 @@ function zigzagTraverse(array) {
         goinDown = false;
 
         if (row === height) {
-          col++;
+          col += 1;
         } else {
-          row++;
+          row += 1;
         }
       } else {
-        row++;
+        row += 1;
         col -= 1;
       }
     } else if (col === width || row === 0) {
       goinDown = true;
 
       if (col === width) {
-        row++;
+        row += 1;
       } else {
-        col++;
+        col += 1;
       }
     } else {
       row -= 1;
-      col++;
+      col += 1;
     }
   }
 

@@ -5,7 +5,7 @@ function threeNumberSum(array, targetSum) {
 
   const triples = [];
 
-  for (let i = 0; i < array.length - 1; i++) {
+  for (let i = 0; i < array.length - 1; i += 1) {
     let left = i + 1;
     let right = array.length - 1;
 
@@ -14,10 +14,10 @@ function threeNumberSum(array, targetSum) {
 
       if (currSum === targetSum) {
         triples.push([array[i], array[left], array[right]]);
-        left++;
+        left += 1;
         right -= 1;
       } else if (currSum < targetSum) {
-        left++;
+        left += 1;
       } else if (currSum > targetSum) {
         right -= 1;
       }

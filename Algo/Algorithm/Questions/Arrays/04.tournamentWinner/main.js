@@ -5,7 +5,7 @@ function tournamentWinner(competitions, results) {
   let currentBestTeam = '';
   const scores = { [currentBestTeam]: 0 };
 
-  for (let i = 0; i < results.length; i++) {
+  for (let i = 0; i < results.length; i += 1) {
     const result = results[i];
     const [homeTeam, awayTeam] = competitions[i];
     const winingTeam = result === HOME_TEAM_WON ? homeTeam : awayTeam;

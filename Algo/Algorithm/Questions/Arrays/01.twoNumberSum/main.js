@@ -12,7 +12,7 @@ function twoNumberSum(array, targetSum) {
     } if (current > targetSum) {
       right -= 1;
     } else {
-      left++;
+      left += 1;
     }
   }
 

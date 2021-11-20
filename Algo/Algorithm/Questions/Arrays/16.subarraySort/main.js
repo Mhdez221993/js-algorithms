@@ -3,7 +3,7 @@ function subarraySort(array) {
   let minBreakingPoint = Infinity;
   let maxBreakingPoint = -Infinity;
 
-  for (let i = 0; i < array.length; i++) {
+  for (let i = 0; i < array.length; i += 1) {
     const breakingPoint = array[i] > array[i + 1];
 
     if (breakingPoint) {
@@ -18,7 +18,7 @@ function subarraySort(array) {
 
   let leftIndex = 0;
   while (minBreakingPoint >= array[leftIndex]) {
-    leftIndex++;
+    leftIndex += 1;
   }
 
   let rightIndex = array.length - 1;

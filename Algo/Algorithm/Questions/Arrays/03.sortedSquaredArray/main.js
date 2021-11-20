@@ -25,7 +25,7 @@ function sortedSquaredArray(array) {
       endIdx -= 1;
     } else {
       newArr[curr] = startAbs;
-      startIdx++;
+      startIdx += 1;
     }
 
     curr -= 1;

@@ -2,7 +2,7 @@
 function minRewards(scores) {
   const rewards = new Array(scores.length).fill(1);
 
-  for (let i = 1; i < scores.length; i++) {
+  for (let i = 1; i < scores.length; i += 1) {
     if (scores[i] > scores[i - 1]) {
       rewards[i] = rewards[i - 1] + 1;
     }

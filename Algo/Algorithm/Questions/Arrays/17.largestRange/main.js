@@ -16,14 +16,14 @@ function largestRange(array) {
 
     while (left in nums) {
       nums[left] = false;
-      currLongestRange++;
+      currLongestRange += 1;
       left -= 1;
     }
 
     while (right in nums) {
       nums[right] = false;
-      currLongestRange++;
-      right++;
+      currLongestRange += 1;
+      right += 1;
     }
 
     if (currLongestRange > longestRange) {

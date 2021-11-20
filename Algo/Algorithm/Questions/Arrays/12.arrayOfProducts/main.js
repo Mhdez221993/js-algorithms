@@ -2,7 +2,7 @@ function arrayOfProducts(array) {
   const products = new Array(array.length).fill(1);
 
   let leftCurrentProduct = 1;
-  for (let i = 0; i < array.length; i++) {
+  for (let i = 0; i < array.length; i += 1) {
     products[i] *= leftCurrentProduct;
     leftCurrentProduct *= array[i];
   }

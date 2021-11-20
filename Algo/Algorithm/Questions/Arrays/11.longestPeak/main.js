@@ -6,7 +6,7 @@ function longestPeak(array) {
     const peak = array[i] > array[i - 1] && array[i] > array[i + 1];
 
     if (!peak) {
-      i++;
+      i += 1;
       continue;
     }
 
@@ -17,7 +17,7 @@ function longestPeak(array) {
 
     let rightIndx = i + 2;
     while (rightIndx < array.length && array[rightIndx] < array[rightIndx - 1]) {
-      rightIndx++;
+      rightIndx += 1;
     }
 
     const currentPeak = rightIndx - leftIndx - 1;

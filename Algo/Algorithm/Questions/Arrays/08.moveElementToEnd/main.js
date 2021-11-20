@@ -12,7 +12,7 @@ function moveElementToEnd(array, toMove) {
       [array[left], array[right]] = [array[right], array[left]];
     }
 
-    left++;
+    left += 1;
   }
 
   return array;

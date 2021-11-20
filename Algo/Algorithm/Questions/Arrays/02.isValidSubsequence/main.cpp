@@ -16,9 +16,9 @@ bool isValidSubsequence(vector<int> array, vector<int> sequence)
   {
     if (array[index] == sequence[idx])
     {
-      idx++;
+      idx += 1;
     }
-    index++;
+    index += 1;
   }
 
   return idx == sequence.size();
