@@ -80,20 +80,4 @@ describe('arrayOfProducts', () => {
     const result = [362880, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     expect(arrayOfProducts(test.array)).toStrictEqual(result);
   });
-
-  // it('should return result', () => {
-  //   const test = {
-  //     "array": [1, 2, 3, 2, 1, 1]
-  //   };
-  //   let result = 5
-  //   expect(arrayOfProducts(test.array)).toStrictEqual(result);
-  // });
-
-  // it('should return result', () => {
-  //   const test = {
-  //     "array": [1, 1, 1, 2, 3, 10, 12, -3, -3, 2, 3, 45, 800, 99, 98, 0, -1, -1, 2, 3, 4, 5, 0, -1, -1]
-  //   };
-  //   let result = 9
-  //   expect(arrayOfProducts(test.array)).toStrictEqual(result);
-  // });
 });

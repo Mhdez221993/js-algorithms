@@ -1,3 +1,4 @@
+
 const longestPeak = require('./main');
 
 describe('longestPeak', () => {
@@ -91,7 +92,10 @@ describe('longestPeak', () => {
 
   it('should return result', () => {
     const test = {
-      array: [1, 1, 1, 2, 3, 10, 12, -3, -3, 2, 3, 45, 800, 99, 98, 0, -1, -1, 2, 3, 4, 5, 0, -1, -1],
+      array: [
+        1, 1, 1, 2, 3, 10, 12, -3, -3, 2, 3, 45,
+        800, 99, 98, 0, -1, -1, 2, 3, 4, 5, 0, -1, -1,
+      ],
     };
     const result = 9;
     expect(longestPeak(test.array)).toStrictEqual(result);
