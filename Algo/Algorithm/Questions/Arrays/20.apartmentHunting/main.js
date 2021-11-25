@@ -99,3 +99,5 @@ function apartmentHunting(blocks, reqs) {
   const maxDistanceFromBlocks = getMaxDistanceFromBlocks(blocks, minDistanceFromBlocks)
   return getIndxMinValue(maxDistanceFromBlocks)
 }
+
+module.exports = apartmentHunting;
