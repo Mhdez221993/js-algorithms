@@ -43,61 +43,61 @@
 
 // O(br) Time | O(br) Space
 function distanceBetween(a, b) {
-  return Math.abs(a - b)
+  return Math.abs(a - b);
 }
 
 function getMinDistanceFromBlocks(blocks, req) {
-  let minDistances = new Array(blocks.length).fill(Infinity)
-  let closestReqIndx = Infinity
+  const minDistances = new Array(blocks.length).fill(Infinity);
+  let closestReqIndx = Infinity;
 
-  for(let i = 0; i < blocks.length; i++) {
+  for (let i = 0; i < blocks.length; i++) {
     if (blocks[i][req]) {
-      closestReqIndx = i
+      closestReqIndx = i;
     }
-    minDistances[i] = distanceBetween(i, closestReqIndx)
+    minDistances[i] = distanceBetween(i, closestReqIndx);
   }
 
-  for(let i = blocks.length - 1; i >= 0; i--) {
+  for (let i = blocks.length - 1; i >= 0; i--) {
     if (blocks[i][req]) {
-      closestReqIndx = i
+      closestReqIndx = i;
     }
-    minDistances[i] = Math.min(minDistances[i], distanceBetween(i, closestReqIndx))
+    minDistances[i] = Math.min(minDistances[i], distanceBetween(i, closestReqIndx));
   }
 
-  return minDistances
+  return minDistances;
 }
 
 function getMaxDistanceFromBlocks(blocks, minDistanceFromBlocks) {
-  let maxDistances = new Array(blocks.length).fill(0)
-  for(let i = 0; i < blocks.length; i++) {
+  const maxDistances = new Array(blocks.length).fill(0);
+  for (let i = 0; i < blocks.length; i++) {
     minDistanceFromBlocks.forEach(min => {
-      maxDistances[i] = Math.max(min[i], maxDistances[i])
-    })
+      maxDistances[i] = Math.max(min[i], maxDistances[i]);
+    });
   }
 
-  return maxDistances
+  return maxDistances;
 }
 
 function getIndxMinValue(array) {
   let index = 0;
   let minValue = Infinity;
 
-  for(let i = 0; i < array.length; i++) {
-    let curr = array[i]
+  for (let i = 0; i < array.length; i++) {
+    const curr = array[i];
 
     if (curr < minValue) {
-      minValue = curr
-      index = i
+      minValue = curr;
+      index = i;
     }
   }
 
-  return index
+  return index;
 }
 
 function apartmentHunting(blocks, reqs) {
-  const minDistanceFromBlocks = reqs.map(req => getMinDistanceFromBlocks(blocks, req))
-  const maxDistanceFromBlocks = getMaxDistanceFromBlocks(blocks, minDistanceFromBlocks)
-  return getIndxMinValue(maxDistanceFromBlocks)
+  const minDistanceFromBlocks = reqs.map(req => getMinDistanceFromBlocks(blocks, req));
+  const maxDistanceFromBlocks = getMaxDistanceFromBlocks(blocks, minDistanceFromBlocks);
+  return getIndxMinValue(maxDistanceFromBlocks);
 }
 
 module.exports = apartmentHunting;
