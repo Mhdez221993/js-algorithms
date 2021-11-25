@@ -41,6 +41,7 @@
 // }
 
 
+// O(br) Time | O(br) Space
 function distanceBetween(a, b) {
   return Math.abs(a - b)
 }
@@ -98,40 +99,3 @@ function apartmentHunting(blocks, reqs) {
   const maxDistanceFromBlocks = getMaxDistanceFromBlocks(blocks, minDistanceFromBlocks)
   return getIndxMinValue(maxDistanceFromBlocks)
 }
-
-let blocks = [
-  {
-    "gym": false,
-    "office": true,
-    "school": true,
-    "store": false
-  },
-  {
-    "gym": true,
-    "office": false,
-    "school": false,
-    "store": false
-  },
-  {
-    "gym": true,
-    "office": false,
-    "school": true,
-    "store": false
-  },
-  {
-    "gym": false,
-    "office": false,
-    "school": true,
-    "store": false
-  },
-  {
-    "gym": false,
-    "office": false,
-    "school": true,
-    "store": true
-  }
-]
-
-let reqs = ["gym", "office", "school", "store"]
-
-console.log(apartmentHunting(blocks, reqs));
