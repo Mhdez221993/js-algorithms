@@ -1,3 +1,4 @@
+// O(b^2*r) Time | O(b) Space
 function distanceBetween(a, b) {
   return Math.abs(a - b)
 }
