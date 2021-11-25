@@ -50,14 +50,14 @@ function getMinDistanceFromBlocks(blocks, req) {
   const minDistances = new Array(blocks.length).fill(Infinity);
   let closestReqIndx = Infinity;
 
-  for (let i = 0; i < blocks.length; i++) {
+  for (let i = 0; i < blocks.length; i += 1) {
     if (blocks[i][req]) {
       closestReqIndx = i;
     }
     minDistances[i] = distanceBetween(i, closestReqIndx);
   }
 
-  for (let i = blocks.length - 1; i >= 0; i--) {
+  for (let i = blocks.length - 1; i >= 0; i -= 1) {
     if (blocks[i][req]) {
       closestReqIndx = i;
     }
@@ -69,7 +69,7 @@ function getMinDistanceFromBlocks(blocks, req) {
 
 function getMaxDistanceFromBlocks(blocks, minDistanceFromBlocks) {
   const maxDistances = new Array(blocks.length).fill(0);
-  for (let i = 0; i < blocks.length; i++) {
+  for (let i = 0; i < blocks.length; i += 1) {
     minDistanceFromBlocks.forEach(min => {
       maxDistances[i] = Math.max(min[i], maxDistances[i]);
     });
@@ -82,7 +82,7 @@ function getIndxMinValue(array) {
   let index = 0;
   let minValue = Infinity;
 
-  for (let i = 0; i < array.length; i++) {
+  for (let i = 0; i < array.length; i += 1) {
     const curr = array[i];
 
     if (curr < minValue) {
