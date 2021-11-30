@@ -1,3 +1,4 @@
+// O(n) Time | O(1) Space. Where n is the length of the coins array
 function nonConstructibleChange(coins) {
   coins.sort((a, b) => a - b);
 
