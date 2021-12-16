@@ -2,4 +2,4 @@ function calendarMatching(calendar1, dailyBounds1, calendar2, dailyBounds2, meet
   // Write your code here.
 }
 
-module.exports = calendarMatching
+module.exports = calendarMatching;
