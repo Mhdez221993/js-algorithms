@@ -21,3 +21,7 @@ is a Toeplitz matrix, so we should return <code>true</code>, while
 </pre>
 
 isn’t a Toeplitz matrix, so we should return <code>false</code>.
+
+## C++ Resources
+
+* [programiz_c++](https://www.programiz.com/cpp-programming/vectors)
