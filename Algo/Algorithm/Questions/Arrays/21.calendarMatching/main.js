@@ -3,7 +3,7 @@ function timeToMinutes(time) {
   return hours * 60 + minutes
 }
 function updateCalendar(calendar, dailyBounds) {
-  const updatedCalendar = [['00:00', dailyBounds[0]], ...calendar, [dailyBounds[1], '23:59']]
+  const updatedCalendar = [['0:00', dailyBounds[0]], ...calendar, [dailyBounds[1], '23:59']]
 
   return updatedCalendar.map(meeting => meeting.map(timeToMinutes))
 }
@@ -29,7 +29,7 @@ function mergeCalendars(calendar1, calendar2) {
   }
 
   while (j < calendar2.length) {
-    mergedCalendars.push(calendar2[i])
+    mergedCalendars.push(calendar2[j])
     j += 1
   }
 
@@ -62,10 +62,6 @@ function minutesToTime(match) {
   let minutes = match % 60
   if (minutes < 10) {
     minutes = '0' + minutes
-  }
-
-  if (hour < 10) {
-    hour = '0' + hour
   }
 
   return `${hour}:${minutes}`
