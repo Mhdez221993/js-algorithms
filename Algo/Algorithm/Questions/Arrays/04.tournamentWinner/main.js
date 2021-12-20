@@ -19,5 +19,3 @@ function tournamentWinner(competitions, results) {
 
   return currentBestTeam;
 }
-
-module.exports = tournamentWinner;

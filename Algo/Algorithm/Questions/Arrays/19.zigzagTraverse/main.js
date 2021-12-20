@@ -42,5 +42,3 @@ function zigzagTraverse(array) {
 
   return result;
 }
-
-module.exports = zigzagTraverse;

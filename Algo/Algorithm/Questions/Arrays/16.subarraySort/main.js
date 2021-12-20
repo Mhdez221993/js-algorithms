@@ -27,5 +27,3 @@ function subarraySort(array) {
   }
   return [leftIndex, rightIndex];
 }
-
-module.exports = subarraySort;

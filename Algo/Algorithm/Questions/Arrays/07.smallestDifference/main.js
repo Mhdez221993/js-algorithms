@@ -30,5 +30,3 @@ function smallestDifference(arrayOne, arrayTwo) {
   }
   return smallestPair;
 }
-
-module.exports = smallestDifference;

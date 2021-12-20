@@ -64,15 +64,3 @@ function lineThroughPoints(points) {
 
   return maxNumberOfPoints
 }
-
-let points = [
-  [1, 1],
-  [2, 2],
-  [3, 3],
-  [0, 4],
-  [-2, 6],
-  [4, 0],
-  [2, 1]
-]
-
-console.log(lineThroughPoints(points));

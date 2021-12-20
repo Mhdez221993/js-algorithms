@@ -15,5 +15,3 @@ function isMonotonic(array) {
 
   return isNonDecreaseaing || isNonIncreaseaing;
 }
-
-module.exports = isMonotonic;

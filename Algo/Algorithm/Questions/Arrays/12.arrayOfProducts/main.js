@@ -15,5 +15,3 @@ function arrayOfProducts(array) {
 
   return products;
 }
-
-module.exports = arrayOfProducts;

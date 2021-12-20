@@ -9,5 +9,3 @@ function firstDuplicateValue(array) {
   }
   return -1;
 }
-
-module.exports = firstDuplicateValue;

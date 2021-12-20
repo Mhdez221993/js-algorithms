@@ -18,5 +18,3 @@ function mergeOverlappingIntervals(array) {
 
   return merge;
 }
-
-module.exports = mergeOverlappingIntervals;

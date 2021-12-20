@@ -1,3 +1,4 @@
+// twoNumberSum2 is O(nLog(n)) T | O(1) S
 function twoNumberSum(array, targetSum) {
   array.sort((a, b) => a - b);
 
@@ -18,7 +19,3 @@ function twoNumberSum(array, targetSum) {
 
   return [];
 }
-
-// twoNumberSum2 is O(nLog(n)) T | O(1) S
-
-module.exports = twoNumberSum;

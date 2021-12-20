@@ -13,5 +13,3 @@ function isValidSubsequence(array, sequence) {
 
   return current === sequence.length;
 }
-
-module.exports = isValidSubsequence;

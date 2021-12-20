@@ -28,5 +28,3 @@ function longestPeak(array) {
 
   return longestPeak;
 }
-
-module.exports = longestPeak;

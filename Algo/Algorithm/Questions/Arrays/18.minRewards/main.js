@@ -16,6 +16,3 @@ function minRewards(scores) {
 
   return rewards.reduce((acc, curr) => acc + curr);
 }
-
-
-module.exports = minRewards;

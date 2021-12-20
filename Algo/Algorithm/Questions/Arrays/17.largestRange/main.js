@@ -40,5 +40,3 @@ function largestRange(array) {
 
   return bestRange;
 }
-
-module.exports = largestRange;

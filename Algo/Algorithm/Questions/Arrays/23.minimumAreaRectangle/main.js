@@ -42,18 +42,3 @@ function minimumAreaRectangle(points) {
   return minumumAreaFound !== Infinity ? minumumAreaFound : 0
 }
 
-let test = {
-  points: [
-    [1, 5],
-    [5, 1],
-    [4, 2],
-    [2, 4],
-    [2, 2],
-    [1, 2],
-    [4, 5],
-    [2, 5],
-    [-1, -2]
-  ]
-}
-
-console.log(minimumAreaRectangle(test.points));

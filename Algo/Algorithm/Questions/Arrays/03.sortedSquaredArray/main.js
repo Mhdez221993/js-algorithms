@@ -33,9 +33,3 @@ function sortedSquaredArray(array) {
 
   return newArr;
 }
-
-// let array = [1, 2, 3, 5, 6, 8, 9]
-
-// console.log(sortedSquaredArray(array));
-
-module.exports = sortedSquaredArray;

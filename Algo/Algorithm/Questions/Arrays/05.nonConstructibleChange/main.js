@@ -11,5 +11,3 @@ function nonConstructibleChange(coins) {
 
   return currentChange + 1;
 }
-
-module.exports = nonConstructibleChange;

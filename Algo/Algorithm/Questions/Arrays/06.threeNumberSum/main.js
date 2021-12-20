@@ -26,6 +26,3 @@ function threeNumberSum(array, targetSum) {
 
   return triples;
 }
-
-
-module.exports = threeNumberSum;

@@ -33,39 +33,3 @@ function spiralTraverse(array) {
 
   return result;
 }
-
-
-// function spiralTraverse(array) {
-//   let result = []
-//   recursiveSpiral(array, 0, array.length - 1, 0, array[0].length - 1, result)
-//   return result
-// }
-
-// function recursiveSpiral(array, startRow, endRow, startCol, endCol, result){
-
-//   if(startRow > endRow || startCol > endCol){
-//     return
-//   }
-
-//   for(let col = startCol; col <= endCol; col += 1){
-//     result.push(array[startRow][col])
-//   }
-
-//   for(let row = startRow + 1; row <= endRow; row += 1){
-//     result.push(array[row][endCol])
-//   }
-
-//   for(let col = endCol - 1; col >= startCol; col -= 1){
-//     if(startRow === endRow) break
-//     result.push(array[endRow][col])
-//   }
-
-//   for(let row = endRow - 1; row > startRow; row -= 1){
-//     if(startCol === endCol) break
-//     result.push(array[row][startCol])
-//   }
-
-//   recursiveSpiral(array, startRow+1, endRow-1, startCol+1, endCol-1, result)
-// }
-
-module.exports = spiralTraverse;
