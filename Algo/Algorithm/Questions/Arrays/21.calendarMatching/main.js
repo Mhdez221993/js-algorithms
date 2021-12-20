@@ -1,3 +1,4 @@
+// O(c1 + c2) time | O(c1 + c2) space - where c1 and c2 are the respective numbers of meetings in calendar1 and calendar2.
 function timeToMinutes(time) {
   const [hours, minutes] = time.split(':').map(str => parseInt(str, 10));
   return hours * 60 + minutes;

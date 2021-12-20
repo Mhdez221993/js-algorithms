@@ -1,4 +1,4 @@
-// O(n) Time | O(1) Space
+// O(n) time | O(1) space - where n is the length of the array
 function isMonotonic(array) {
   let isNonIncreaseaing = true;
   let isNonDecreaseaing = true;

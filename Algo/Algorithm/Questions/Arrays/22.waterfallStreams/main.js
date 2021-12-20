@@ -1,4 +1,4 @@
-// O(w^2 * h) space| O(w) space
+// O(w^2 * h) time | O(w) space - where w and h are the width and height of the input array.
 function waterfallStreams(array, source) {
 
   let prevRow = [...array[0]]

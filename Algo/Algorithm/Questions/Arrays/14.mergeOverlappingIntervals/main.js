@@ -1,4 +1,5 @@
 function mergeOverlappingIntervals(array) {
+  // O(nlog(n)) time | O(n) space - where n is the length of the input array
   array = array.sort(([a], [b]) => a - b);
   const merge = [];
   let currentInterval = array[0];

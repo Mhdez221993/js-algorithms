@@ -1,4 +1,5 @@
-// O(n^2) time and in the worst case O(n^3) time | O(n^2) space
+// Average: O(n^2) time | O(n^2) space - where n is the length of the input array
+// Worst: O(n^3) time | O(n^2) space - where n is the length of the input array
 function fourNumberSum(array, targetSum) {
   const quadruplets = [];
   const hash = {};

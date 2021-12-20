@@ -1,3 +1,4 @@
+// O(n) time | O(n) space - where n is the length of the input array
 function sortedSquaredArray(array) {
   const newArr = new Array(array.length).fill(0);
   let startIdx = 0;

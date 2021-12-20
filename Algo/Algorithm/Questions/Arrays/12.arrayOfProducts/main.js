@@ -1,3 +1,4 @@
+// O(n) time | O(n) space - where n is the length of the array
 function arrayOfProducts(array) {
   const products = new Array(array.length).fill(1);
 

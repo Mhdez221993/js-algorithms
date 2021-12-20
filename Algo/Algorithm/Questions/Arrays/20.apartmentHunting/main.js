@@ -1,4 +1,4 @@
-// O(br) Time | O(br) Space
+// O(br) time | O(br) space - where b is the number of blocks and r is the number of requirements.
 function distanceBetween(a, b) {
   return Math.abs(a - b);
 }

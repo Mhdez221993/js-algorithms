@@ -1,3 +1,4 @@
+// O(n^2) time | O(n) space - where n is the number of points
 function getGraterCommondDivisor(num1, num2) {
   let a = num1
   let b = num2

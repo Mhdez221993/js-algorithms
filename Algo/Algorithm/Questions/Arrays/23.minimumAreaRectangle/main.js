@@ -1,3 +1,4 @@
+// O(n^2) time | O(n) space - where n is the number of points.
 function initilizeColumns(points) {
   let columns = {}
   for (let i = 0; i < points.length; i += 1) {

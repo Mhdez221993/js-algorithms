@@ -1,4 +1,4 @@
-// Time O(n^2) | Space O(n)
+// O(n^2) time | O(n) space - where n is the length of the input array
 function threeNumberSum(array, targetSum) {
   // Write your code here.
   array.sort((a, b) => a - b);

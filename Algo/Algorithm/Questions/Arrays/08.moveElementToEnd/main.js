@@ -1,4 +1,4 @@
-// O(n) Time | O(1) Space
+// O(n) time | O(1) space - where n is the length of the array
 function moveElementToEnd(array, toMove) {
   let left = 0;
   let right = array.length - 1;

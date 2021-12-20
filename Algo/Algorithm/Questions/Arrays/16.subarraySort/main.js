@@ -1,4 +1,4 @@
-// O(n) time | O(1) space
+// O(n) time | O(1) space - where n is the length of the input array
 function subarraySort(array) {
   let minBreakingPoint = Infinity;
   let maxBreakingPoint = -Infinity;

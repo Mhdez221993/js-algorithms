@@ -1,4 +1,4 @@
-// O(n) Time | O(n) Space
+// O(n) time | O(n) space - where n is the length of the input array
 function minRewards(scores) {
   const rewards = new Array(scores.length).fill(1);
 
