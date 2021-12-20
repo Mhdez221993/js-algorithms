@@ -1,42 +1,55 @@
 function waterfallStreams(array, source) {
   let prevRow = [...array[0]]
   prevRow[source] = -1
-  // let currRow = array[1]
 
   for (let i = 1; i < array.length; i++) {
-    currRow = array[i]
-    for (let j = 0; j < array[i].length; j++) {
+    const currRow = [...array[i]]
+    for (let j = 0; j < currRow.length; j++) {
 
-      if (prevRow[j] < 0) {
-        if (currRow[j] === 0) {
-          currRow[j] = prevRow[j]
+      const valueAbove = prevRow[j]
+      const hasWatherAbove = valueAbove < 0
+      const hasBlock = currRow[j] === 1
 
-        } else {
-          let l = j - 1
-          let r = j + 1
-          while (l >= 0 && prevRow[l] !== 1) {
-            if (currRow[l] === 0) {
-              currRow[l] = (prevRow[j] / 2) + currRow[l]
-              break
-            }
-            l--
-          }
+      if (!hasWatherAbove) {
+        continue
+      }
 
-          while (r < currRow.length && prevRow[r] !== 1) {
-            if (currRow[r] === 0) {
-              currRow[r] = (prevRow[j] / 2) + currRow[r]
-              break
-            }
-            r++
-          }
+      if (!hasBlock) {
+        currRow[j] += valueAbove
+        continue
+      }
+
+      const splitWater = valueAbove / 2
+
+      let leftIndx = j
+      while (leftIndx - 1 >= 0) {
+        leftIndx--
+        if (prevRow[leftIndx] === 1) {
+          break
+        }
+
+        if (currRow[leftIndx] !== 1) {
+          currRow[leftIndx] += splitWater
+          break
+        }
+      }
+
+      let rightIndx = j
+      while (rightIndx + 1 < currRow.length) {
+        rightIndx++
+        if (prevRow[rightIndx] === 1) {
+          break
+        }
+
+        if (currRow[rightIndx] !== 1) {
+          currRow[rightIndx] += splitWater
+          break
         }
       }
     }
-
     prevRow = currRow
   }
-
-  return currRow.map(v => v < 0 ? v * -1 : v)
+  return prevRow.map(v => v < 0 ? v * -100 : v)
 }
 
 let test = {
