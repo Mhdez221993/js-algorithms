@@ -1,95 +1,95 @@
 function timeToMinutes(time) {
-  const [hours, minutes] = time.split(':').map(str => parseInt(str))
-  return hours * 60 + minutes
+  const [hours, minutes] = time.split(':').map(str => parseInt(str, 10));
+  return hours * 60 + minutes;
 }
 function updateCalendar(calendar, dailyBounds) {
-  const updatedCalendar = [['0:00', dailyBounds[0]], ...calendar, [dailyBounds[1], '23:59']]
+  const updatedCalendar = [['0:00', dailyBounds[0]], ...calendar, [dailyBounds[1], '23:59']];
 
-  return updatedCalendar.map(meeting => meeting.map(timeToMinutes))
+  return updatedCalendar.map(meeting => meeting.map(timeToMinutes));
 }
 
 function mergeCalendars(calendar1, calendar2) {
-  let mergedCalendars = []
-  let i = 0
-  let j = 0
+  const mergedCalendars = [];
+  let i = 0;
+  let j = 0;
 
   while (i < calendar1.length && j < calendar2.length) {
     if (calendar1[i][0] < calendar2[j][0]) {
-      mergedCalendars.push(calendar1[i])
-      i += 1
+      mergedCalendars.push(calendar1[i]);
+      i += 1;
     } else {
-      mergedCalendars.push(calendar2[j])
-      j += 1
+      mergedCalendars.push(calendar2[j]);
+      j += 1;
     }
   }
 
   while (i < calendar1.length) {
-    mergedCalendars.push(calendar1[i])
-    i += 1
+    mergedCalendars.push(calendar1[i]);
+    i += 1;
   }
 
   while (j < calendar2.length) {
-    mergedCalendars.push(calendar2[j])
-    j += 1
+    mergedCalendars.push(calendar2[j]);
+    j += 1;
   }
 
-  return mergedCalendars
+  return mergedCalendars;
 }
 
 function flattenCalendar(calendar) {
-  let flattened = [calendar[0]]
+  const flattened = [calendar[0]];
 
   for (let i = 1; i < calendar.length; i += 1) {
-    let currMeeting = calendar[i]
-    let prevMeeting = flattened[flattened.length - 1]
+    const currMeeting = calendar[i];
+    const prevMeeting = flattened[flattened.length - 1];
 
-    let [currStart, currEnd] = currMeeting
-    let [prevStart, prevEnd] = prevMeeting
+    const [currStart, currEnd] = currMeeting;
+    const [prevStart, prevEnd] = prevMeeting;
 
     if (prevEnd >= currStart) {
-      let newCurrMeeting = [prevStart, Math.max(prevEnd, currEnd)]
-      flattened[flattened.length - 1] = newCurrMeeting
+      const newCurrMeeting = [prevStart, Math.max(prevEnd, currEnd)];
+      flattened[flattened.length - 1] = newCurrMeeting;
     } else {
-      flattened.push(currMeeting)
+      flattened.push(currMeeting);
     }
   }
 
-  return flattened
+  return flattened;
 }
 
 function minutesToTime(match) {
-  let hour = Math.floor(match / 60)
-  let minutes = match % 60
+  const hour = Math.floor(match / 60);
+  let minutes = match % 60;
   if (minutes < 10) {
-    minutes = '0' + minutes
+    minutes = `0${minutes}`;
   }
 
-  return `${hour}:${minutes}`
+  return `${hour}:${minutes}`;
 }
 
 function getMatchingAvailabilities(calendar, meetingDuration) {
-  let matchingAvailabilities = []
+  const matchingAvailabilities = [];
 
   for (let i = 1; i < calendar.length; i += 1) {
-    let start = calendar[i - 1][1]
-    let end = calendar[i][0]
-    let availabilityDuration = end - start
+    const start = calendar[i - 1][1];
+    const end = calendar[i][0];
+    const availabilityDuration = end - start;
 
     if (availabilityDuration >= meetingDuration) {
-      matchingAvailabilities.push([start, end])
+      matchingAvailabilities.push([start, end]);
     }
   }
 
-  return matchingAvailabilities.map(match => match.map(minutesToTime))
+  return matchingAvailabilities.map(match => match.map(minutesToTime));
 }
 
 function calendarMatching(calendar1, dailyBounds1, calendar2, dailyBounds2, meetingDuration) {
-  const updatedCalendar1 = updateCalendar(calendar1, dailyBounds1)
-  const updatedCalendar2 = updateCalendar(calendar2, dailyBounds2)
-  const mergedCalendars = mergeCalendars(updatedCalendar1, updatedCalendar2)
-  const flattedCalendar = flattenCalendar(mergedCalendars)
+  const updatedCalendar1 = updateCalendar(calendar1, dailyBounds1);
+  const updatedCalendar2 = updateCalendar(calendar2, dailyBounds2);
+  const mergedCalendars = mergeCalendars(updatedCalendar1, updatedCalendar2);
+  const flattedCalendar = flattenCalendar(mergedCalendars);
 
-  return getMatchingAvailabilities(flattedCalendar, meetingDuration)
+  return getMatchingAvailabilities(flattedCalendar, meetingDuration);
 }
 
-module.exports = calendarMatching
+module.exports = calendarMatching;
