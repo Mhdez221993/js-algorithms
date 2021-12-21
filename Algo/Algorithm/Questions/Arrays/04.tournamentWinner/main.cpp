@@ -3,35 +3,32 @@
 #include <iostream>
 using namespace std;
 
+void updateScores(string currWinner, int point, map<string, int> &scores) {
+  if(scores.find(currWinner) == scores.end()){
+    scores[currWinner] = 0;
+  }
+
+  scores[currWinner] += point;
+}
+
 string tournamentWinner(vector<vector<string>> competitions, vector<int> results) {
-  map <string, int> winners;
+  string currBestTeam = "";
+  map<string, int> scores = {{currBestTeam, 0}};
+
   for(int i = 0; i < results.size(); i++){
-    string currWinner;
+    int result = results[i];
     string home = competitions[i][0];
     string visitor = competitions[i][1];
-    if(results[i] == 1){
-      currWinner = home;
-    } else {
-      currWinner = visitor;
-    }
+    string currWinner = result ? home : visitor;
 
-    if(!winners.count(currWinner)) {
-      winners[currWinner] = 1;
-    }
-    winners[currWinner] += 1;
-  }
+    updateScores(currWinner, 3, scores);
 
-  string finalWinner = "";
-  int finalPoint = 0;
-  for(auto const& [key, val] : winners) {
-
-    if(val > finalPoint){
-      finalWinner = key;
-      finalPoint = val;
+    if(scores[currWinner] > scores[currBestTeam]){
+      currBestTeam = currWinner;
     }
   }
 
-  return finalWinner;
+  return currBestTeam;
 }
 
 int main()
