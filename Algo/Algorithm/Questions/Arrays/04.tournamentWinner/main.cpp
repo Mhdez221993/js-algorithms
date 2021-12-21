@@ -1,3 +1,4 @@
+// O(n) time | O(k) space - where n is the number of competitions and k is the number of teams
 #include <vector>
 #include <map>
 #include <iostream>
