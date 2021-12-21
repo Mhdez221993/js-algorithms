@@ -4,12 +4,14 @@
 using namespace std;
 
 vector<int> sortedSquaredArray(vector<int> array) {
-  vector<int> newArray = {};
+  vector<int> sortedSqueres(array.size(), 0);
   for(int i = 0; i < array.size(); i++){
-    newArray.push_back(array[i] * array[i]);
+    int value = array[i];
+    sortedSqueres[i] = value * value;
   }
-  sort(newArray.begin(), newArray.end());
-  return newArray;
+
+  sort(sortedSqueres.begin(), sortedSqueres.end());
+  return sortedSqueres;
 }
 
 int main()
