@@ -1,33 +1,29 @@
 #include <iostream>
-using namespace std;
 #include <vector>
+using namespace std;
 
 bool isValidSubsequence(vector<int> array, vector<int> sequence)
 {
-  if (array.size() < 2)
-  {
-    return 1;
-  }
+  int arrIdx = 0;
+  int seqIdx = 0;
 
-  int index = 0;
-  int idx = 0;
-
-  while (idx < sequence.size() && index < array.size())
+  while(arrIdx < array.size() && seqIdx < sequence.size())
   {
-    if (array[index] == sequence[idx])
+    if(array[arrIdx] == sequence[seqIdx])
     {
-      idx += 1;
+      seqIdx++;
     }
-    index += 1;
+    arrIdx++;
   }
 
-  return idx == sequence.size();
+  return seqIdx == sequence.size();
 }
 
 int main()
 {
   vector<int> array = {5, 1, 22, 25, 6, -1, 8, 10};
   vector<int> sequence = {1, 6, -1, 10};
-  int isValid = isValidSubsequence(array, sequence);
-  cout << isValid << endl;
+  cout << boolalpha;
+  cout << isValidSubsequence(array, sequence) << endl;
+  return 0;
 }
