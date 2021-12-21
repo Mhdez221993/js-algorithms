@@ -1,4 +1,4 @@
-// twoNumberSum2 is O(nLog(n)) T | O(1) S
+// O(nLog(n)) time | O(1) space - where n is the length of the input array
 function twoNumberSum(array, targetSum) {
   array.sort((a, b) => a - b);
 

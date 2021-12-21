@@ -42,4 +42,4 @@ Try storing every number in a hash table, solving the equation mentioned in Hint
 
 ## Optimal Space & Time Complexity
 
-O(n) time | O(n) space - where n is the length of the input array
+O(n * log(n)) time | O(1) space - where n is the length of the input array
