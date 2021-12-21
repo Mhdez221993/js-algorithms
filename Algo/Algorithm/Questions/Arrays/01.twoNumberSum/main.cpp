@@ -1,27 +1,32 @@
-#include <bits/stdc++.h>
+
+// O(nLog(n)) time | O(1) space - where n is the length of the input array
 #include <vector>
+#include <algorithm>
+#include <iostream>
 using namespace std;
 
 vector<int> twoNumberSum(vector<int> array, int targetSum)
 {
   sort(array.begin(), array.end());
-  int left = 0;
-  int right = array.size() - 1;
-  for (; left < right;)
+  int leftIdx = 0;
+  int rightIndx = array.size() - 1;
+
+  for(;leftIdx < rightIndx;)
   {
-    int first = array[left];
-    int second = array[right];
+    int first = array[leftIdx];
+    int second = array[rightIndx];
+
     if (first + second == targetSum)
     {
-      return vector<int>{first, second};
+      return {first, second};
     }
-    else if (first + second > targetSum)
+    else if (first + second < targetSum)
     {
-      right -= 1;
+      leftIdx += 1;
     }
     else
     {
-      left++;
+      rightIndx -= 1;
     }
   }
 
@@ -31,7 +36,13 @@ vector<int> twoNumberSum(vector<int> array, int targetSum)
 int main()
 {
   vector<int> array = {3, 5, -4, 8, 11, 1, -1, 6};
-  int target = 10;
+  int targetSum = 10;
 
-  twoNumberSum(array, target);
+  vector<int> sumOfTwo = twoNumberSum(array, targetSum);
+  for(int x: sumOfTwo)
+  {
+    cout << x << endl;
+  }
+
+  return 0;
 }
