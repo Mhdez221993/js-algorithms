@@ -1,33 +1,43 @@
 #include <vector>
 #include <iostream>
-#include <limits>
+#include <climits>
+#include <algorithm>
 using namespace std;
 
-vector<int> smallestDifference(vector<int> arrayOne, vector<int> arrayTwo) {
-  vector<int> bestPair;
-  int bestDiffence = numeric_limits<int>::max();
+vector<int> smallestDifference(vector<int> arrayOne, vector<int> arrayTwo)
+{
+  sort(arrayOne.begin(), arrayOne.end());
+  sort(arrayTwo.begin(), arrayTwo.end());
   int first = 0;
   int second = 0;
-  while(first < arrayOne.size() || second < arrayOne.size())
+  int currDifference = INT_MAX;
+  int bestDiffence = INT_MAX;
+  vector<int> bestPair;
+
+  while(first < arrayOne.size() && second < arrayTwo.size())
   {
     int firstValue = arrayOne[first];
     int secondValue = arrayTwo[second];
-    int absValue = abs(firstValue-secondValue);
-    if(absValue < bestDiffence)
+
+    if(firstValue < secondValue)
     {
-      bestDiffence = absValue;
-      bestPair = {firstValue, secondValue};
+      currDifference = secondValue - firstValue;
+      first++;
+    }
+    else if(secondValue < firstValue)
+    {
+      currDifference = firstValue - secondValue;
+      second++;
+    }
+    else
+    {
+      return vector<int>{firstValue, secondValue};
     }
 
-    if(firstValue > secondValue)
+    if(bestDiffence > currDifference)
     {
-      second++;
-    } else if(secondValue > firstValue)
-    {
-      first++;
-    } else
-    {
-      return {firstValue, secondValue};
+      bestDiffence = currDifference;
+      bestPair = {firstValue, secondValue};
     }
   }
 
@@ -36,8 +46,8 @@ vector<int> smallestDifference(vector<int> arrayOne, vector<int> arrayTwo) {
 
 int main()
 {
-  vector<int> arrayOne = {-1, 5, 10, 20, 28, 3};
-  vector<int> arrayTwo = {26, 134, 135, 15, 17};
+  vector<int> arrayOne = {10, 1000};
+  vector<int> arrayTwo = {-1441, -124, -25, 1014, 1500, 660, 410, 245, 530};
   vector<int> result = smallestDifference(arrayOne, arrayTwo);
   for(int v: result)
   {
