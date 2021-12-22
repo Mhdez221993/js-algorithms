@@ -1,3 +1,4 @@
+// O(n^2) time | O(n) space - where n is the length of the input array
 #include <vector>
 #include <algorithm>
 #include <iostream>
@@ -8,31 +9,27 @@ vector<vector<int>> threeNumberSum(vector<int> array, int targetSum)
   sort(array.begin(), array.end());
   vector<vector<int>> threeNumSumResult;
 
-  for(int i = 1; i < array.size(); i++)
+  for(int i = 0; i < array.size(); i++)
   {
-    int curr = array[i];
-    int leftIndx = 0;
-    int rightIndx = array.size() -1;
+    int left = i + 1;
+    int right = array.size() -1;
 
-    while(leftIndx < i && rightIndx > i)
+    while(left < right)
     {
-      int leftValue = array[leftIndx];
-      int rightValue = array[rightIndx];
-      int currSum = curr + leftValue + rightValue;
-
+      int currSum = array[i] + array[left] + array[right];
       if(currSum == targetSum)
       {
-        threeNumSumResult.push_back({leftValue, curr, rightValue});
-        leftIndx++;
-        rightIndx--;
+        threeNumSumResult.push_back({array[i], array[left], array[right]});
+        left++;
+        right--;
       }
       else if(currSum > targetSum)
       {
-        rightIndx--;
+        right--;
       }
-      else
+      else if(currSum < targetSum)
       {
-        leftIndx++;
+        left++;
       }
     }
   }
