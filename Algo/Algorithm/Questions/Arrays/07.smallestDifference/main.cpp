@@ -15,17 +15,17 @@ vector<int> smallestDifference(vector<int> arrayOne, vector<int> arrayTwo)
   int bestDiffence = INT_MAX;
   vector<int> bestPair;
 
-  while(first < arrayOne.size() && second < arrayTwo.size())
+  while (first < arrayOne.size() && second < arrayTwo.size())
   {
     int firstValue = arrayOne[first];
     int secondValue = arrayTwo[second];
 
-    if(firstValue < secondValue)
+    if (firstValue < secondValue)
     {
       currDifference = secondValue - firstValue;
       first++;
     }
-    else if(secondValue < firstValue)
+    else if (secondValue < firstValue)
     {
       currDifference = firstValue - secondValue;
       second++;
@@ -35,7 +35,7 @@ vector<int> smallestDifference(vector<int> arrayOne, vector<int> arrayTwo)
       return vector<int>{firstValue, secondValue};
     }
 
-    if(bestDiffence > currDifference)
+    if (bestDiffence > currDifference)
     {
       bestDiffence = currDifference;
       bestPair = {firstValue, secondValue};
@@ -50,7 +50,7 @@ int main()
   vector<int> arrayOne = {10, 1000};
   vector<int> arrayTwo = {-1441, -124, -25, 1014, 1500, 660, 410, 245, 530};
   vector<int> result = smallestDifference(arrayOne, arrayTwo);
-  for(int v: result)
+  for (int v : result)
   {
     cout << v << endl;
   }

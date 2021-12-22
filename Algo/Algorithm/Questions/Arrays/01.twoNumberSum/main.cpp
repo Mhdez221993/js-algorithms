@@ -10,7 +10,7 @@ vector<int> twoNumberSum(vector<int> array, int targetSum)
   int leftIdx = 0;
   int rightIndx = array.size() - 1;
 
-  for(;leftIdx < rightIndx;)
+  for (; leftIdx < rightIndx;)
   {
     int first = array[leftIdx];
     int second = array[rightIndx];
@@ -38,7 +38,7 @@ int main()
   int targetSum = 10;
 
   vector<int> sumOfTwo = twoNumberSum(array, targetSum);
-  for(int x: sumOfTwo)
+  for (int x : sumOfTwo)
   {
     cout << x << endl;
   }

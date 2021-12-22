@@ -6,7 +6,7 @@ using namespace std;
 
 void updateScores(string currWinner, int point, map<string, int> &scores)
 {
-  if(scores.find(currWinner) == scores.end())
+  if (scores.find(currWinner) == scores.end())
   {
     scores[currWinner] = 0;
   }
@@ -19,7 +19,7 @@ string tournamentWinner(vector<vector<string>> competitions, vector<int> results
   string currBestTeam = "";
   map<string, int> scores = {{currBestTeam, 0}};
 
-  for(int i = 0; i < results.size(); i++)
+  for (int i = 0; i < results.size(); i++)
   {
     int result = results[i];
     string home = competitions[i][0];
@@ -28,7 +28,7 @@ string tournamentWinner(vector<vector<string>> competitions, vector<int> results
 
     updateScores(currWinner, 3, scores);
 
-    if(scores[currWinner] > scores[currBestTeam])
+    if (scores[currWinner] > scores[currBestTeam])
     {
       currBestTeam = currWinner;
     }

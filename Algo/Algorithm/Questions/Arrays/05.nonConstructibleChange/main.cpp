@@ -8,9 +8,9 @@ int nonConstructibleChange(vector<int> coins)
 {
   sort(coins.begin(), coins.end());
   int minimumChangeICannotCreate = 1;
-  for(int coin :coins)
+  for (int coin : coins)
   {
-    if(coin > minimumChangeICannotCreate)
+    if (coin > minimumChangeICannotCreate)
     {
       return minimumChangeICannotCreate;
     }
