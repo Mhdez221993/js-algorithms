@@ -2,38 +2,22 @@
 #include <vector>
 #include <iostream>
 using namespace std;
-void swapNumbers(vector<int> &array, int leftIdx, int rightIndx)
-{
-  int tempA = array[leftIdx];
-  array[leftIdx] = array[rightIndx];
-  array[rightIndx] = tempA;
-}
 
 vector<int> moveElementToEnd(vector<int> array, int toMove)
 {
   // Write your code here.
-  int left = 0;
-  int right = array.size() - 1;
-  while (left < right)
+  int i = 0;
+  int j = array.size() - 1;
+  while (i < j)
   {
-    if (array[left] == toMove && array[right] != toMove)
-    {
-      swapNumbers(array, left, right);
-      left++;
-      right--;
-      continue;
-    }
+    while (i < j && array[j] == toMove)
+      j--;
 
-    if (array[left] != toMove)
-    {
-      left++;
-    }
-
-    if (array[right] == toMove)
-    {
-      right--;
-    }
+    if (array[i] == toMove)
+      swap(array[i], array[j]);
+    i++;
   }
+
   return array;
 }
 
