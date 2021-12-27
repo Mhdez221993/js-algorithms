@@ -6,53 +6,41 @@ using namespace std;
 vector<int> spiralTraverse(vector<vector<int>> array)
 {
   vector<int> spiral = {};
-  int rowStart = 0;
-  int rowEnd = array.size() - 1;
-  int colStart = 0;
-  int colEnd = array[0].size() - 1;
+  int startRow = 0;
+  int endRow = array.size() - 1;
+  int startCol = 0;
+  int endCol = array[0].size() - 1;
 
-  while (rowStart <= rowEnd && colStart <= colEnd)
+  while (startRow <= endRow && startCol <= endCol)
   {
-    int target = colStart;
-    while (target <= colEnd)
+    for (int col = startCol; col <= endCol; col++)
     {
-      spiral.push_back(array[rowStart][target]);
-      target++;
+      spiral.push_back(array[startRow][col]);
     }
 
-    if (rowStart == rowEnd)
+    for (int row = startRow + 1; row <= endRow; row++)
     {
-      return spiral;
-    }
-    target = rowStart + 1;
-    while (target <= rowEnd)
-    {
-      spiral.push_back(array[target][colEnd]);
-      target++;
+      spiral.push_back(array[row][endCol]);
     }
 
-    if (colStart == colEnd)
+    for (int col = endCol - 1; col >= startCol; col--)
     {
-      return spiral;
-    }
-    target = colEnd - 1;
-    while (target >= colStart)
-    {
-      spiral.push_back(array[rowEnd][target]);
-      target--;
+      if (startRow == endRow)
+        break;
+      spiral.push_back(array[endRow][col]);
     }
 
-    target = rowEnd - 1;
-    while (target > rowStart)
+    for (int row = endRow - 1; row > startRow; row--)
     {
-      spiral.push_back(array[target][colStart]);
-      target--;
+      if (startCol == endCol)
+        break;
+      spiral.push_back(array[row][startCol]);
     }
 
-    rowStart++;
-    rowEnd--;
-    colStart++;
-    colEnd--;
+    startRow++;
+    endRow--;
+    startCol++;
+    endCol--;
   }
 
   return spiral;
