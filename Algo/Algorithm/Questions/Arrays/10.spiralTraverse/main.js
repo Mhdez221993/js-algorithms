@@ -1,4 +1,4 @@
-// O(n) time | O(1) space - where n is the length of the array
+// O(n) time | O(n) space - where n is the total number of elements in the array
 function spiralTraverse(array) {
   const result = [];
   let startRow = 0;

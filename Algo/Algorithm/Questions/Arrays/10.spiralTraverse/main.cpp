@@ -1,3 +1,4 @@
+// O(n) time | O(n) space - where n is the total number of elements in the array
 #include <vector>
 #include <iostream>
 
