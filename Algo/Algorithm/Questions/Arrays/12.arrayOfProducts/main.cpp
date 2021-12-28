@@ -1,3 +1,4 @@
+// O(n) time | O(n) space - where n is the length of the input array.
 #include <vector>
 #include <iostream>
 
@@ -19,6 +20,7 @@ vector<int> arrayOfProducts(vector<int> array)
     newArr[i] *= currProduct;
     currProduct *= array[i];
   }
+
   return newArr;
 }
 
@@ -26,10 +28,10 @@ int main()
 {
   vector<int> array = {5, 1, 4, 2};
   vector<int> results = arrayOfProducts(array);
-
   for (int x : results)
   {
     cout << x << endl;
   }
+
   return 0;
 }
