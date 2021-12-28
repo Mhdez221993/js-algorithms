@@ -5,8 +5,21 @@ using namespace std;
 
 vector<int> arrayOfProducts(vector<int> array)
 {
-  // Write your code here.
-  return array;
+  vector<int> newArr(array.size(), 1);
+  int currProduct = 1;
+  for (int i = 0; i < array.size(); i++)
+  {
+    newArr[i] *= currProduct;
+    currProduct *= array[i];
+  }
+
+  currProduct = 1;
+  for (int i = (array.size() - 1); i >= 0; i--)
+  {
+    newArr[i] *= currProduct;
+    currProduct *= array[i];
+  }
+  return newArr;
 }
 
 int main()
