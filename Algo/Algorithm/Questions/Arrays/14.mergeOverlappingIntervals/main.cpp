@@ -5,43 +5,46 @@
 
 using namespace std;
 
-bool overlapping(vector<int> prevInterval, vector<int> currInterval)
-{
-  if (currInterval[0] <= prevInterval[1])
-    return true;
-  return false;
-}
-
 vector<vector<int>> mergeOverlappingIntervals(vector<vector<int>> intervals)
 {
-  vector<vector<int>> result;
+  vector<vector<int> *> result;
   sort(intervals.begin(), intervals.end());
-  vector<int> prevInterval = intervals[0];
+  vector<int> *currInterval = &intervals[0];
+  result.push_back(currInterval);
 
-  for (int i = 1; i < intervals.size(); i++)
+  for (auto &nextInterval : intervals)
   {
-    vector<int> currInterval = intervals[i];
-    if (overlapping(prevInterval, currInterval))
+    int currEnd = currInterval->at(1);
+    int nextStart = nextInterval[0];
+    int nextEnd = nextInterval[1];
+    if (currEnd >= nextStart)
     {
-      prevInterval[0] = min(prevInterval[0], currInterval[0]);
-      prevInterval[1] = max(prevInterval[1], currInterval[1]);
+      currInterval->at(1) = max(currEnd, nextEnd);
     }
     else
     {
-      result.push_back(prevInterval);
-      prevInterval = currInterval;
+      currInterval = &nextInterval;
+      result.push_back(currInterval);
     }
   }
 
-  result.push_back(prevInterval);
-  return result;
+  vector<vector<int>> mergetIntervals;
+  for (auto interval : result)
+  {
+    mergetIntervals.push_back(*interval);
+  }
+
+  return mergetIntervals;
 }
 
 int main()
 {
   vector<vector<int>> array = {
-      {1, 22},
-      {-20, 30}};
+      {1, 2},
+      {3, 5},
+      {4, 7},
+      {6, 8},
+      {9, 10}};
   vector<vector<int>> result = mergeOverlappingIntervals(array);
   for (vector<int> arr : result)
     cout << arr[0] << " " << arr[1] << endl;
