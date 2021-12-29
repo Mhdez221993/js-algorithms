@@ -15,6 +15,7 @@
     "valarray": "cpp",
     "cmath": "cpp",
     "iostream": "cpp",
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "cstdlib": "cpp"
   }
 }
