@@ -16,6 +16,7 @@
     "cmath": "cpp",
     "iostream": "cpp",
     "ostream": "cpp",
-    "cstdlib": "cpp"
+    "cstdlib": "cpp",
+    "tuple": "cpp"
   }
 }
