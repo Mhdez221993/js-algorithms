@@ -1,21 +1,21 @@
 #include <vector>
-#include <map>
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 
 int firstDuplicateValue(vector<int> array)
 {
-  map<int, bool> myMap;
   for (int i = 0; i < array.size(); i++)
   {
-    int value = array[i];
-    if (!myMap[value])
+    int currValue = array[i];
+    int index = abs(currValue) - 1;
+    if (array[index] < 0)
     {
-      myMap[value] = true;
+      return abs(array[i]);
     }
     else
     {
-      return value;
+      array[index] *= -1;
     }
   }
 
@@ -24,7 +24,7 @@ int firstDuplicateValue(vector<int> array)
 
 int main()
 {
-  vector<int> array = {2, 1, 5, 2, 3, 3, 4};
+  vector<int> array = {5, 5, 3, 3, 4};
   cout << firstDuplicateValue(array) << endl;
   return 0;
 }
