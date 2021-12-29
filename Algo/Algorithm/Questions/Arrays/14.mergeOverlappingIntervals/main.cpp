@@ -1,3 +1,4 @@
+// O(nlog(n)) time | O(n) space - where n is the length of the input array
 #include <vector>
 #include <algorithm>
 #include <iostream>
@@ -7,10 +8,7 @@ using namespace std;
 bool overlapping(vector<int> prevInterval, vector<int> currInterval)
 {
   if (currInterval[0] <= prevInterval[1])
-  {
     return true;
-  }
-
   return false;
 }
 
@@ -46,8 +44,7 @@ int main()
       {-20, 30}};
   vector<vector<int>> result = mergeOverlappingIntervals(array);
   for (vector<int> arr : result)
-  {
     cout << arr[0] << " " << arr[1] << endl;
-  }
+
   return 0;
 }
