@@ -1,7 +1,7 @@
 #include <vector>
 #include <iostream>
 #include <algorithm>
-#include <map>
+#include <unordered_map>
 using namespace std;
 void addFourtNumbers(vector<vector<int>> array, int num1, int num2, vector<vector<int>> &fourNumSum)
 {
@@ -16,15 +16,15 @@ void addFourtNumbers(vector<vector<int>> array, int num1, int num2, vector<vecto
 vector<vector<int>> fourNumberSum(vector<int> array, int targetSum)
 {
   vector<vector<int>> fourNumSum = {};
-  map<int, vector<vector<int>>> myHash = {};
+  unordered_map<int, vector<vector<int>>> myHash = {};
   for (int i = 1; i < array.size(); i++)
   {
     for (int right = i + 1; right < array.size(); right++)
     {
-      int curr = targetSum - (array[i] + array[right]);
-      if (myHash[curr].size() > 0)
+      int difference = targetSum - (array[i] + array[right]);
+      if (myHash[difference].size() > 0)
       {
-        addFourtNumbers(myHash[curr], array[i], array[right], fourNumSum);
+        addFourtNumbers(myHash[difference], array[i], array[right], fourNumSum);
       }
     }
 
