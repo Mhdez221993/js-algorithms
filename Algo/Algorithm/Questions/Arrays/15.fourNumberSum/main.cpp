@@ -1,10 +1,12 @@
 #include <vector>
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 vector<vector<int>> fourNumberSum(vector<int> array, int targetSum)
 {
   vector<vector<int>> fourNumSum = {};
+  sort(array.begin(), array.end());
   for (int i = 0; i < array.size(); i++)
   {
     for (int j = i + 1; j < array.size(); j++)
