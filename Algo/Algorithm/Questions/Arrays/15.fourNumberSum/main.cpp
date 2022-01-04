@@ -1,36 +1,40 @@
 #include <vector>
 #include <iostream>
 #include <algorithm>
+#include <map>
 using namespace std;
+void addFourtNumbers(vector<vector<int>> array, int num1, int num2, vector<vector<int>> &fourNumSum)
+{
+  for (vector<int> arr : array)
+  {
+    arr.push_back(num1);
+    arr.push_back(num2);
+    fourNumSum.push_back(arr);
+  }
+}
 
 vector<vector<int>> fourNumberSum(vector<int> array, int targetSum)
 {
   vector<vector<int>> fourNumSum = {};
-  sort(array.begin(), array.end());
-  for (int i = 0; i < array.size(); i++)
+  map<int, vector<vector<int>>> myHash = {};
+  for (int i = 1; i < array.size(); i++)
   {
-    for (int j = i + 1; j < array.size(); j++)
+    for (int right = i + 1; right < array.size(); right++)
     {
-      int left = j + 1;
-      int right = array.size() - 1;
-      while (left < right)
+      int curr = targetSum - (array[i] + array[right]);
+      if (myHash[curr].size() > 0)
       {
-        int currSum = array[i] + array[j] + array[left] + array[right];
-        if (currSum == targetSum)
-        {
-          fourNumSum.push_back({array[i], array[j], array[left], array[right]});
-          left++;
-          right--;
-        }
-        else if (currSum < targetSum)
-        {
-          left++;
-        }
-        else if (currSum > targetSum)
-        {
-          right--;
-        }
+        addFourtNumbers(myHash[curr], array[i], array[right], fourNumSum);
       }
+    }
+
+    for (int left = i - 1; left >= 0; left--)
+    {
+      int curr = array[i] + array[left];
+      vector<int> currPair = {array[i], array[left]};
+      if (myHash[curr].size() < 1)
+        myHash[curr] = {};
+      myHash[curr].push_back(currPair);
     }
   }
 
