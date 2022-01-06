@@ -3,23 +3,15 @@
 #include <climits>
 using namespace std;
 
-vector<int> arrayToBeSorted(int left, int right, vector<int> array)
+vector<int> getIndxOfSubArrayToBeSorted(int left, int right, vector<int> array)
 {
-  int leftIdx = -1;
-  int rightIndx = -1;
-  for (int i = 0; i < array.size(); i++)
-  {
-    leftIdx = i;
-    if (array[i] > left)
-      break;
-  }
+  int leftIdx = 0;
+  while (left >= array[leftIdx])
+    leftIdx++;
 
-  for (int i = (array.size() - 1); i >= 0; i--)
-  {
-    rightIndx = i;
-    if (array[i] < right)
-      break;
-  }
+  int rightIndx = array.size() - 1;
+  while (right <= array[rightIndx])
+    rightIndx--;
 
   return {leftIdx, rightIndx};
 }
@@ -34,17 +26,15 @@ vector<int> subarraySort(vector<int> array)
     bool breaker = (array[i] < array[i - 1]);
     if (breaker)
     {
-      if (array[i] < left)
-        left = array[i];
-      if (array[i - 1] > right)
-        right = array[i - 1];
+      left = min(array[i], left);
+      right = max(array[i - 1], right);
     }
   }
 
-  if (left != INT_MAX)
-    return arrayToBeSorted(left, right, array);
+  if (left == INT_MAX)
+    return {-1, -1};
 
-  return {-1, -1};
+  return getIndxOfSubArrayToBeSorted(left, right, array);
 }
 
 int main()
