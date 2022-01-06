@@ -20,6 +20,7 @@
     "tuple": "cpp",
     "*.tcc": "cpp",
     "algorithm": "cpp",
-    "map": "cpp"
+    "map": "cpp",
+    "limits": "cpp"
   }
 }
