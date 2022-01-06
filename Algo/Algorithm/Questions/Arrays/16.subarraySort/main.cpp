@@ -1,6 +1,6 @@
 #include <vector>
 #include <iostream>
-#include <limits>
+#include <climits>
 using namespace std;
 
 vector<int> arrayToBeSorted(int left, int right, vector<int> array)
@@ -24,10 +24,11 @@ vector<int> arrayToBeSorted(int left, int right, vector<int> array)
   return {leftIdx, rightIndx};
 }
 
+// O(n) time | O(1) space - where n is the length of the input array
 vector<int> subarraySort(vector<int> array)
 {
-  int left = numeric_limits<int>::max();
-  int right = numeric_limits<int>::min();
+  int left = INT_MAX;
+  int right = INT_MIN;
   for (int i = 1; i < array.size(); i++)
   {
     bool breaker = (array[i] < array[i - 1]);
@@ -40,7 +41,7 @@ vector<int> subarraySort(vector<int> array)
     }
   }
 
-  if (left != numeric_limits<int>::max())
+  if (left != INT_MAX)
     return arrayToBeSorted(left, right, array);
 
   return {-1, -1};
