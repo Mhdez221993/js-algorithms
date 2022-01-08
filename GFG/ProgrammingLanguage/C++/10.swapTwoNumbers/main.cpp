@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Write a program to swap two numbers.
 void swap(int &a, int &b)
 {
   int tem = a;
