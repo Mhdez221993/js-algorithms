@@ -2,54 +2,56 @@
 #include <vector>
 #include <climits>
 #include <algorithm>
+#include <unordered_map>
+
 using namespace std;
 
 // O(nLogn) time | O(1) space - where n is the length of the input array.
 vector<int> largestRange(vector<int> array)
 {
-  sort(array.begin(), array.end());
-  vector<int> range;
-  int len = INT_MIN;
-  int firstIndx;
-  int lastIndx;
-  bool foundingRange = false;
-  for (int i = 0; i < array.size(); i++)
+  unordered_map<int, bool> nums = {};
+  vector<int> result;
+
+  int longestLeng = 0;
+  for (int num : array)
+    nums[num] = true;
+
+  for (int num : array)
   {
-    int curr = array[i];
-    int prev = array[i - 1];
-    if (i == 0)
-    {
-      range = {curr, curr};
+    if (!nums[num])
       continue;
-    }
-    if (curr - 1 == prev || curr == prev)
+
+    int leftNum = num - 1;
+    int rightNum = num + 1;
+    int currLen = 1;
+
+    while (nums[leftNum])
     {
-      if (!foundingRange)
-      {
-        firstIndx = prev;
-        foundingRange = true;
-      }
-      lastIndx = curr;
-      if (lastIndx - firstIndx > len)
-        range = {firstIndx, lastIndx};
+      nums[leftNum] = false;
+      leftNum -= 1;
+      currLen += 1;
     }
-    else if (foundingRange)
+
+    while (nums[rightNum])
     {
-      if (lastIndx - firstIndx > len)
-      {
-        len = lastIndx - firstIndx;
-        range = {firstIndx, lastIndx};
-      }
-      foundingRange = false;
+      nums[rightNum] = false;
+      rightNum += 1;
+      currLen += 1;
+    }
+
+    if (currLen > longestLeng)
+    {
+      longestLeng = currLen;
+      result = {leftNum + 1, rightNum - 1};
     }
   }
 
-  return range;
+  return result;
 }
 
 int main()
 {
-  vector<int> array = {1};
+  vector<int> array = {0, -5, 9, 19, -1, 18, 17, 2, -4, -3, 10, 3, 12, 5, 16, 4, 11, 7, -6, -7, 6, 15, 12, 12, 2, 1, 6, 13, 14, -2};
   for (int x : largestRange(array))
   {
     cout << x << " ";
