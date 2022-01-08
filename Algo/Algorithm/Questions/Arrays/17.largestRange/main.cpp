@@ -4,6 +4,7 @@
 #include <algorithm>
 using namespace std;
 
+// O(nLogn) time | O(1) space - where n is the length of the input array.
 vector<int> largestRange(vector<int> array)
 {
   sort(array.begin(), array.end());
