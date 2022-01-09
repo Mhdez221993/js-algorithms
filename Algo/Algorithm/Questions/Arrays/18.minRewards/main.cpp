@@ -17,10 +17,7 @@ int minRewards(vector<int> scores)
   for (int i = (scores.size() - 2); i >= 0; i--)
   {
     if (scores[i] > scores[i + 1])
-    {
-      if (customeScores[i] <= customeScores[i + 1])
-        customeScores[i] = customeScores[i + 1] + 1;
-    }
+      customeScores[i] = max(customeScores[i], customeScores[i + 1] + 1);
   }
 
   for (int x : customeScores)
