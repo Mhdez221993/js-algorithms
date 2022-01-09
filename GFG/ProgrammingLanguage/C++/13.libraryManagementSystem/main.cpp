@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-// #define SIZE 1e5 + 6;
 
+// Consider a library management system containing a large number of books, where one needs to store ISBN no, author, title and availability information of each book
 struct book
 {
   string title, author, isbn;

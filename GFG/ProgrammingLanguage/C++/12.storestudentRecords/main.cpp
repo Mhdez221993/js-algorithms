@@ -1,6 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Write a program to store student records in a structure. It should contain the following information:
+// Student ID
+// Name
+// Year
+// CGPA
+
 struct student
 {
   string id, name;

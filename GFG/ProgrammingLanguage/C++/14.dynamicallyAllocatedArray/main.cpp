@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//  Implement a list of numbers which doesn't require being provided any initial size, and can extend to as much as we want
 int *start, *last;
 int size;
 
