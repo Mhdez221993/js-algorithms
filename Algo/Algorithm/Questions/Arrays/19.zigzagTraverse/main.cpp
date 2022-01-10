@@ -2,6 +2,13 @@
 #include <iostream>
 using namespace std;
 
+// O(n) time | O(n) space - where n is the total number of elements in the two-dimensional array.
+
+bool outOfBounds(int row, int col, int lenRow, int lenCol)
+{
+  return row < 0 || row > lenRow || col < 0 || col > lenCol;
+}
+
 vector<int> zigzagTraverse(vector<vector<int>> array)
 {
   vector<int> zigzag = {};
@@ -9,35 +16,42 @@ vector<int> zigzagTraverse(vector<vector<int>> array)
   int col = 0;
   int lenRow = array.size() - 1;
   int lenCol = array[0].size() - 1;
-  zigzag.push_back(array[row][col]);
-  while (row <= lenRow && col <= lenCol)
+  bool goinDown = true;
+
+  while (!outOfBounds(row, col, lenRow, lenCol))
   {
-    if (row < lenRow)
-      row++;
-    else
-      col++;
-
-    while (row >= 0 && col <= lenCol)
+    zigzag.push_back(array[row][col]);
+    if (goinDown)
     {
-      zigzag.push_back(array[row][col]);
-      if (row == 0 || col == lenCol)
-        break;
-      row--;
-      col++;
-    }
-
-    if (col < lenCol)
-      col++;
-    else
-      row++;
-
-    while (row <= lenRow && col >= 0)
-    {
-      zigzag.push_back(array[row][col]);
       if (col == 0 || row == lenRow)
-        break;
-      row++;
-      col--;
+      {
+        goinDown = false;
+        if (row == lenRow)
+          col++;
+        else
+          row++;
+      }
+      else
+      {
+        row++;
+        col--;
+      }
+    }
+    else
+    {
+      if (col == lenCol || row == 0)
+      {
+        goinDown = true;
+        if (col == lenCol)
+          row++;
+        else
+          col++;
+      }
+      else
+      {
+        row--;
+        col++;
+      }
     }
   }
 
