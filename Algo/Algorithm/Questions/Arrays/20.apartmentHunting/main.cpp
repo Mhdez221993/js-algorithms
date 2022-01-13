@@ -6,45 +6,48 @@ using namespace std;
 
 using namespace std;
 
+int distanceBetween(int a, int b)
+{
+  return abs(a - b);
+}
+
+int getIndexAtBestBlock(vector<int> array)
+{
+  int bestValue = INT_MAX;
+  int bestIndex = 0;
+  for (int i = 0; i < array.size(); i++)
+  {
+    if (array[i] < bestValue)
+    {
+      bestValue = array[i];
+      bestIndex = i;
+    }
+  }
+  return bestIndex;
+}
+
 int apartmentHunting(vector<unordered_map<string, bool>> blocks,
                      vector<string> reqs)
 {
-  vector<int> distances(blocks.size(), 0);
+  vector<int> maxDistanceAtBlock(blocks.size(), INT_MIN);
   for (int i = 0; i < blocks.size(); i++)
   {
-    unordered_map<string, bool> currBlock = blocks[i];
     for (string req : reqs)
     {
-      if (!currBlock[req])
+      int closestReqDistance = INT_MAX;
+      if (!blocks[i][req])
       {
-        int difference = blocks.size();
         for (int j = 0; j < blocks.size(); j++)
         {
-          if (i == j)
-            continue;
           if (blocks[j][req])
-          {
-            int currDifference = (max(i, j) - min(i, j));
-            difference = min(currDifference, difference);
-          }
+            closestReqDistance = min(distanceBetween(i, j), closestReqDistance);
         }
-        distances[i] = max(difference, distances[i]);
+        maxDistanceAtBlock[i] = max(closestReqDistance, maxDistanceAtBlock[i]);
       }
     }
   }
 
-  int bestLocation = INT_MAX;
-  int bestIndex = 0;
-  for (int i = 0; i < distances.size(); i++)
-  {
-    if (distances[i] < bestLocation)
-    {
-      bestLocation = distances[i];
-      bestIndex = i;
-    }
-  }
-
-  return bestIndex;
+  return getIndexAtBestBlock(maxDistanceAtBlock);
 }
 
 int main()
