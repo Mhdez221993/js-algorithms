@@ -6,48 +6,64 @@ using namespace std;
 
 using namespace std;
 
-int distanceBetween(int a, int b)
+// O(br) time | O(br) space - where b is the number of blocks and r is the number of requirements.
+vector<int> minDistances(vector<unordered_map<string, bool>> blocks, string req)
 {
-  return abs(a - b);
+  vector<int> distances(blocks.size(), 0);
+  int closestReq = INT_MAX;
+  for (int i = 0; i < blocks.size(); i++)
+  {
+    if (blocks[i][req])
+      closestReq = i;
+    distances[i] = abs(i - closestReq);
+  }
+
+  closestReq = INT_MAX;
+  for (int i = (blocks.size() - 1); i >= 0; i--)
+  {
+    if (blocks[i][req])
+      closestReq = i;
+    distances[i] = min(distances[i], abs(closestReq - i));
+  }
+
+  return distances;
 }
 
-int getIndexAtBestBlock(vector<int> array)
+int maxDistances(unordered_map<string, vector<int>> distances, vector<string> reqs, int index)
 {
-  int bestValue = INT_MAX;
-  int bestIndex = 0;
-  for (int i = 0; i < array.size(); i++)
+  int myIndex = INT_MIN;
+  for (string req : reqs)
+    myIndex = max(myIndex, distances[req][index]);
+  return myIndex;
+}
+
+int bestBlock(vector<int> maxDistanceOfAReq)
+{
+  int myIndex = 0;
+  int myValue = INT_MAX;
+  for (int i = 0; i < maxDistanceOfAReq.size(); i++)
   {
-    if (array[i] < bestValue)
+    if (maxDistanceOfAReq[i] < myValue)
     {
-      bestValue = array[i];
-      bestIndex = i;
+      myIndex = i;
+      myValue = maxDistanceOfAReq[i];
     }
   }
-  return bestIndex;
+  return myIndex;
 }
 
 int apartmentHunting(vector<unordered_map<string, bool>> blocks,
                      vector<string> reqs)
 {
-  vector<int> maxDistanceAtBlock(blocks.size(), INT_MIN);
-  for (int i = 0; i < blocks.size(); i++)
-  {
-    for (string req : reqs)
-    {
-      int closestReqDistance = INT_MAX;
-      if (!blocks[i][req])
-      {
-        for (int j = 0; j < blocks.size(); j++)
-        {
-          if (blocks[j][req])
-            closestReqDistance = min(distanceBetween(i, j), closestReqDistance);
-        }
-        maxDistanceAtBlock[i] = max(closestReqDistance, maxDistanceAtBlock[i]);
-      }
-    }
-  }
+  unordered_map<string, vector<int>> minDistanceFromBlock;
+  vector<int> maxDistanceOfAReq(blocks.size(), 0);
+  for (string req : reqs)
+    minDistanceFromBlock[req] = minDistances(blocks, req);
 
-  return getIndexAtBestBlock(maxDistanceAtBlock);
+  for (int i = 0; i < blocks.size(); i++)
+    maxDistanceOfAReq[i] = maxDistances(minDistanceFromBlock, reqs, i);
+
+  return bestBlock(maxDistanceOfAReq);
 }
 
 int main()
