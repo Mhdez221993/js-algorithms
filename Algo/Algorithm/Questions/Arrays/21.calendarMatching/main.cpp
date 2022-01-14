@@ -8,39 +8,58 @@ struct StringMeeting
   string end;
 };
 
-void updateCalendar(
-    vector<StringMeeting> &calendar,
-    StringMeeting dailyBounds)
+struct Meeting
 {
-  StringMeeting startTime{"00:00", dailyBounds.start};
-  StringMeeting endTime{dailyBounds.end, "23:59"};
+  int start;
+  int end;
+};
 
-  calendar.insert(calendar.begin(), startTime);
-  calendar.push_back(endTime);
+int timeToMinutes(string time)
+{
+  int delimiter = time.find(":");
+  int hour = stoi(time.substr(0, delimiter));
+  int minutes = stoi(time.substr(delimiter + 1, time.length()));
+  return hour * 60 + minutes;
 }
 
-vector<StringMeeting> findAvailableTime(
-    vector<StringMeeting> calendar)
+vector<Meeting>
+updateCalendar(
+    vector<StringMeeting> calendar,
+    StringMeeting dailyBounds)
 {
-  vector<StringMeeting> avilableCalendar;
+  vector<StringMeeting> updatedCalendar;
+  updatedCalendar.push_back({"0:00", dailyBounds.start});
+  updatedCalendar.insert(updatedCalendar.end(), calendar.begin(), calendar.end());
+  updatedCalendar.push_back({dailyBounds.end, "23:59"});
+  vector<Meeting> calendarInMinutes;
+  for (auto x : updatedCalendar)
+    calendarInMinutes.push_back({timeToMinutes(x.start), timeToMinutes(x.end)});
+
+  return calendarInMinutes;
+}
+
+vector<Meeting> findAvailableTime(
+    vector<Meeting> calendar)
+{
+  vector<Meeting> avilableCalendar;
   for (int i = 0; i < (calendar.size() - 1); i++)
   {
-    string startTime = calendar[i].end;
-    string endTime = calendar[i + 1].start;
+    int startTime = calendar[i].end;
+    int endTime = calendar[i + 1].start;
     avilableCalendar.push_back({startTime, endTime});
   }
   return avilableCalendar;
 }
 
-vector<StringMeeting> mergeAvailableClalendars(vector<StringMeeting> calendar1, vector<StringMeeting> calendar2)
+vector<Meeting> mergeAvailableClalendars(vector<Meeting> calendar1, vector<Meeting> calendar2)
 {
-  vector<StringMeeting> mergedCalendar;
+  vector<Meeting> mergedCalendar;
   int i = 0;
   int j = 0;
   while (i < calendar1.size() && j < calendar2.size())
   {
-    StringMeeting currCalendar1 = calendar1[i];
-    StringMeeting currCalendar2 = calendar2[j];
+    Meeting currCalendar1 = calendar1[i];
+    Meeting currCalendar2 = calendar2[j];
     if (currCalendar1.start < currCalendar2.start)
     {
       mergedCalendar.push_back(currCalendar1);
@@ -61,19 +80,19 @@ vector<StringMeeting> mergeAvailableClalendars(vector<StringMeeting> calendar1, 
   return mergedCalendar;
 }
 
-vector<StringMeeting> calendarMatching(vector<StringMeeting> calendar1,
-                                       StringMeeting dailyBounds1,
-                                       vector<StringMeeting> calendar2,
-                                       StringMeeting dailyBounds2,
-                                       int meetingDuration)
+vector<Meeting> calendarMatching(vector<StringMeeting> calendar1,
+                                 StringMeeting dailyBounds1,
+                                 vector<StringMeeting> calendar2,
+                                 StringMeeting dailyBounds2,
+                                 int meetingDuration)
 {
   // Write your code here.
-  updateCalendar(calendar1, dailyBounds1);
-  updateCalendar(calendar2, dailyBounds2);
-  vector<StringMeeting> avilableCalendar1 = findAvailableTime(calendar1);
-  vector<StringMeeting> avilableCalendar2 = findAvailableTime(calendar2);
-  vector<StringMeeting> mergedCalendars = mergeAvailableClalendars(avilableCalendar1, avilableCalendar2);
-  return {};
+  vector<Meeting> updatedCalendar1 = updateCalendar(calendar1, dailyBounds1);
+  vector<Meeting> updatedCalendar2 = updateCalendar(calendar2, dailyBounds2);
+  vector<Meeting> avilableCalendar1 = findAvailableTime(updatedCalendar1);
+  vector<Meeting> avilableCalendar2 = findAvailableTime(updatedCalendar2);
+  vector<Meeting> mergedCalendars = mergeAvailableClalendars(avilableCalendar1, avilableCalendar2);
+  return mergedCalendars;
 }
 
 int main()
@@ -91,6 +110,7 @@ int main()
   StringMeeting dailyBounds2 = {"9:00", "20:00"};
   int meetingDuration = 30;
 
-  calendarMatching(calendar1, dailyBounds1, calendar2, dailyBounds2, meetingDuration);
+  for (auto x : calendarMatching(calendar1, dailyBounds1, calendar2, dailyBounds2, meetingDuration))
+    cout << x.start << " " << x.end << endl;
   return 0;
 }
