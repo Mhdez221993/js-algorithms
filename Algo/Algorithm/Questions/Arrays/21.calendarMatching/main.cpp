@@ -48,19 +48,6 @@ updateCalendar(
   return calendarInMinutes;
 }
 
-vector<Meeting> findAvailableTime(
-    vector<Meeting> calendar)
-{
-  vector<Meeting> avilableCalendar;
-  for (int i = 0; i < (calendar.size() - 1); i++)
-  {
-    int startTime = calendar[i].end;
-    int endTime = calendar[i + 1].start;
-    avilableCalendar.push_back({startTime, endTime});
-  }
-  return avilableCalendar;
-}
-
 vector<Meeting> mergeAvailableClalendars(vector<Meeting> calendar1, vector<Meeting> calendar2)
 {
   vector<Meeting> mergedCalendar;
@@ -110,10 +97,12 @@ vector<Meeting> flattenCalendar(vector<Meeting> mergedCalendars)
 vector<StringMeeting> getMatchingAvailableTime(vector<Meeting> calendar, int meetingDuration)
 {
   vector<StringMeeting> availability;
-  for (Meeting time : calendar)
+  for (int i = 0; i < (calendar.size() - 1); i++)
   {
-    if (time.end - time.start >= meetingDuration)
-      availability.push_back({minutesToTime(time.start), minutesToTime(time.end)});
+    Meeting curr = calendar[i];
+    Meeting next = calendar[i + 1];
+    if (meetingDuration <= next.start - curr.end)
+      availability.push_back({minutesToTime(curr.end), minutesToTime(next.start)});
   }
 
   return availability;
@@ -128,9 +117,7 @@ vector<StringMeeting> calendarMatching(vector<StringMeeting> calendar1,
   // Write your code here.
   vector<Meeting> updatedCalendar1 = updateCalendar(calendar1, dailyBounds1);
   vector<Meeting> updatedCalendar2 = updateCalendar(calendar2, dailyBounds2);
-  vector<Meeting> avilableCalendar1 = findAvailableTime(updatedCalendar1);
-  vector<Meeting> avilableCalendar2 = findAvailableTime(updatedCalendar2);
-  vector<Meeting> mergedCalendars = mergeAvailableClalendars(avilableCalendar1, avilableCalendar2);
+  vector<Meeting> mergedCalendars = mergeAvailableClalendars(updatedCalendar1, updatedCalendar2);
   vector<Meeting> flattedCalendar = flattenCalendar(mergedCalendars);
   return getMatchingAvailableTime(flattedCalendar, meetingDuration);
 }
