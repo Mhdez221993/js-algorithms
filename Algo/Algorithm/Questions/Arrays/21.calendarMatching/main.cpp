@@ -2,14 +2,16 @@
 #include <iostream>
 using namespace std;
 
-struct StringMeeting
+class StringMeeting
 {
+public:
   string start;
   string end;
 };
 
-struct Meeting
+class Meeting
 {
+public:
   int start;
   int end;
 };
