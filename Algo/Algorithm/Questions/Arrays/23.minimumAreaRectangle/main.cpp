@@ -5,9 +5,10 @@
 #include <algorithm>
 using namespace std;
 
-int findAreaOfRectangle(vector<vector<int>> firstSecond, vector<int> third, vector<int> fourth)
+int findAreaOfRectangle(int len, int width1, int width2)
 {
-  return 10;
+  int width = max(width1, width2);
+  return len * width;
 }
 
 int minimumAreaRectangle(vector<vector<int>> points)
@@ -25,7 +26,7 @@ int minimumAreaRectangle(vector<vector<int>> points)
       int key = max(currY, y) - min(currY, y);
       if (currX == x && myHashPoints[key].size() > 1)
       {
-        int currArea = findAreaOfRectangle(myHashPoints[key], points[i], points[right]);
+        int currArea = findAreaOfRectangle(key, currX, myHashPoints[key][0][0]);
         minimumArea = min(minimumArea, currArea);
       }
     }
@@ -49,10 +50,15 @@ int minimumAreaRectangle(vector<vector<int>> points)
 int main()
 {
   vector<vector<int>> points = {
-      {0, 0},
-      {4, 4},
-      {8, 8},
-      {0, 8}};
+      {1, 5},
+      {5, 1},
+      {4, 2},
+      {2, 4},
+      {2, 2},
+      {1, 2},
+      {4, 5},
+      {2, 5},
+      {-1, -2}};
   cout << minimumAreaRectangle(points) << endl;
   return 0;
 }
