@@ -1,13 +1,16 @@
 #include <vector>
 #include <climits>
 #include <iostream>
+#include <string>
 #include <unordered_map>
 #include <algorithm>
 using namespace std;
+// string key = concat(to_string(min(currY, y)), to_string(max(currY, y)));
 
 int findAreaOfRectangle(int len, int width1, int width2)
 {
   int width = max(width1, width2);
+  cout << (width * len) << endl;
   return len * width;
 }
 
