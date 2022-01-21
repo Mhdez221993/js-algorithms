@@ -77,7 +77,7 @@ int minimumAreaRectangle(vector<vector<int>> points)
     vector<int> currentCol = columns[x];
     for (int j = 1; j < currentCol.size(); j++)
     {
-      int left = 0;
+      int left = j - 1;
       int currY = currentCol[j];
       while (left >= 0)
       {
@@ -94,6 +94,7 @@ int minimumAreaRectangle(vector<vector<int>> points)
         left--;
       }
     }
+    cout << endl;
   }
 
   if (minimumArea == INT_MAX)
@@ -110,7 +111,11 @@ int main()
       {-4, -2},
       {0, -2},
       {4, 2},
-      {0, 2}};
+      {0, 2},
+      {0, 4},
+      {2, 3},
+      {0, 3},
+      {2, 4}};
   cout << minimumAreaRectangle(points) << endl;
   return 0;
 }
