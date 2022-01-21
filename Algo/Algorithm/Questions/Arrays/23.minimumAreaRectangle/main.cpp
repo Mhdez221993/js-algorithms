@@ -8,51 +8,39 @@
 using namespace std;
 
 // O(n^2) time | O(n) space - where n is the number of points.
-unordered_map<int, vector<int>> mapPoinst(vector<vector<int>> points)
+unordered_map<string, vector<int>> mapPoinst(vector<vector<int>> points)
 {
-  unordered_map<int, vector<int>> columns;
-  for (vector<int> point : points)
+  unordered_map<string, vector<int>> pairPoints;
+  for (int i = 0; i < points.size(); i++)
   {
-    int x = point[0];
-    int y = point[1];
-    if (columns.find(x) == columns.end())
-      columns[x] = {};
-    columns[x].push_back(y);
+    vector<int> p = points[i];
+    string pointKey = to_string(p[0]) + ":" + to_string(p[1]);
+    pairPoints[pointKey] = p;
   }
-
-  return columns;
+  return pairPoints;
 }
 
 int minimumAreaRectangle(vector<vector<int>> points)
 {
   int minimumArea = INT_MAX;
-  unordered_map<int, vector<int>> columns = mapPoinst(points);
-  vector<int> sortedKeys;
-  unordered_map<string, int> edges;
+  unordered_map<string, vector<int>> pairPoints = mapPoinst(points);
+  sort(points.begin(), points.end());
 
-  for (auto x : columns)
-    sortedKeys.push_back(x.first);
-  sort(sortedKeys.begin(), sortedKeys.end());
-
-  for (int i = 0; i < sortedKeys.size(); i++)
+  for (vector<int> point1 : points)
   {
-    int x2 = sortedKeys[i];
-    vector<int> currentCol = columns[x2];
-    sort(currentCol.begin(), currentCol.end());
-    for (int currIndx = 0; currIndx < currentCol.size(); currIndx++)
+    for (vector<int> point2 : points)
     {
-      int y2 = currentCol[currIndx];
-      for (int prevIndex = 0; prevIndex < currIndx; prevIndex++)
+      int x1 = point1[0], y1 = point1[1];
+      int x2 = point2[0], y2 = point2[1];
+      if ((x1 != x2) && (y1 != y2))
       {
-        int y1 = currentCol[prevIndex];
-        string pointKey = to_string(y1) + ":" + to_string(y2);
-        if (edges.find(pointKey) != edges.end())
+        string p1 = to_string(x1) + ":" + to_string(y2);
+        string p2 = to_string(x2) + ":" + to_string(y1);
+        if (pairPoints.find(p1) != pairPoints.end() && pairPoints.find(p2) != pairPoints.end())
         {
-          int x1 = edges[pointKey];
-          int currArea = ((x2 - x1) * (y2 - y1));
+          int currArea = ((max(x2, x1) - min(x1, x2)) * (max(y2, y1) - min(y1, y2)));
           minimumArea = min(currArea, minimumArea);
         }
-        edges[pointKey] = x2;
       }
     }
   }
