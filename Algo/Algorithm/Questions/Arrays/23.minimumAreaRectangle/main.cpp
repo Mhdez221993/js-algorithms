@@ -1,3 +1,4 @@
+
 #include <vector>
 #include <iostream>
 #include <unordered_map>
@@ -6,6 +7,7 @@
 // #include <string>
 using namespace std;
 
+// O(n^2) time | O(n) space - where n is the number of points.
 unordered_map<int, vector<int>> mapPoinst(vector<vector<int>> points)
 {
   unordered_map<int, vector<int>> columns;
