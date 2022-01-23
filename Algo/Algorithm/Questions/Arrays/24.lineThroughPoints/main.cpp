@@ -7,8 +7,8 @@ using namespace std;
 
 int lineThroughPoints(vector<vector<int>> points)
 {
-  int maxPoint = INT_MAX;
-  unordered_map<string, int> lineThrough;
+  int maxPoint = INT_MIN;
+  unordered_map<int, int> lineThrough;
   sort(points.begin(), points.end());
 
   for (int i = 0; i < points.size(); i++)
@@ -19,15 +19,16 @@ int lineThroughPoints(vector<vector<int>> points)
       int y1 = points[i][1];
       int x2 = points[j][0];
       int y2 = points[j][1];
-      if (x2 - x1 != 0)
+      if (x2 != x1)
       {
-        int point = (y2 - y1) / (x2 - x1);
-        cout << x1 << "," << y1 << "/" << x2 << "," << y2 << ": " << point << endl;
-        // string pointToString = to_string(point);
-        // if (lineThrough.find(pointToString) != lineThrough.end())
-        //   lineThrough[pointToString] = 0;
-        // lineThrough[pointToString] += 1;
-        // maxPoint = max(maxPoint, lineThrough[pointToString]);
+        int m = (y2 - y1) / (x2 - x1);
+        int x = x2;
+        int b = y1;
+        int y = (m * x) + b;
+        if (lineThrough.find(y) == lineThrough.end())
+          lineThrough[y] = 0;
+        lineThrough[y] += 1;
+        maxPoint = max(maxPoint, lineThrough[y]);
       }
     }
   }
