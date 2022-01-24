@@ -22,13 +22,15 @@ int lineThroughPoints(vector<vector<int>> points)
       if (x2 != x1)
       {
         int m = (y2 - y1) / (x2 - x1);
-        int x = x2;
-        int b = y1;
-        int y = (m * x) + b;
-        if (lineThrough.find(y) == lineThrough.end())
-          lineThrough[y] = 0;
-        lineThrough[y] += 1;
-        maxPoint = max(maxPoint, lineThrough[y]);
+        for (int k = j + 1; k < points.size(); k++)
+        {
+          int x3 = points[k][0];
+          int currY = (m * x3) + y2;
+          if (lineThrough.find(currY) == lineThrough.end())
+            lineThrough[currY] = 0;
+          lineThrough[currY] += 1;
+          maxPoint = max(maxPoint, lineThrough[currY]);
+        }
       }
     }
   }
