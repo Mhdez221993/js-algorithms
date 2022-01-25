@@ -5,34 +5,74 @@
 #include <unordered_map>
 using namespace std;
 
+int getCommonDivisor(int y, int x)
+{
+  int a = y;
+  int b = x;
+  while (true)
+  {
+    if (a == 0)
+      return b;
+    if (b == 0)
+      return a;
+    int temp = a;
+    a = b;
+    b = temp % b;
+  }
+}
+
+vector<int> getSlope(vector<int> num1, vector<int> num2)
+{
+  int x1 = num1[0];
+  int y1 = num1[1];
+  int x2 = num2[0];
+  int y2 = num2[1];
+  vector<int> slope = {1, 0};
+  if (x1 != x2)
+  {
+    int xDiff = (x2 - x1);
+    int yDiff = (y2 - y1);
+    int gcd = getCommonDivisor(abs(yDiff), abs(xDiff));
+    xDiff /= gcd;
+    yDiff /= gcd;
+    if (xDiff < 0)
+    {
+      xDiff *= -1;
+      yDiff *= -1;
+    }
+    slope = {xDiff, yDiff};
+  }
+
+  return slope;
+}
+
+string createSlopeKey(int numerator, int denominator)
+{
+  return to_string(numerator) + ":" + to_string(denominator);
+}
+
 int lineThroughPoints(vector<vector<int>> points)
 {
   int maxPoint = INT_MIN;
-  unordered_map<int, int> lineThrough;
-  sort(points.begin(), points.end());
 
   for (int i = 0; i < points.size(); i++)
   {
+    auto p1 = points[i];
+    unordered_map<string, int> slopes;
     for (int j = i + 1; j < points.size(); j++)
     {
-      int x1 = points[i][0];
-      int y1 = points[i][1];
-      int x2 = points[j][0];
-      int y2 = points[j][1];
-      if (x2 != x1)
-      {
-        int m = (y2 - y1) / (x2 - x1);
-        for (int k = j + 1; k < points.size(); k++)
-        {
-          int x3 = points[k][0];
-          int currY = (m * x3) + y2;
-          if (lineThrough.find(currY) == lineThrough.end())
-            lineThrough[currY] = 0;
-          lineThrough[currY] += 1;
-          maxPoint = max(maxPoint, lineThrough[currY]);
-        }
-      }
+      auto p2 = points[j];
+      auto slope = getSlope(p1, p2);
+      int run = slope[0];
+      int rise = slope[1];
+      string slopeKey = createSlopeKey(rise, run);
+      if (slopes.find(slopeKey) == slopes.end())
+        slopes[slopeKey] = 1;
+      slopes[slopeKey] += 1;
     }
+
+    for (auto x : slopes)
+      maxPoint = max(maxPoint, slopes[x.first]);
   }
   return maxPoint;
 }
