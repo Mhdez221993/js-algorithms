@@ -21,12 +21,12 @@ int getCommonDivisor(int y, int x)
   }
 }
 
-vector<int> getSlope(vector<int> num1, vector<int> num2)
+vector<int> getSlope(vector<int> point1, vector<int> point2)
 {
-  int x1 = num1[0];
-  int y1 = num1[1];
-  int x2 = num2[0];
-  int y2 = num2[1];
+  int x1 = point1[0];
+  int y1 = point1[1];
+  int x2 = point2[0];
+  int y2 = point2[1];
   vector<int> slope = {1, 0};
   if (x1 != x2)
   {
@@ -40,7 +40,7 @@ vector<int> getSlope(vector<int> num1, vector<int> num2)
       xDiff *= -1;
       yDiff *= -1;
     }
-    slope = {xDiff, yDiff};
+    slope = {yDiff, xDiff};
   }
 
   return slope;
@@ -53,7 +53,7 @@ string createSlopeKey(int numerator, int denominator)
 
 int lineThroughPoints(vector<vector<int>> points)
 {
-  int maxPoint = INT_MIN;
+  int maxPoint = 1;
 
   for (int i = 0; i < points.size(); i++)
   {
@@ -63,12 +63,12 @@ int lineThroughPoints(vector<vector<int>> points)
     {
       auto p2 = points[j];
       auto slope = getSlope(p1, p2);
-      int run = slope[0];
-      int rise = slope[1];
+      int rise = slope[0];
+      int run = slope[1];
       string slopeKey = createSlopeKey(rise, run);
       if (slopes.find(slopeKey) == slopes.end())
         slopes[slopeKey] = 1;
-      slopes[slopeKey] += 1;
+      slopes[slopeKey]++;
     }
 
     for (auto x : slopes)
