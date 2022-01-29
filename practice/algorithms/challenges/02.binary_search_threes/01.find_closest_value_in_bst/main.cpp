@@ -4,34 +4,34 @@ using namespace std;
 class BST
 {
 public:
-  int data;
+  int value;
   BST *left;
   BST *right;
 
   BST(int d)
   {
-    data = d;
+    value = d;
     left = NULL;
     right = NULL;
   }
 
-  BST *insert(BST *root, int data)
+  BST *insert(BST *root, int value)
   {
     if (root == NULL)
     {
-      return new BST(data);
+      return new BST(value);
     }
     else
     {
       BST *cur;
-      if (data <= root->data)
+      if (value <= root->value)
       {
-        cur = insert(root->left, data);
+        cur = insert(root->left, value);
         root->left = cur;
       }
       else
       {
-        cur = insert(root->right, data);
+        cur = insert(root->right, value);
         root->right = cur;
       }
       return root;
@@ -44,30 +44,26 @@ public:
       return;
 
     inorder(root->left);
-    cout << root->data << " ";
+    cout << root->value << " ";
     inorder(root->right);
   }
 };
 
-int findNum(BST *tree, int target, int num)
+int findClosestValueInBstHelper(BST *tree, int target, int closest)
 {
-  if (tree == NULL)
-    return num;
-
-  int a = abs(target - tree->data);
-  int b = abs(target - num);
-  if (a < b)
-    num = tree->data;
-
-  if (tree->data < target)
-    return findNum(tree->right, target, num);
+  if (abs(target - tree->value) < abs(target - closest))
+    closest = tree->value;
+  if (target > tree->value && tree->right != nullptr)
+    return findClosestValueInBstHelper(tree->right, target, closest);
+  else if (target < tree->value && tree->left != nullptr)
+    return findClosestValueInBstHelper(tree->left, target, closest);
   else
-    return findNum(tree->left, target, num);
+    return closest;
 }
 
-int findClosestdataueInBst(BST *tree, int target)
+int findClosestValueInBst(BST *tree, int target)
 {
-  return findNum(tree, target, INT_MAX);
+  return findClosestValueInBstHelper(tree, target, tree->value);
 }
 
 int main()
@@ -75,9 +71,9 @@ int main()
   BST Tree(0);
   BST *root = NULL;
   vector<int> values = {10, 5, 15, 2, 5, 13, 22, 1, 14};
-  for (int data : values)
-    root = Tree.insert(root, data);
+  for (int value : values)
+    root = Tree.insert(root, value);
   // Tree.inorder(root);
-  cout << findClosestdataueInBst(root, 12) << endl;
+  cout << findClosestValueInBst(root, 12) << endl;
   return 0;
 }
