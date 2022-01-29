@@ -49,21 +49,22 @@ public:
   }
 };
 
-int findClosestValueInBstHelper(BST *tree, int target, int closest)
-{
-  if (abs(target - tree->value) < abs(target - closest))
-    closest = tree->value;
-  if (target > tree->value && tree->right != nullptr)
-    return findClosestValueInBstHelper(tree->right, target, closest);
-  else if (target < tree->value && tree->left != nullptr)
-    return findClosestValueInBstHelper(tree->left, target, closest);
-  else
-    return closest;
-}
-
 int findClosestValueInBst(BST *tree, int target)
 {
-  return findClosestValueInBstHelper(tree, target, tree->value);
+  BST *root = tree;
+  int bestValue = root->value;
+  while (root)
+  {
+    if (abs(target - root->value) < abs(target - bestValue))
+      bestValue = root->value;
+    if (target < root->value)
+      root = root->left;
+    else if (target > root->value)
+      root = root->right;
+    else
+      break;
+  }
+  return bestValue;
 }
 
 int main()
