@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Average: O(log(n)) time | O(1) space - where n is the number of nodes in the BST
+// Worst: O(n) time | O(1) space - where n is the number of nodes in the BST
 class BST
 {
 public:
