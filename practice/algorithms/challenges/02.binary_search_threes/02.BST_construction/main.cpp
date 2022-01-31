@@ -42,6 +42,13 @@ public:
 
   bool contains(int val)
   {
+    if (val == value)
+      return true;
+    else if (val > value && right != nullptr)
+      return right->contains(val);
+    else if (val < value && right != nullptr)
+      return left->contains(val);
+
     return false;
   }
 
@@ -69,7 +76,6 @@ int main()
   BST *root = new BST(5);
   for (int val : values)
     root->insert(val);
-  root->inorder(root);
-  cout << endl;
+  cout << root->contains(15) << endl;
   return 0;
 }
