@@ -19,3 +19,24 @@ function twoNumberSum(array, targetSum) {
 
   return [];
 }
+
+// O(n^2) time | O(1)
+
+function twoNumberSum(array, targetSum){
+  for(let i = 0; i < array.length; i++){
+    for(let j = i+1; j < array.length; j++){
+      if(array[i] + array[j] == targetSum){
+        return [array[i], array[j]]
+      }
+    }
+  }
+  return []
+}
+
+let array = [3, 5, -4, 8, 11, 1, -1, 6]
+             -4, -1 1, 3, 5, 6, 8, 11
+             i    i                  j
+let targetSum = 10
+
+console.log(twoNumberSum(array, targetSum))
+
