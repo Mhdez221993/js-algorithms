@@ -4,10 +4,16 @@ function findClosestValueInBstHelper(tree, target, closest) {
   }
 
   if (Math.abs(tree.value - target) < Math.abs(closest - target)) {
-    return findClosestValueInBstHelper(tree.left, target, tree.value)
+    closest = tree.value
   }
-  return findClosestValueInBstHelper(tree.right, target, closest)
 
+  if (target > tree.value) {
+    return findClosestValueInBstHelper(tree.right, target, closest)
+  } else if (target < tree.value) {
+    return findClosestValueInBstHelper(tree.left, target, closest)
+  } else {
+    return closest
+  }
 }
 
 function findClosestValueInBst(tree, target) {
