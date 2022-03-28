@@ -1,29 +1,29 @@
 // Average: O(log(n)) time | O(1) space - where n is the number of nodes in the BST
 // Worst: O(n) time | O(1) space - where n is the number of nodes in the BST
 
-function findClosestValueInBstHelper(tree, target, closest) {
-  if (!tree) {
-    return closest
-  }
-
-  if (Math.abs(tree.value - target) < Math.abs(closest - target)) {
-    closest = tree.value
-  }
-
-  if (target > tree.value) {
-    return findClosestValueInBstHelper(tree.right, target, closest)
-  } else if (target < tree.value) {
-    return findClosestValueInBstHelper(tree.left, target, closest)
-  } else {
-    return closest
-  }
-}
-
 function findClosestValueInBst(tree, target) {
-  return findClosestValueInBstHelper(tree, target, tree.value)
+
+  let currNode = tree
+  let closest = tree.value
+  while (currNode) {
+
+    if (Math.abs(currNode.value - target) < Math.abs(closest - target)) {
+      closest = currNode.value
+    }
+
+    if (target > currNode.value) {
+      currNode = currNode.right
+    } else if (target < currNode.value) {
+      currNode = currNode.left
+    } else {
+      break
+    }
+  }
+
+  return closest
 }
 
-// This is the class of the input tree. Do not edit.
+
 class BST {
   constructor(value) {
     this.value = value;
