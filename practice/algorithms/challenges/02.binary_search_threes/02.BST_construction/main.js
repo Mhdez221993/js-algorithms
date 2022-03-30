@@ -5,38 +5,18 @@ class BST {
     this.right = null;
   }
 
-  insertHelper(root, value) {
-    if (!root) return root
-
-    if (value > root.value) {
-      if (!root.right) {
-        root.right = new BST(value)
-        return
-      } else {
-        this.insertHelper(root.right, value)
-      }
-    } else if (value < root.value) {
-      if (!root.left) {
-        root.left = new BST(value)
-        return
-      } else {
-        this.insertHelper(root.left, value)
-      }
-    } else {
-      return null
-    }
-
-    return root
-  }
-
   insert(value) {
-    let root = this
-    if (root.value == null) {
-      root.value = value
-    } else {
-      this.insertHelper(root, value)
+    if (value < this.value && this.left) {
+      this.left.insert(value)
+    } else if (value < this.value) {
+      this.left = new BST(value)
     }
 
+    if (value > this.value && this.right) {
+      this.right.insert(value)
+    } else if (value > this.value) {
+      this.right = new BST(value)
+    }
 
     return this;
   }
@@ -54,36 +34,20 @@ class BST {
     }
   }
 
-  removeHelper(root) {
-    if (root.left && root.right) {
-
-    } else if (root.left || root.right) {
-      if (root.left) root.left = root
-      if (root.right) root.right = root
-    } else {
-      root.value = null
-    }
-  }
-
   remove(value) {
-    let root = this
-    while (root) {
-      if (value > root.value) {
-        root = root.right
-      } else if (value < root.value) {
-        root = root.left
-      } else {
-        removeHelper(root)
-      }
-    }
     return this;
   }
 }
 
-let arr = [10, 8, 12, 6, 15]
-let bst = new BST
+let bst = new BST(10)
+bst.insert(8)
+bst.insert(15)
+bst.insert(7)
+bst.insert(9)
+bst.insert(23)
+bst.insert(13)
 
-arr.forEach(v => bst.insert(v))
-
+// console.log(bst);
+// console.log(bst.contains(6));
+// bst.remove(10)
 console.log(bst);
-console.log(bst.contains(6));
