@@ -49,7 +49,7 @@ class BST {
       } else if (value < root.value) {
         root = root.left
       } else {
-        return true
+        return root.value
       }
     }
   }
@@ -86,3 +86,4 @@ let bst = new BST
 arr.forEach(v => bst.insert(v))
 
 console.log(bst);
+console.log(bst.contains(6));
