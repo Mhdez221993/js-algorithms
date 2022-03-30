@@ -75,3 +75,8 @@ Traverse the BST all the while applying the logic described in Hint #1. For inse
 Average (all 3 methods): O(log(n)) time | O(1) space - where n is the number of nodes in the BST
 
 Worst (all 3 methods): O(n) time | O(1) space - where n is the number of nodes in the BST
+
+
+## Helpful links
+
+- [Implementing a Basic Binary Search Tree in JavaScript](https://dev.to/seanwelshbrown/implementing-a-basic-binary-search-tree-in-javascript-57g4)
