@@ -33,13 +33,46 @@ class BST {
     }
   }
 
-  remove(value) {
+  remove(value, parent = null) {
+    if (this.value === value) {
+      if (!parent && !this.left && !this.right) return // when there's one node three
+
+      if (!this.left && !this.right) { // when no leaf nodes
+        if (parent.right === this) return parent.right = null
+        if (parent.left === this) return parent.left = null
+
+      } else if (this.left && this.right) { // when left and right node
+        let temp = this.right
+        while (temp.left) {
+          temp = temp.left  // get the most right left node
+        }
+        return
+
+      } else { // when one leaf node
+        if (parent.left === this) {
+          parent.left = this.left || this.right
+        } else {
+          parent.right = this.right || this.left
+        }
+        return
+      }
+
+    }
+
+    if (value < this.value && this.left) {
+      this.left.remove(value, this)
+    } else if (value > this.value && this.right) {
+      this.right.remove(value, this)
+    } else {
+      return
+    }
+
     return this;
   }
 }
 
 let bst = new BST(10)
-bst.insert(8)
+// bst.insert(8)
 bst.insert(15)
 bst.insert(7)
 bst.insert(9)
@@ -47,6 +80,6 @@ bst.insert(23)
 bst.insert(13)
 
 // console.log(bst);
-console.log(bst.contains(9));
-// bst.remove(10)
-// console.log(bst);
+// console.log(bst.contains(9));s
+bst.remove(10)
+console.log(bst);
