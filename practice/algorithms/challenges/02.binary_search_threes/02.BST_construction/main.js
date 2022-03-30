@@ -5,24 +5,38 @@ class BST {
     this.right = null;
   }
 
+  insertHelper(root, value) {
+    if (!root) return root
+
+    if (value > root.value) {
+      if (!root.right) {
+        root.right = new BST(value)
+        return
+      } else {
+        this.insertHelper(root.right, value)
+      }
+    } else if (value < root.value) {
+      if (!root.left) {
+        root.left = new BST(value)
+        return
+      } else {
+        this.insertHelper(root.left, value)
+      }
+    } else {
+      return null
+    }
+
+    return root
+  }
+
   insert(value) {
-    if (!this.value) {
-      this.value = value
-      return this
+    let root = this
+    if (root.value == null) {
+      root.value = value
+    } else {
+      this.insertHelper(root, value)
     }
 
-    let root = this;
-    while (root) {
-      if (!root.value) {
-        root.value = value
-      }
-
-      if (value > root.value) {
-        root = root.right
-      } else if (value < root.value) {
-        root = root.left
-      }
-    }
 
     return this;
   }
@@ -65,3 +79,10 @@ class BST {
     return this;
   }
 }
+
+let arr = [10, 8, 12, 6, 15]
+let bst = new BST
+
+arr.forEach(v => bst.insert(v))
+
+console.log(bst);
