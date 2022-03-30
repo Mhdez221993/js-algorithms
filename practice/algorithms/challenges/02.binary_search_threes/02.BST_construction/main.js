@@ -22,15 +22,14 @@ class BST {
   }
 
   contains(value) {
-    let root = this
-    while (root) {
-      if (value > root.value) {
-        root = root.right
-      } else if (value < root.value) {
-        root = root.left
-      } else {
-        return root.value
-      }
+    if (this.value === value) return this
+
+    if (value < this.value && this.left) {
+      return this.left.contains(value)
+    } else if (value > this.value && this.right) {
+      return this.right.contains(value)
+    } else {
+      return null
     }
   }
 
@@ -48,6 +47,6 @@ bst.insert(23)
 bst.insert(13)
 
 // console.log(bst);
-// console.log(bst.contains(6));
+console.log(bst.contains(9));
 // bst.remove(10)
-console.log(bst);
+// console.log(bst);
