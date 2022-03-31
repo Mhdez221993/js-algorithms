@@ -29,7 +29,7 @@ class BST {
     } else if (value > this.value && this.right) {
       return this.right.contains(value)
     } else {
-      return null
+      return false
     }
   }
 
@@ -53,9 +53,19 @@ class BST {
         return
 
       } else { // when one leaf node
-        if (parent.left === this) {
+        if (!parent) {
+          if (this.left) {
+            this.value = this.left.value
+            this.right = this.left.right
+            this.left = this.left.left
+          } else {
+            this.value = this.right.value
+            this.right = this.right.right
+            this.left = this.right.left
+          }
+        } else if (parent.left === this) {
           parent.left = this.left || this.right
-        } else {
+        } else if (parent.right === this) {
           parent.right = this.right || this.left
         }
         return
@@ -75,15 +85,15 @@ class BST {
   }
 }
 
-let bst = new BST(10)
+let bst = new BST(1)
 // bst.insert(8)
-bst.insert(15)
-bst.insert(5)
-bst.insert(5)
 bst.insert(2)
+bst.insert(3)
+bst.insert(4)
+// bst.insert(2)
 // bst.insert(13)
 
 // console.log(bst);
 // console.log(bst.contains(9));s
-// bst.remove(10)
+bst.remove(1)
 console.log(bst);
