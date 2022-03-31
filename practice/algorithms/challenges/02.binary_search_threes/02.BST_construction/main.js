@@ -12,9 +12,9 @@ class BST {
       this.left = new BST(value)
     }
 
-    if (value > this.value && this.right) {
+    if (value >= this.value && this.right) {
       this.right.insert(value)
-    } else if (value > this.value) {
+    } else if (value >= this.value) {
       this.right = new BST(value)
     }
 
@@ -22,7 +22,7 @@ class BST {
   }
 
   contains(value) {
-    if (this.value === value) return this
+    if (this.value === value) return true
 
     if (value < this.value && this.left) {
       return this.left.contains(value)
@@ -46,6 +46,10 @@ class BST {
         while (temp.left) {
           temp = temp.left  // get the most right left node
         }
+        const final = temp.value
+        this.right.remove(temp.value, this)
+        this.value = final
+
         return
 
       } else { // when one leaf node
@@ -74,12 +78,12 @@ class BST {
 let bst = new BST(10)
 // bst.insert(8)
 bst.insert(15)
-bst.insert(7)
-bst.insert(9)
-bst.insert(23)
-bst.insert(13)
+bst.insert(5)
+bst.insert(5)
+bst.insert(2)
+// bst.insert(13)
 
 // console.log(bst);
 // console.log(bst.contains(9));s
-bst.remove(10)
+// bst.remove(10)
 console.log(bst);
