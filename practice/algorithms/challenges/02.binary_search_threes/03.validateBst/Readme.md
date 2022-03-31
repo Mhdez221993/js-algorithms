@@ -42,3 +42,8 @@ Validate the BST by recursively calling the validateBst function on every node, 
 ## Optimal Space & Time Complexity
 
 O(n) time | O(d) space - where n is the number of nodes in the BST and d is the depth (height) of the BST
+
+
+## Documentation
+
+![is_a_BST](./test_if_BST.jpeg)
