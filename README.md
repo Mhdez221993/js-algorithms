@@ -1,4 +1,4 @@
-# Interview Preparation
+# Data Structure And Algorithms
 
 > This project contains resources to prepare you for algorithms and behavioral interviews.
 
