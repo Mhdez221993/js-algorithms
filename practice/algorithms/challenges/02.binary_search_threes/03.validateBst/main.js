@@ -6,7 +6,7 @@ class BST {
   }
 
   insert(value) {
-    if (value > this.value) {
+    if (value >= this.value) {
       if (!this.right) {
         this.right = new BST(value)
         return
@@ -22,22 +22,39 @@ class BST {
   }
 }
 
-function validateBst(tree, root = tree.value) {
-  if (tree.left || tree.right) {
-    if (tree.left) {
-      return tree.left >= tree.value && tree.left ? false : validateBst(tree.left)
-    }
-    return tree.right && tree.right < tree.value ? false : validateBst(tree.right)
+function validateBstHelper(tree, root) {
+  if (root > tree.value) {
+    if (tree.value > root || tree.value < tree.left.value) return false
+  } else {
+
+  }
+}
+
+function validateBst(tree) {
+  if (!tree) return false
+  const root = tree.value
+
+  if (tree.left) {
+    validateBstHelper(tree, root)
+  } else if (tree.right) {
+    validateBstHelper(tree, root)
   } else {
     return true
   }
+
+  return true
 }
 
 
 let bst = new BST(10)
-// bst.insert(5)
-// bst.insert(15)
+bst.insert(5)
+// bst.insert(2)
+// bst.insert(6)
+// // bst.left.right.value = 10
+// bst.insert(20)
+// bst.insert(13)
 
-console.log(bst);
+// // bst.value = 30
 
 console.log(validateBst(bst));
+// console.log(bst);
