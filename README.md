@@ -1,6 +1,6 @@
-# Interview Preparation
+# Data Structure And Algorithms
 
-> This project contains resources to prepare you for coding interviews.
+> This project contains resources to prepare you for algorithms and behavioral interviews.
 
 ## Getting Started
 
