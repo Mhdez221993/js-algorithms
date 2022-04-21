@@ -33,6 +33,7 @@
     "stylelint-scss": "3.17.x"
   },
   "dependencies": {
-    "cppunitlite-2": "^1.0.0"
+    "cppunitlite-2": "^1.0.0",
+    "express": "^4.17.3"
   }
 }
