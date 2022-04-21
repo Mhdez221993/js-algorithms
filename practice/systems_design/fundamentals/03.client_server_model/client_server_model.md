@@ -5,6 +5,8 @@ A server is a thing that talks to clients.
 The client—server model is a thing made up of a
 bunch of clients and servers talking to one another.
 
+![client-server](./client-server.PNG)
+
 ## Client
 
   A machine or process that requests data or service from a server.

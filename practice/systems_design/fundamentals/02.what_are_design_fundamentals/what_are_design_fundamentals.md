@@ -6,6 +6,8 @@
 
 > Master both disciplines and you, too, can become a Systems Expert.
 
+![fundamentals](./fundatamentals.PNG)
+
 ## We can divide design fundamentals into 4 categories
 
 * 1. Foundational design knowledge like:
