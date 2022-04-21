@@ -1,11 +1,11 @@
-## Client—Server Model
+# Client—Server Model
 
 A client is a thing that talks to servers.
 A server is a thing that talks to clients.
 The client—server model is a thing made up of a
 bunch of clients and servers talking to one another.
 
-### Client
+## Client
 
   A machine or process that requests data or service from a server.
 
@@ -13,7 +13,7 @@ bunch of clients and servers talking to one another.
   server at the same time. For instance, a single machine could act as a server
   for end users and as a client for a database.
 
-### Server
+## Server
 
   A machine or process that provides data or service for a client, usually by
   listening for incoming network calls.
@@ -22,13 +22,13 @@ bunch of clients and servers talking to one another.
   server at the same time. For instance, a single machine could act as a server
   for end users and as a client for a database.
 
-### Client—Server Model
+## Client—Server Model
 
   The paradigm by which modern systems are designed, which consists of clients
   requesting data or service from servers and servers providing data or service
   to clients.
 
-### IP Address
+## IP Address
 
   An address given to each machine connected to the public internet. IPv4
   addresses consist of four numbers separated by dots: <b>a.b.c.d</b> where all
@@ -42,7 +42,7 @@ bunch of clients and servers talking to one another.
     machines on your private wifi network will usually have the
     192.168 prefix.
 
-### Port
+## Port
 
   In order for multiple programs to listen for new network connections on the
   same machine without colliding, they pick a <b>port</b> to listen on. A port
@@ -59,10 +59,14 @@ bunch of clients and servers talking to one another.
   80: HTTP
   443: HTTPS
 
+## DNS
+
 Short for Domain Name System, it describes the entities and protocols involved in the
 translation from domain names to IP Addresses. Typically, machines make a DNS query to
 a well known entity which is responsible for returning the IP address (or multiple ones)
 of the requested domain name in the response.
+
+# Notes
 
 * A client is a machine that request data to the server
   * The browser is the clien
