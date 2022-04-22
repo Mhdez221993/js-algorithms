@@ -1,7 +1,31 @@
-## Latency And Throughput
+# Latency And Throughput
 
-If you've ever experienced lag in a video game, it was most likely due to a combination of high latency and low throughput. And lag sucks.
+  f you've ever experienced lag in a video game, it was most likely due to a combination of high latency and low throughput. And lag sucks.
 
 ![](./latency.PNG)
 
-Notes:
+## Latency
+
+  The time it takes for a certain operation to complete in a system. Most often
+  this measure is a time duration, like milliseconds or seconds. You should know
+  these orders of magnitude:
+
+  Reading 1 MB from RAM: 250 μs (0.25 ms)
+  Reading 1 MB from SSD: 1,000 μs (1 ms)
+  Transfer 1 MB over Network: 10,000 μs (10 ms)
+  Reading 1MB from HDD: 20,000 μs (20 ms)
+  Inter-Continental Round Trip: 150,000 μs (150 ms)
+
+## Throughput
+
+  The number of operations that a system can handle properly per time unit. For
+  instance the throughput of a server can often be measured in requests per
+  second (RPS or QPS).
+
+## Notes
+
+* Latency
+  * how long it takes for data to get from one point to another
+
+* Throughput
+  * the amount of request a server can handle
