@@ -1,3 +1,5 @@
+# run this file python3 leader_election.py
+
 import sys
 import time
 from threading import Event
