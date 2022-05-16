@@ -1,5 +1,7 @@
 # Find Closest Value In BST
 
+![](./closest_value_in_bst.PNG)
+
 Write a function that takes in a Binary Search Tree (BST) and a target integer
 value and returns the closest value to that target value contained in the BST.
 
@@ -48,6 +50,6 @@ Average: O(log(n)) time | O(1) space - where n is the number of nodes in the BST
 
 Worst: O(n) time | O(1) space - where n is the number of nodes in the BST
 
-
 ## Helpful links
+
 - [Binary Search Tree Algorithms for JavaScript Beginners](https://www.freecodecamp.org/news/binary-tree-algorithms-for-javascript-beginners/)
