@@ -1,5 +1,7 @@
 # BST Construction
 
+![](./bts_construction.PNG)
+
 Write a BST class for a Binary Search Tree. The class should
 support:
 
@@ -44,7 +46,6 @@ insert(12):
       /        /  \
      1        12  14
 
-
 remove(10):
               12
             /     \
@@ -53,7 +54,6 @@ remove(10):
         2     5 13   22
       /           \
      1            14
-
 
 contains(15): true
 </pre>
@@ -75,7 +75,6 @@ Traverse the BST all the while applying the logic described in Hint #1. For inse
 Average (all 3 methods): O(log(n)) time | O(1) space - where n is the number of nodes in the BST
 
 Worst (all 3 methods): O(n) time | O(1) space - where n is the number of nodes in the BST
-
 
 ## Helpful links
 
