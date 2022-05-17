@@ -42,21 +42,82 @@ public:
 
   bool contains(int val)
   {
-    if (val == value)
+    if (val < value)
+    {
+      if (left == nullptr)
+        return false;
+      else
+        return left->contains(val);
+    }
+    else if (val > value)
+    {
+      if (right == nullptr)
+        return false;
+      else
+        return right->contains(val);
+    }
+    else
       return true;
-    else if (val > value && right != nullptr)
-      return right->contains(val);
-    else if (val < value && right != nullptr)
-      return left->contains(val);
 
     return false;
   }
 
-  BST &remove(int val)
+  BST &remove(int val, BST *parent = nullptr)
   {
-    // Write your code here.
-    // Do not edit the return statement of this method.
+    if (val < value)
+    {
+      if (left != nullptr)
+        left->remove(val, this);
+    }
+    else if (val > value)
+    {
+      if (right != nullptr)
+        right->remove(val, this);
+    }
+    else
+    {
+      if (left != nullptr && right != nullptr)
+      {
+        value = right->getMinValue();
+        right->remove(value, this);
+      }
+      else if (parent == nullptr)
+      {
+        if (left != nullptr)
+        {
+          value = left->value;
+          right = left->right;
+          left = left->left;
+        }
+        else if (right != nullptr)
+        {
+          value = right->value;
+          left = right->left;
+          right = right->right;
+        }
+        else
+        {
+        }
+      }
+      else if (parent->left == this)
+      {
+        parent->left = left != nullptr ? left : right;
+      }
+      else if (parent->right == this)
+      {
+        parent->right = left != nullptr ? left : right;
+      }
+    }
+
     return *this;
+  }
+
+  int getMinValue()
+  {
+    if (left == nullptr)
+      return value;
+    else
+      return left->getMinValue();
   }
 
   void inorder(BST *root)
@@ -76,6 +137,7 @@ int main()
   BST *root = new BST(5);
   for (int val : values)
     root->insert(val);
-  cout << root->contains(15) << endl;
+  root->remove(11);
+  root->inorder(root);
   return 0;
 }
