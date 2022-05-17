@@ -1,4 +1,4 @@
-#include <limits>
+#include <climits>
 using namespace std;
 
 class BST
@@ -15,7 +15,7 @@ public:
 // O(n) time | O(d) space where d is the depth of the tree
 bool validateBst(BST *tree)
 {
-  return validateBstHelper(tree, numeric_limits<int>::min(), numeric_limits<int>::max());
+  return validateBstHelper(tree, INT_MIN, INT_MAX);
 }
 
 bool validateBstHelper(BST *tree, int min, int max)
