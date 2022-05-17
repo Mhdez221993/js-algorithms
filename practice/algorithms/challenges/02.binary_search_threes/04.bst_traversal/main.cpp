@@ -11,6 +11,7 @@ public:
   BST(int val);
 };
 
+// O(n) time | O(n) space
 void inOrderTraverse(BST *tree, vector<int> &array)
 {
   if (tree)
@@ -21,6 +22,7 @@ void inOrderTraverse(BST *tree, vector<int> &array)
   }
 }
 
+// O(n) time | O(n) space
 void preOrderTraverse(BST *tree, vector<int> &array)
 {
   if (tree)
@@ -31,6 +33,7 @@ void preOrderTraverse(BST *tree, vector<int> &array)
   }
 }
 
+// O(n) time | O(n) space
 void postOrderTraverse(BST *tree, vector<int> &array)
 {
   if (tree)
