@@ -20,6 +20,8 @@ public:
     right = nullptr;
   }
 
+  // Average: O(log(n)) time | O(log(n)) space
+  // Worst: O(n) time | O(n) space
   BST &insert(int val)
   {
     if (val < value)
@@ -40,6 +42,8 @@ public:
     return *this;
   }
 
+  // Average: O(log(n)) time | O(log(n)) space
+  // Worst: O(n) time | O(n) space
   bool contains(int val)
   {
     if (val < value)
@@ -62,6 +66,8 @@ public:
     return false;
   }
 
+  // Average: O(log(n)) time | O(log(n)) space
+  // Worst: O(n) time | O(n) space
   BST &remove(int val, BST *parent = nullptr)
   {
     if (val < value)
