@@ -1,4 +1,5 @@
 #include <vector>
+#include <deque>
 using namespace std;
 
 class BinaryTree
@@ -13,20 +14,32 @@ public:
   void invertedInsert(vector<int> values, int i = 0);
 };
 
-void swapNodes(BinaryTree *tree)
-{
-  BinaryTree *temp = tree->left;
-  tree->left = tree->right;
-  tree->right = temp;
-}
-
 void invertBinaryTree(BinaryTree *tree)
 {
-  if (!tree)
-    return;
+  deque<BinaryTree *> queue;
+  queue.push_back(tree);
 
-  swapNodes(tree);
+  while (queue.size() > 0)
+  {
+    BinaryTree *node = queue.front();
+    queue.pop_front();
 
-  invertBinaryTree(tree->left);
-  invertBinaryTree(tree->right);
+    if (node == nullptr)
+      continue;
+
+    swap(node->left, node->right);
+    queue.push_back(node->left);
+    queue.push_back(node->right);
+  }
 }
+
+// void invertBinaryTree(BinaryTree *tree)
+// {
+//   if (!tree)
+//     return;
+
+//   swap(node->left, node->right);
+
+//   invertBinaryTree(tree->left);
+//   invertBinaryTree(tree->right);
+// }
