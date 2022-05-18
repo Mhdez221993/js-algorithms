@@ -14,32 +14,32 @@ public:
   void invertedInsert(vector<int> values, int i = 0);
 };
 
-void invertBinaryTree(BinaryTree *tree)
-{
-  deque<BinaryTree *> queue;
-  queue.push_back(tree);
-
-  while (queue.size() > 0)
-  {
-    BinaryTree *node = queue.front();
-    queue.pop_front();
-
-    if (node == nullptr)
-      continue;
-
-    swap(node->left, node->right);
-    queue.push_back(node->left);
-    queue.push_back(node->right);
-  }
-}
-
 // void invertBinaryTree(BinaryTree *tree)
 // {
-//   if (!tree)
-//     return;
+//   deque<BinaryTree *> queue;
+//   queue.push_back(tree);
 
-//   swap(node->left, node->right);
+//   while (queue.size() > 0)
+//   {
+//     BinaryTree *node = queue.front();
+//     queue.pop_front();
 
-//   invertBinaryTree(tree->left);
-//   invertBinaryTree(tree->right);
+//     if (node == nullptr)
+//       continue;
+
+//     swap(node->left, node->right);
+//     queue.push_back(node->left);
+//     queue.push_back(node->right);
+//   }
 // }
+
+void invertBinaryTree(BinaryTree *tree)
+{
+  if (!tree)
+    return;
+
+  swap(tree->left, tree->right);
+
+  invertBinaryTree(tree->left);
+  invertBinaryTree(tree->right);
+}
