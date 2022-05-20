@@ -22,3 +22,22 @@ int maxSubsetSumNoAdjacent(vector<int> array)
 
   return maxSum;
 }
+
+int maxSubsetSumNoAdjacent(vector<int> array)
+{
+  if (!array.size())
+    return 0;
+
+  if (array.size() == 1)
+    return array[0];
+
+  vector<int> maxSums = array;
+  maxSums[1] = max(array[0], array[1]);
+
+  for (int i = 2; i < array.size(); i++)
+  {
+    maxSums[i] = max(maxSums[i - 1], (maxSums[i - 2] + array[i]));
+  }
+
+  return maxSums[maxSums.size() - 1];
+}
