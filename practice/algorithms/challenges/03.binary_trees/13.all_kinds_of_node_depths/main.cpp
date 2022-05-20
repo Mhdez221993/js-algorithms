@@ -1,3 +1,4 @@
+#include <vector>
 using namespace std;
 
 class BinaryTree
@@ -40,7 +41,37 @@ TreeInfo getTreeInfo(BinaryTree *node)
   return TreeInfo{sumOfNodes, sumOfDepths, sumOfAllDepths};
 }
 
+// O(n) time | O(1) space
 int allKindsOfNodeDepths(BinaryTree *root)
 {
   return getTreeInfo(root).sumOfAllDepths;
 }
+
+// O(nlog(n)) time | O(n) space
+// int nodeDepths(BinaryTree *node, int depth = 0)
+// {
+//   if (node == nullptr)
+//     return 0;
+
+//   return depth + nodeDepths(node->left, depth + 1) + nodeDepths(node->right, depth + 1);
+// }
+
+// int allKindsOfNodeDepths(BinaryTree *root)
+// {
+//   int sumOfAllDepths = 0;
+
+//   vector<BinaryTree *> stack = {root};
+//   while (stack.size() > 0)
+//   {
+//     BinaryTree *node = stack.back();
+//     stack.pop_back();
+//     if (node == nullptr)
+//       continue;
+
+//     sumOfAllDepths += nodeDepths(node);
+//     stack.push_back(node->left);
+//     stack.push_back(node->right);
+//   }
+
+//   return sumOfAllDepths;
+// }
