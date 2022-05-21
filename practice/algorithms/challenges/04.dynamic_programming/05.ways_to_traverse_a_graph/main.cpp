@@ -27,3 +27,25 @@ int numberOfWaysToTraverseGraph(int width, int height)
 
   return numberOfWays[height - 1][width - 1];
 }
+
+// int factorial(int num)
+// {
+//   int result = 1;
+
+//   for (int i = 2; i <= num; i++)
+//     result *= i;
+
+//   return result;
+// }
+
+// O((n+m)) time | O(1) space
+// int numberOfWaysToTraverseGraph(int width, int height)
+// {
+//   int xDistanceToCorner = width - 1;
+//   int yDistanceToCorner = height - 1;
+
+//   int numerator = factorial(xDistanceToCorner + yDistanceToCorner);
+//   int denominator = factorial(xDistanceToCorner) * factorial(yDistanceToCorner);
+
+//   return numerator / denominator;
+// }
