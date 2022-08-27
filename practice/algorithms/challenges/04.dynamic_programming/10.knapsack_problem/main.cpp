@@ -3,6 +3,7 @@ using namespace std;
 
 vector<vector<int>> getKnapsackItems(vector<vector<int>> knapsackValues, vector<vector<int>> items, int weight);
 
+// Time O(nc) - Space O(nc)
 vector<vector<int>> knapsackProblem(vector<vector<int>> items, int capacity)
 {
   vector<vector<int>> knapsackValues(items.size() + 1, vector<int>(capacity + 1, 0));
