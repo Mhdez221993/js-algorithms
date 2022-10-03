@@ -62,3 +62,34 @@ void printUnorderedPairs (int[] arrayA, int[] arrayB) {
   }
 }
 // Nothing has really changed here. 100,000 units of work is still constant, so the runtime is 0(ab).
+
+// Example 6
+// The following code reverses an array. What is its runtime?
+void reverse (int[] array) {
+  for (int i = 0; i < array.length / 2; i++) {
+    int other = array.length - i - 1;
+    int temp = array[i];
+    array[i] = array[other];
+    array[other] = temp;
+  }
+}
+// This algorithm runs in O ( N) time. The fact that it only goes through half of the array (in terms of iterations)
+// does not impact the big O time.
+
+// Example 7
+// Which of the following are equivalent to O(N)? Why?
+/*
+  O(N + P), where P < N/2
+  O(2N)
+  O(N + log N)
+  O(N + M)
+
+  Let's go through these.
+  • If P < X, then we know that N is the dominant term so we can drop the 0( P).
+  • 0(2N) isO(N) since we drop constants.
+    48 Cracking the Coding Interview, 6th Edition
+    VI I Big 0
+  • O(N) dominatesO(log N),so we can drop theO(log N).
+    There is no established relationship between N and M, so we have to keep both variables in there.
+    Therefore, all but the last one are equivalent to O(N).
+*/
