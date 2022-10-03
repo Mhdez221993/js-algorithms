@@ -93,3 +93,10 @@ void reverse (int[] array) {
     There is no established relationship between N and M, so we have to keep both variables in there.
     Therefore, all but the last one are equivalent to O(N).
 */
+
+
+/*
+Examples 8
+Suppose we had an algorithm that took in an array of strings, sorted each string, and then sorted the full
+array. What would the runtime be?
+*/
