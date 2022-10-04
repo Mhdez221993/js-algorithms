@@ -167,3 +167,13 @@ void permutation (String str, String prefix) {
 }
 // Since we are calling permutation 0(n * n!) times (as an upper bound), and each one takes 0(n) time,
 // the total runtime will not exceed O(n^2 * n!)
+
+// Example 13
+// The following code computes the Nth Fibonacci number.
+int fib (int n) {
+  if (n <= 0) return 0;
+  else if (n == 1) return 1;
+  return fib (n - 1) + fib (n - 2);
+}
+// We can use the earlier pattern we'd established for recursive calls: O(branches^depth).
+// There are 2 branches per call, and we go as deep as N, therefore the runtime is O(2^N).
