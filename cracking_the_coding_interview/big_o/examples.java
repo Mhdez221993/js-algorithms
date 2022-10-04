@@ -122,3 +122,16 @@ int sum (Node node) {
 // Therefore, the runtime will be linear in terms of the number of nodes. If there are N nodes, then the runtime
 // is O(N).
 
+// Example 10
+// The following method checks if a number is prime by checking for divisibility on numbers less than it. It only
+// needs to go up to the square root of n because if n is divisible by a number greater than its square root then
+// it's divisible by something smaller than it.
+boolean isPrime (int n) {
+  for (int x = 2; x * x <= n; x++) {
+    if (n %  == 0) {
+      return false;
+    }
+  }
+  return true;
+}
+// This runs in O(n) time.
