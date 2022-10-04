@@ -135,3 +135,16 @@ boolean isPrime (int n) {
   return true;
 }
 // This runs in O(n) time.
+
+// Example 11
+// The following code computes n ! (n factorial). What is its time complexity?
+int factorial (int n) {
+  if (n < 0) {
+    return -1;
+  } else if (n == 0) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+// This is just a straight recursion from n to n -1 to n - 2 down to 1. It will take O ( n) time
