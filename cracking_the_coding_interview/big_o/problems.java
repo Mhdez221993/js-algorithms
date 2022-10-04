@@ -85,3 +85,27 @@ int sqrt(int n) {
 // 8  You are looking for a specific value in a binary tree, but the tree is not a binary search tree.
 // What is the time complexity of this?
 // O(n)
+
+// 9 The appendToNew method appends a value to an array by creating a new, longer array and
+// returning this longer array. You've used the appendToNew method to create a copyArray
+// function that repeatedly calls appendToNew. How long does copying an array take?
+int[] copyArray(int[] array) {
+  int[] copy = new int[0];
+  for (int value : array) {
+    copy = appendToNew(copy, value);
+  }
+  return copy;
+}
+
+int appendToNew(int [] array, int value) {
+  // cpy all elemts over to new array
+  int[] bigger = new int[array.length + 1];
+  for (int i = 0; i < array.length; i++) {
+    bigger[i] = array[i];
+  }
+
+  // add new elemet
+  bigger[bigger.length - 1] = value;
+  return bigger;
+}
+// O(n^2)
