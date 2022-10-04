@@ -99,4 +99,26 @@ void reverse (int[] array) {
 Examples 8
 Suppose we had an algorithm that took in an array of strings, sorted each string, and then sorted the full
 array. What would the runtime be?
+
+• Let s be the length of the longest string.
+• Let a be the length of the array.
+• Sorting each string is 0( s log s).
+• We have to do this for every string (and there are a strings), so that's 0( a* s log s).
+• Now we have to sort all the strings. There are a strings, so you'll may be inclined to say that this takes O ( a log a) time.
+  This is what most candidates would say. You should also take into account that you need
+  to compare the strings. Each string comparison takes O(s) time. There are O(a log a) comparisons,
+  therefore this will take 0( a*s log a) time.
+If you add up these two parts, you get 0( a* s ( log a + log s)).
 */
+
+// Example 9
+// The following simple code sums the values of all the nodes in a balanced binary search tree. What is its runtime?
+int sum (Node node) {
+  if (node == null) {
+    return 0;
+  }
+  return sum(node.left) + node.value + sum(node.right);
+}
+// Therefore, the runtime will be linear in terms of the number of nodes. If there are N nodes, then the runtime
+// is O(N).
+
