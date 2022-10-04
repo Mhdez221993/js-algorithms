@@ -177,3 +177,16 @@ int fib (int n) {
 }
 // We can use the earlier pattern we'd established for recursive calls: O(branches^depth).
 // There are 2 branches per call, and we go as deep as N, therefore the runtime is O(2^N).
+
+// The following code prints all Fibonacci numbers from Oto n. What is its time complexity?
+void allFib(int n) {
+  for (int i = 0; i < n; i++) {
+    System.out.println(i + ": " + fib(i));
+  }
+}
+
+int fib(int n) {
+  if (n <= 0) return 0;
+  else if (n == 1) return 1;
+  return fib(n - 1) + fib(n - 2)
+}
