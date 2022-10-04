@@ -65,7 +65,7 @@ int sqrt_helper(int n, int min, int max) {
 }
 // O(log n)
 
-// The following code computes the [integer] square root of a number. If the number is not
+// 6 The following code computes the [integer] square root of a number. If the number is not
 // a perfect square (there is no integer square root), then it returns -1. It does this by trying
 // increasingly large numbers until it finds the right value (or is too high). What is its runtime?
 int sqrt(int n) {
@@ -77,3 +77,11 @@ int sqrt(int n) {
   return -1;
 }
 // O(log n)
+
+// 7 If a binary search tree is not balanced, how long might it take (worst case) to find an element
+// in it?
+// O(n)
+
+// 8  You are looking for a specific value in a binary tree, but the tree is not a binary search tree.
+// What is the time complexity of this?
+// O(n)
