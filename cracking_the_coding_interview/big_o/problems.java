@@ -109,3 +109,15 @@ int appendToNew(int [] array, int value) {
   return bigger;
 }
 // O(n^2)
+
+// 10 The following code sums the digits in a number. What is its big O time?
+int sumDigits(int n) {
+  int sum = 0;
+  while (n > 0) {
+    sum += n % 10;
+    n /= 10;
+  }
+
+  return sum;
+}
+// O(log n)
