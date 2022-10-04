@@ -133,13 +133,13 @@ void printSortedStrings(int remaining) {
 
 void printSortedStrings(int remaining, String prefix) {
   if (remaining == 0) {
-    if (isInOrder(prefix)) {
-      System.out.println(prefix);
+    if (isInOrder(prefix)) { // O(p)
+      System.out.println(prefix); // O(p)
     }
   } else {
-    for (int i = 0; i < numChars; i++) {
-      char c = ithLetter(i);
-      printSortedStrings(remaining - 1; prefix + c);
+    for (int i = 0; i < numChars; i++) { // O(c)
+      char c = ithLetter(i); // O(1)
+      printSortedStrings(remaining - 1; prefix + c); // O(r)
     }
   }
 }
@@ -158,3 +158,23 @@ boolean isInOrder(String s) {
 char ithLetter(int i) {
   return (char) (((int) 'a') + i);
 }
+
+// O(cr)
+
+// 12  The following code computes the intersection (the number of elements in common) of two
+// arrays. It assumes that neither array has duplicates. It computes the intersection by sorting
+// one array (array b) and then iterating through array a checking (via binary search) if each
+// value is in b. What is its runtime?
+int intersection(int[] a, int[] b) {
+  mergesort(b); // O(b log b)
+  int intersect = 0; // O(1)
+
+  for (int x : a) { // O(a)
+    if (binarySearch(b, x) >= 0) { // O(log b)
+      intersect++; // O(1)
+    }
+  }
+
+  return intersect;
+}
+// O(a*b log b)
