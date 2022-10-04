@@ -219,3 +219,21 @@ int fib(int n, int[] memo) {
 // time.
 // We're doing a constant amount of work N times, so this is O (n) time.
 // This technique, called memoization, is a very common one to optimize exponential time recursive algorithms.
+
+// Example 16
+// The following function prints the powers of 2 from 1 through n (inclusive). For example, if n is 4, it would
+// print 1, 2, and 4. What is its runtime?
+int powersOf2(int n) {
+  if (n < 1) {
+    return 0;
+  } else if (n == 1) {
+    System.out.println(1);
+    return 1;
+  } else {
+    int prev = powersOf2(n / 2);
+    int curr = prev * 2;
+    System.out.println(curr);
+    return curr;
+  }
+}
+//  the number of times we can halve n until we get 1 is O(log n)
