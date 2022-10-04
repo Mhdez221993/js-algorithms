@@ -1,21 +1,21 @@
 // 1 The following code computes the product of a and b. What is its runtime?
 int product(int a, int b) {
-  int sum = 0;
-  for (int i = 0; i < b; i++) {
-    su += a;
+  int sum = 0; // O(1)
+  for (int i = 0; i < b; i++) { // O(b)
+    sum += a; // O(1)
   }
   return sum;
 }
-// O(a*b)
+// O(b)
 
 // 2 The following code computes a^b What is its runtime?
 int power(int a, int b) {
   if (b < 0) {
-    return 0; // error
+    return 0; // error O(1)
   } else if (b == 0) {
-    return 1;
+    return 1; // O(1)
   } else {
-    return a * power(a, b - 1);
+    return a * power(a, b - 1);  // O(b)
   }
 }
 // O(b)
@@ -35,13 +35,13 @@ int mod(int a, int b) {
 int div(int a, int b) {
   int count = 0; // O(1)
   int sum =  b; // O(1)
-  while (sum <= a) { // O(log b * a)
+  while (sum <= a) { // O(a / b)
     sum += b;
     count++;
   }
   return count;
 }
-// O(log b * a)
+// O(a / b)
 
 // 5 The following code computes the [integer] square root of a number. If the number is not a
 // perfect square (there is no integer square root), then it returns -1. It does this by successive
@@ -76,7 +76,7 @@ int sqrt(int n) {
   }
   return -1;
 }
-// O(log n)
+// O(sqrt(n))
 
 // 7 If a binary search tree is not balanced, how long might it take (worst case) to find an element
 // in it?
@@ -91,8 +91,8 @@ int sqrt(int n) {
 // function that repeatedly calls appendToNew. How long does copying an array take?
 int[] copyArray(int[] array) {
   int[] copy = new int[0];
-  for (int value : array) {
-    copy = appendToNew(copy, value);
+  for (int value : array) { // O(n)
+    copy = appendToNew(copy, value); // O(n)
   }
   return copy;
 }
@@ -159,7 +159,7 @@ char ithLetter(int i) {
   return (char) (((int) 'a') + i);
 }
 
-// O(cr)
+// O(Kc^k)
 
 // 12  The following code computes the intersection (the number of elements in common) of two
 // arrays. It assumes that neither array has duplicates. It computes the intersection by sorting
@@ -177,4 +177,35 @@ int intersection(int[] a, int[] b) {
 
   return intersect;
 }
-// O(a*b log b)
+// O(b log b + a log b)
+
+// Solutions
+
+// 1. O( b). The for loop just iterates through b.
+// 2. 0 ( b). The recursive code iterates through b calls, since it subtracts one at each level.
+// 3. 0 ( 1). It does a constant amount of work.
+// 4. 0( X ). The variable count will eventually equal X. The while loop iterates count times. Therefore, it
+// iterates X times.
+// 5. 0 ( log n). This algorithm is essentially doing a binary search to find the square root. Therefore, the
+// runtime isO(log n).
+// 6. O(sqrt(n) ). This is just a straightforward loop that stops when guess*guess > n (or, in other
+// words, when guess > sqrt(n)).
+// 58 Cracking the Coding Interview, 6th Edition
+// VI I Big 0
+// 7. O(n), where n is the number of nodes in the tree. The max time to find an element is the depth tree. The
+// tree could be a straight list downwards and have depth n.
+// 8. O(n ). Without any ordering property on the nodes, we might have to search through all the nodes.
+// 9. O ( n2
+// ), where n is the number of elements in the array. The first call to appendToNew takes 1 copy. The
+// second call takes 2 copies. The third call takes 3 copies. And so on. The total time will be the sum of 1
+// through n, which is O ( n2).
+// 10.0( log n). The runtime will be the number of digits in the number. A number with d digits can have a
+// value up to 10d
+// . If n = 10d
+// , then d = log n. Therefore, the runtime is 0( log n).
+// 11.0( kck), where k is the length of the string and c is the number of characters in the alphabet. It takes
+// 0( c
+// k) time to generate each string. Then, we need to check that each of these is sorted, which takes
+// O(k) time.
+// 12.0(b log b + a log b).First,we have to sort arrayb,which takesO(b log b) time.Then,for each
+// element in a, we do binary search in 0( log b) time. The second part takes O(a log b) time.
