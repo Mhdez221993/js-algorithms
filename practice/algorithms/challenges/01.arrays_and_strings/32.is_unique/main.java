@@ -7,14 +7,20 @@ Set the caracter to equal 0 if does not exist else return false
 */
 import java.util.*;
 
-public boolean isUnique(String str) {
-  Dictionary unique = new Hashtable();
-  for(chart c: str) {
-    if(!unique[c]) {
-      unique[c] = '0';
-    } else {
-      return false;
+public class main {
+  public boolean isUnique(String str) {
+    Dictionary unique = new HashTable();
+    for(chart c: str) {
+      if(!unique[c]) {
+        unique[c] = '0';
+      } else {
+        return false;
+      }
     }
+    return true;
   }
-  return true;
+
+  public static void main(String[] args) {
+    System.out.println(isUnique("World"));
+  }
 }
