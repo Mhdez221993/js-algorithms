@@ -11,5 +11,6 @@ public class HelloWorld {
         Random generator = new Random();
         System.out.println(generator.nextInt());
         System.out.println(generator.nextInt());
+        System.out.println(Math.floorMod(10 + -5, 12));
     }
 }
