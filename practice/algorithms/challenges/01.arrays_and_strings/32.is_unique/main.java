@@ -8,7 +8,7 @@ Set the caracter to equal 0 if does not exist else return false
 import java.util.*;
 
 public class main {
-  public boolean isUnique(String str) {
+  public boolean isUnique(String[] str) {
     Dictionary unique = new HashTable();
     for(chart c: str) {
       if(!unique[c]) {
