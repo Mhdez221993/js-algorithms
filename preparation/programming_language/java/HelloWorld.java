@@ -1,4 +1,3 @@
-// package ch01.sec01;
 import java.util.*;
 
 
@@ -6,9 +5,11 @@ import java.util.*;
 
 public class HelloWorld {
     public static void main(String[] args) {
-        int low;
-        int high;
-
+        try {
+            // statemnets
+        } catch () {
+            // handler
+        }
     }
 
 }
