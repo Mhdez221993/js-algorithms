@@ -7,7 +7,8 @@ public class Entry<k, V> {
     this.value = value;
   }
 
-  public k getKey() { return key; }
-  public v getValue() { return value; }
+  public K getKey() { return key; }
+  public V getValue() { return value; }
 }
+
 
