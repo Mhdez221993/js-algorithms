@@ -21,3 +21,37 @@
 10. An inner class is a `nonstatic` nested class. Its instances have a reference to the object of the enclosing class that constructed it.
 
 11. The `javadoc` utility processes source files, producing `HTML files` with declarations and programmer-supplied comments.
+
+## Expand on this topics
+
+1. mainstream programming language
+2. Mutator methods
+3. accessor methods
+4. references to objects
+5. this reference
+6. overloaded constructors
+7. Static methods
+8. Static variables
+9. record class
+10. packages
+11. import declarations
+12. inner class
+13. javadoc
+15. chain method calls
+16. Call by Value
+17.  Calling One Constructor from Another
+18. Final Instance Variables
+19. Constructor with No Arguments
+20. Constructors: Canonical, Custom, and Compact
+21. Factory Methods
+22. The jar Command
+23. JAR files
+24. The Class Path
+25. Static Imports
+26. Static Nested Classes
+27. Special Syntax Rules for Inner Classes
+28. Documentation Comments
+29. Class Comments
+30. Method Comments
+31. Links
+32. Comment Extraction
