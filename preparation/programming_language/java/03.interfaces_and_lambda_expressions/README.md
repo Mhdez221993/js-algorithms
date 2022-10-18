@@ -23,3 +23,35 @@
 11. Method and constructor references refer to methods or constructors without invoking them.
 
 12. Lambda expressions and local classes can access effectively `final` variables from the enclosing scope.
+
+## Research
+
+1. Java History
+2. paradigm
+3. Interfaces
+4. concurrent and event-driven programming
+5. supertype of a class
+6. Comparable and Comparator interfaces
+7. Operators
+8. instanceof
+9. functional interface
+10. Lambda expressions
+11. Method and constructor references
+12. Local and Anonymous Classes
+13. Converting to an Interface Type
+14. Convert from supertype to a subtype
+15. Extending Interfaces
+16. Implementing Multiple Interfaces
+17. Static, Default, and Private Methods
+18. Resolving Default Method Conflicts
+19. Examples of Interfaces
+20. The Runnable Interface
+21. processor and cores
+22. User Interface Callbacks
+23. Processing Lambda Expressions
+24. Common Functional Interfaces
+25.  Functional Interfaces for Primitive Types
+26. Lambda Expressions and Variable Scope
+27. Higher-Order Functions
+28. Methods That Modify Functions
+29. Comparator Methods
