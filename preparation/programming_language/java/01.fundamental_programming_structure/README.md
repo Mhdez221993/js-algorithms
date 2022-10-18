@@ -20,7 +20,7 @@
 
 10. `Arrays` and `collections` can be used to collect elements of the same type.
 
-## Expand on this topics
+## Research
 
 1. [Java API](https://docs.oracle.com/en/java/javase/17/docs/api/)
 2. Static keyword
