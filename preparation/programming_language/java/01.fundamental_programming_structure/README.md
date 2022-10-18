@@ -20,3 +20,27 @@
 
 10. `Arrays` and `collections` can be used to collect elements of the same type.
 
+## Expand on this topics
+
+1. [Java API](https://docs.oracle.com/en/java/javase/17/docs/api/)
+2. Static keyword
+3. Signed types
+4. Java operators
+5. UTF-16 encoding
+6. tex box systax
+7. Scanner
+8. Collections
+9. JDK
+10. JShell
+11. Arithmetic operations Associativity
+12. Mathematical methods
+13. The String API
+14. Code points and Code units
+15. Conversion Characters for Formatted Output
+16. Flags for Formatted Output
+17. Wrapper Classes for Primitive Types
+18. Array Algorithms
+19. Command-Line Arguments
+20. Multidimensional Arrays
+21. Functional Decomposition
+22. Variable Arguments
