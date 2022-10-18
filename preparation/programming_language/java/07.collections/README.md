@@ -1,6 +1,2 @@
-You can run a Java program by typing in the command line:
-<br>
+## Collections
 
-```cmd
-$ javac fileName.java && java fileName
-```
