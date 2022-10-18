@@ -1,12 +1,12 @@
 ## Streams
 
-1. Iterators imply a specific traversal strategy and prohibit efficient concurrent execution.
+1. `Iterators` imply a specific traversal strategy and prohibit efficient concurrent execution.
 
 2. You can create streams from `collections`, `arrays`, `generators`, or `iterators`.
 
 3. Use `filter` to select elements and `map` to transform elements.
 
-4. Other operations for transforming streams include `limit`, `distinct`, and `sorted`.
+4. Other operations for transforming `streams` include `limit`, `distinct`, and `sorted`.
 
 5. To obtain a result from a stream, use a reduction operator such as `count`, `max`, `min`, `findFirst`, or `findAny`. Some of these methods return an Optional value.
 
