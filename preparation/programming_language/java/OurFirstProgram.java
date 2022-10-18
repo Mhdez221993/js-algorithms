@@ -1,14 +1,6 @@
-public class Entry<k, V> {
-  private K key;
-  private V value;
-
-  public Entry (K key, V value) {
-    this.key = key;
-    this.value = value;
-  }
-
-  public K getKey() { return key; }
-  public V getValue() { return value; }
+public class Entry {
+  String contents = File.readString(Path.of("alice.txt"), StandardCharsets.UTF_8);
+  List<String> words = List.of(contents.split("\\PL+"));
 }
 
 
