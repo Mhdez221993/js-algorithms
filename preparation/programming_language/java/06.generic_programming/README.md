@@ -17,3 +17,28 @@
 8. The `Class<T>` class is generic, which is useful because methods such as cast are declared to produce a value of type `T`.
 
 9. Even though generic classes and methods are erased in the virtual machine, you can find out at runtime how they were declared.
+
+## Research
+
+1. Generic programming
+2. generic class
+3. generic method
+4. Generic types are invariant
+5. wildcards "?"
+6. Type Erasure
+7. throw an object of a generic type
+8. Generic types with primitive types
+9. Type Bounds
+10. Type Variance and Wildcards
+11. Subtype Wildcards
+12. Supertype Wildcards
+13. Wildcards with Type Variables
+14. Unbounded Wildcards
+15. Generics in the Java Virtual Machine
+16. Cast Insertion
+17. Bridge Methods
+18. Restrictions on Generics
+19. Class Type Variables Are Not Valid in Static Contexts
+20. Methods May Not Clash after Erasure
+21. Exceptions and Generics
+22. Reflection and Generics
