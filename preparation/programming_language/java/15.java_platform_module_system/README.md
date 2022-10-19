@@ -25,3 +25,33 @@
 12. To migrate existing applications, you may need to override access restrictions with command-line options.
 
 13. The `jdeps` tool analyzes the dependencies of a given set of JAR files. The `jlink` tool produces an application with minimal dependencies.
+
+## Research
+
+1. The Java Platform Module System?
+2. encapsulation?
+3. module system?
+4. class loaders?
+5. how to migrate your applications to work with the modularized Java platform?
+6. modularize?
+7. How to modularize applications and libraries?
+8. module-info.java?
+9. ServiceLoader facility?
+10. modular JAR?
+11. unnamed module?
+12. The jdeps tool?
+13. JAR files?
+14. The jlink tool?
+15. The Module Concept?
+16. Naming Modules?
+17. The Modular “Hello, World!” Program?
+18. Requiring Modules?
+19. Exporting Packages?
+20. Modules and Reflective Access?
+21. Automatic Modules?
+22. Command-Line Flags for Migration?
+23. Transitive and Static Requirements?
+24. Qualified Exporting and Opening?
+25. Service Loading?
+26. Tools for Working with Modules?
+27. jdeps tool?
