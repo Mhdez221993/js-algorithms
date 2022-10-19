@@ -17,3 +17,24 @@
 8. To process annotations in a running Java program, you can use reflection and query the `reflected` items for annotations.
 
 9. Annotation `processors` process source files during compilation, using the Java language model `API` to locate annotated items.
+
+## Research
+
+1. Annotations?
+2. source level?
+3. JUnit?
+4. Java Persistence Architecture?
+5. Java language model API?
+6. Annotation Elements?
+7. Multiple and Repeated Annotations?
+8. Annotating Declarations?
+9. Annotating Type Uses?
+10. Defining Annotations?
+11. Element Types for the @Target Annotation?
+12. Standard Annotations?
+13. Annotations for Compilation?
+14. Meta-Annotations?
+15. Processing Annotations at Runtime?
+16. Source-Level Annotation Processing?
+17. The Language Model API?
+18. Using Annotations to Generate Source Code?
