@@ -25,3 +25,38 @@
 12. A `long-running` task should not block the user-interface thread of a program, but progress and final updates need to occur in the user interface thread.
 
 13. The `Process` class lets you execute a command in a separate process and interact with the `input`, `output`, and `error` streams.
+
+## Research
+
+1. What is Concurrent Programming?
+2. Who is an application programmer?
+3. Who is an system programmer?
+4. Runnable?
+5. ExecutorService?
+6. Callable?
+7. What are parallel algorithms?
+8. programming with locks?
+9. Parallel streams?
+10. ConcurrentHashMap?
+11. AtomicLong for lock-free shared counter?
+12. LongAdder if contention is high?
+13. interruptible task?
+14. InterruptedException?
+15. Process class?
+16. Concurrent Tasks?
+17. Asynchronous Computations?
+18. Adding an Action to a CompletableFuture<T> Object?
+19. What are Composition Objects?
+20. Combining Multiple Composition Objects
+21. Thread Safety?
+22. Strategies for Safe Concurrency?
+23. Immutable Classes?
+24. What does the word PARALLEL refer to?
+25. Threadsafe Data Structures?
+26. Blocking Queue Operations?
+27. Atomic Counters and Accumulators?
+28. Locks and Conditions?
+29. Threads?
+30. Miscellaneous Thread Properties?
+31. Thread class?
+32. Processes?
