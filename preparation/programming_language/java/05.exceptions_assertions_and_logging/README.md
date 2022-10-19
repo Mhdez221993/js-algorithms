@@ -21,3 +21,31 @@
 10. `Log handlers` can send logging messages to alternate destinations, and `formatters` control the message format.
 
 11. You can control logging properties with a `log configuration file`.
+
+
+## Research
+
+1. logging API
+2. handler of the exception
+3. checked exceptions
+4. try-with-resources
+5. stack trace
+6. assertion
+7. Loggers
+8. Log handlers
+9. log configuration file
+10. The Exception Hierarchy
+11. Uncaught Exceptions and the Stack Trace
+12. API Methods for Throwing Exceptions
+13. Enabling and Disabling Assertions
+14. Should You Use the Java Logging Framework?
+15. java.util.logging
+16. The System.Logger API
+17. Logging Configuration
+18. ConsoleHandler
+19. FileHandler
+20. SocketHandler
+21. File Handler Configuration Parameters
+22. Log File Pattern Variables
+23. Filters and Formatters
+24. LogRecord Property Getters
