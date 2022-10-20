@@ -53,6 +53,7 @@
 12. Mathematical methods
     * [Java Math Library](https://www.youtube.com/watch?v=ufegX5o8uc4)
 13. The String API
+    * [Various Classes of String API](https://www.youtube.com/watch?v=BJWh7ioUgQs&list=PL6pxHmHF3F5LgtI8Z_SHiYsvt2m9BgHmH)
 14. Code points and Code units
 15. Conversion Characters for Formatted Output
 16. Flags for Formatted Output

@@ -18,3 +18,4 @@ $ javac fileName.java && java fileName
 * [Java Tutorial by Simply Coding](https://www.youtube.com/watch?v=4Rk_zDimf2s&list=PLWWFf_h_MQRrLX9ja6gMtIdMwUemkZlDy)
 * [Geekific a Java YouTube channel](https://www.youtube.com/c/Geekific)
 * [Java YouTube channel by Alex lee](https://www.youtube.com/c/AlexLeeYT)
+* [Java YouTube channel by Gyan](https://www.youtube.com/c/mynameisGYAN)
