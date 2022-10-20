@@ -23,8 +23,12 @@
 ## Research
 
 1. [Java API](https://docs.oracle.com/en/java/javase/17/docs/api/)
+    * [Java API documentation](https://www.youtube.com/watch?v=ULEOb8wLa_k)
 2. Static keyword
+    * [Java static keyword](https://www.youtube.com/watch?v=wa1HzkMqY9A)
 3. Signed types
+    * [signed vs unsigned](https://www.youtube.com/watch?v=m04-JYbIXHE)
+    * [Basics of signed and unsigned numbers](https://www.youtube.com/watch?v=miwMEUfkqfY)
 4. Java operators
 5. UTF-16 encoding
 6. tex box systax
