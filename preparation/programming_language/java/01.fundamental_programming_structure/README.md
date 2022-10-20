@@ -48,6 +48,8 @@
     * [Prototype your Java with JShell](https://www.youtube.com/watch?v=201IpTSRIGs)
     * [JShell Basics](https://www.youtube.com/watch?v=mdafxtP4RZU&list=PLqq-6Pq4lTTZh5EDIPZuaD3S25z49Rodz)
 11. Arithmetic operations Associativity
+    * [Java Operator Precedence & Associativity](https://www.youtube.com/watch?v=ch_htR9tX9c)
+    * [Operator Precedence](https://www.youtube.com/watch?v=b_aqlhS1e28)
 12. Mathematical methods
 13. The String API
 14. Code points and Code units

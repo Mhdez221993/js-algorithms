@@ -15,3 +15,5 @@ $ javac fileName.java && java fileName
 * [Java Tutorial](https://www.youtube.com/watch?v=i6AZdFxTK9I&list=PLEiEAq2VkUUI5_Z4vOtWE6AMcSrYbth1t)
 * [Java for Beginners](https://www.youtube.com/playlist?list=PLlrxD0HtieHgX3ExVDMlKjdN8LJsks2CM)
 * [Microsoft Developer](https://www.youtube.com/c/MicrosoftDeveloper)
+* [Java Tutorial by Simply Coding](https://www.youtube.com/watch?v=4Rk_zDimf2s&list=PLWWFf_h_MQRrLX9ja6gMtIdMwUemkZlDy)
+* [Geekific a Java YouTube channel](https://www.youtube.com/c/Geekific)
