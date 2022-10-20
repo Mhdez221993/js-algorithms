@@ -32,6 +32,9 @@
 4. Java operators
     * [Numeric Expressions and Operators](https://www.youtube.com/watch?v=RA7wkTV6z4k)
 5. UTF-16 encoding
+    * [Unicode, in friendly terms](https://www.youtube.com/watch?v=ut74oHojxqo)
+    * [What are UTF-8 and UTF-16?](https://www.youtube.com/watch?v=QCEqpd807z4)
+    * [Unicode Character 'THUMBS UP SIGN'](https://www.fileformat.info/info/unicode/char/1f44d/index.htm)
 6. tex box syntax
 7. Scanner
 8. Collections
