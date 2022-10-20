@@ -40,6 +40,7 @@
 7. Scanner
     * [Scanner Class in Java](https://www.youtube.com/watch?v=IzJ9v8MTVoM)
 8. Collections
+    * [Java Collections](https://www.youtube.com/watch?v=hKhlkx_6HeI&list=PLUDwpEzHYYLu9-xrx5ykNH8wmN1C1qClk)
 9. JDK
 10. JShell
 11. Arithmetic operations Associativity
