@@ -45,6 +45,8 @@
     * [Understand the Differences between JVM vs JRE vs JDK](https://www.youtube.com/watch?v=RYd_hagCiVk)
     * [Java Development Kit](https://www.youtube.com/watch?v=4XgmbO1qexM)
 10. JShell
+    * [Prototype your Java with JShell](https://www.youtube.com/watch?v=201IpTSRIGs)
+    * [JShell Basics](https://www.youtube.com/watch?v=mdafxtP4RZU&list=PLqq-6Pq4lTTZh5EDIPZuaD3S25z49Rodz)
 11. Arithmetic operations Associativity
 12. Mathematical methods
 13. The String API
