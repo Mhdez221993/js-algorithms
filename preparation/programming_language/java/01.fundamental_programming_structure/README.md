@@ -35,9 +35,10 @@
     * [Unicode, in friendly terms](https://www.youtube.com/watch?v=ut74oHojxqo)
     * [What are UTF-8 and UTF-16?](https://www.youtube.com/watch?v=QCEqpd807z4)
     * [Unicode Character 'THUMBS UP SIGN'](https://www.fileformat.info/info/unicode/char/1f44d/index.htm)
-6. tex box syntax to declare multiline string literals
+6. Tex box syntax to declare multiline string literals
     * [Multi-Line Strings in Java](https://www.youtube.com/watch?v=cYOkzqI92M4)
 7. Scanner
+    * [Scanner Class in Java](https://www.youtube.com/watch?v=IzJ9v8MTVoM)
 8. Collections
 9. JDK
 10. JShell
