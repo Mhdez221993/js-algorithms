@@ -30,8 +30,9 @@
     * [signed vs unsigned](https://www.youtube.com/watch?v=m04-JYbIXHE)
     * [Basics of signed and unsigned numbers](https://www.youtube.com/watch?v=miwMEUfkqfY)
 4. Java operators
+    * [Numeric Expressions and Operators](https://www.youtube.com/watch?v=RA7wkTV6z4k)
 5. UTF-16 encoding
-6. tex box systax
+6. tex box syntax
 7. Scanner
 8. Collections
 9. JDK
