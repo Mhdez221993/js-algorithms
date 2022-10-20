@@ -42,6 +42,8 @@
 8. Collections
     * [Java Collections](https://www.youtube.com/watch?v=hKhlkx_6HeI&list=PLUDwpEzHYYLu9-xrx5ykNH8wmN1C1qClk)
 9. JDK
+    * [Understand the Differences between JVM vs JRE vs JDK](https://www.youtube.com/watch?v=RYd_hagCiVk)
+    * [Java Development Kit](https://www.youtube.com/watch?v=4XgmbO1qexM)
 10. JShell
 11. Arithmetic operations Associativity
 12. Mathematical methods
