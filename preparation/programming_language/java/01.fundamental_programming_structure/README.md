@@ -59,6 +59,7 @@
     * [Java chars are not characters, but UTF-16 code units](https://www.youtube.com/watch?v=yrAfTClpNU0)
     * [Unicode Code Points and UTF-8 Encoding](https://www.youtube.com/watch?v=tbdym9ZtepQ)
 15. Conversion Characters for Formatted Output
+    * [Java Formatting Output with the printf Method using Format Specifiers](https://www.youtube.com/watch?v=V8jLACwvCzs)
 16. Flags for Formatted Output
 17. Wrapper Classes for Primitive Types
 18. Array Algorithms
