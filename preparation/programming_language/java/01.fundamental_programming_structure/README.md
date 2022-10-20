@@ -55,6 +55,9 @@
 13. The String API
     * [Various Classes of String API](https://www.youtube.com/watch?v=BJWh7ioUgQs&list=PL6pxHmHF3F5LgtI8Z_SHiYsvt2m9BgHmH)
 14. Code points and Code units
+    * [String Codepoints](https://www.youtube.com/watch?v=DUam3ALSulo)
+    * [Java chars are not characters, but UTF-16 code units](https://www.youtube.com/watch?v=yrAfTClpNU0)
+    * [Unicode Code Points and UTF-8 Encoding](https://www.youtube.com/watch?v=tbdym9ZtepQ)
 15. Conversion Characters for Formatted Output
 16. Flags for Formatted Output
 17. Wrapper Classes for Primitive Types
