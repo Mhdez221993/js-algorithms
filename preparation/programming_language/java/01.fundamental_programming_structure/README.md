@@ -51,6 +51,7 @@
     * [Java Operator Precedence & Associativity](https://www.youtube.com/watch?v=ch_htR9tX9c)
     * [Operator Precedence](https://www.youtube.com/watch?v=b_aqlhS1e28)
 12. Mathematical methods
+    * [Java Math Library](https://www.youtube.com/watch?v=ufegX5o8uc4)
 13. The String API
 14. Code points and Code units
 15. Conversion Characters for Formatted Output
