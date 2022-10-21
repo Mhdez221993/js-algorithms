@@ -69,5 +69,7 @@
 19. Command-Line Arguments
     * [Command Line Arguments](https://www.youtube.com/watch?v=Up17-azeuyE)
 20. Multidimensional Arrays
+    * [Multidimensional Arrays](https://www.youtube.com/watch?v=ctab5xPv-Vk)
+    * [Table for Multi Arrays](https://www.youtube.com/watch?v=hbot9MQVHOM)
 21. Functional Decomposition
 22. Variable Arguments
