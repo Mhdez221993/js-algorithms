@@ -57,6 +57,10 @@ public class Main {
         // The final keyword denotes a value that cannot be changed once it has been assigned
         final int DAYS_PER_WEEK = 7;
         // By convention, uppercase letters are used for names of constants
+    // 4. Arithmetic Operations
+      //  A floating-point division by zero yields an infinite value or NaN
+      // The mathematical operators quietly return wrong results when a computation overflows.
+      // System.out.println(Math.multiplyExact(1000000000, 3);
 
   }
 }
@@ -74,7 +78,6 @@ documentation comment (e.g)
 // System.out.println(Main.DAYS_PER_WEEK);
 
 
-// 4. Arithmetic Operations
 // 5. Strings
 // 6. Input and Output
 // 7. Control Flow
