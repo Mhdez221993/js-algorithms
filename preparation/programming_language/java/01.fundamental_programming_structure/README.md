@@ -65,6 +65,7 @@
 17. Wrapper Classes for Primitive Types
     * [Java wrapper classes](https://www.youtube.com/watch?v=4MiEznM8y8Q)
 18. Array Algorithms
+    * [Introduction to Array Algorithms](https://www.youtube.com/watch?v=WRevubAdEDQ)
 19. Command-Line Arguments
 20. Multidimensional Arrays
 21. Functional Decomposition
