@@ -23,3 +23,4 @@ $ javac fileName.java && java fileName
 * [Java YouTube channel by Alex lee](https://www.youtube.com/c/AlexLeeYT)
 * [Java YouTube channel by Gyan](https://www.youtube.com/c/mynameisGYAN)
 * [Java tutorial for beginners](https://www.youtube.com/watch?v=NBIUbTddde4&list=PLZPZq0r_RZOMhCAyywfnYLlrjiVOkdAI1)
+* [log2base2 the visual learning platform](https://log2base2.com/dashboard/trial-videos)

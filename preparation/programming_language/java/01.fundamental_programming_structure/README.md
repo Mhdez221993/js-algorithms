@@ -67,6 +67,7 @@
 18. Array Algorithms
     * [Introduction to Array Algorithms](https://www.youtube.com/watch?v=WRevubAdEDQ)
 19. Command-Line Arguments
+    * [Command Line Arguments](https://www.youtube.com/watch?v=Up17-azeuyE)
 20. Multidimensional Arrays
 21. Functional Decomposition
 22. Variable Arguments
