@@ -61,6 +61,7 @@
 15. Conversion Characters for Formatted Output
     * [Java Formatting Output with the printf Method using Format Specifiers](https://www.youtube.com/watch?v=V8jLACwvCzs)
 16. Flags for Formatted Output
+    * [Conversion Type Characters](https://www.youtube.com/watch?v=moQ3Kr8ouiU)
 17. Wrapper Classes for Primitive Types
 18. Array Algorithms
 19. Command-Line Arguments

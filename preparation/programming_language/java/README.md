@@ -9,6 +9,7 @@ $ javac fileName.java && java fileName
 
 ## Useful resources
 
+* [JavaPoint the one place for java](https://www.javatpoint.com/)
 * [#javatutorial](https://www.youtube.com/hashtag/javatutorial)
 * [How To Master Java](https://www.youtube.com/watch?v=TE3LyYW-AHQ)
 * [Java in Animated Way](https://www.youtube.com/watch?v=Y-ubmaLsd5E&list=PLrKBFf87Cy9CHAyhX9l0rhktvg3pCG5R5)
