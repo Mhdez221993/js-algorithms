@@ -72,4 +72,6 @@
     * [Multidimensional Arrays](https://www.youtube.com/watch?v=ctab5xPv-Vk)
     * [Table for Multi Arrays](https://www.youtube.com/watch?v=hbot9MQVHOM)
 21. Functional Decomposition
+    * [Functional Decomposition 1](https://www.youtube.com/watch?v=nEVnTJjQxms)
+    * [Functional Decomposition 2](https://www.youtube.com/watch?v=cv-aOsqaTeA)
 22. Variable Arguments
