@@ -78,3 +78,4 @@
     * [Varargs](https://www.youtube.com/watch?v=9EzGgz5th_s)
 23. Hexadecimal
 24. Octal numbers
+24. [BigDecimal Class in Java](https://www.geeksforgeeks.org/bigdecimal-class-java/)

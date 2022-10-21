@@ -1,5 +1,7 @@
 import java.nio.charset.StandardCharsets;
 import java.util.Random;
+import java.math.BigDecimal;
+
 // Fundamental Programming Structures
 
 public class Main {
@@ -22,11 +24,17 @@ public class Main {
       // Floating-Point Types
         // float storage: 4 bytes, range: 3.4e-038 to 3.4e+038
         // double storage: 8 bytes, range: 1.7e-308 to 1.7e+308
+        // If you need precise numerical computations with arbitrary precision and without roundoff errors, use the BigDecimal class
+        System.out.println(2.0 - 1.7);
+        BigDecimal num1 = new BigDecimal("2.0");
+        BigDecimal num2 = new BigDecimal("1.7");
+        System.out.println(num1.subtract(num2));
       // The char type
         // The char type describes “code units” in the UTF-16 character encoding
         // The special codes ’\n’, ’\r’, ’\t’, ’\b’ denote a line feed, carriage return, tab, and backspace
       // The boolean Type
         // The boolean type has two values, false and true
+    // 3. Variables
   }
 }
 
@@ -42,7 +50,6 @@ documentation comment (e.g)
 
 
 
-// 3. Variables
 // 4. Arithmetic Operations
 // 5. Strings
 // 6. Input and Output
