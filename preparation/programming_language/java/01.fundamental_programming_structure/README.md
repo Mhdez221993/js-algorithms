@@ -16,7 +16,7 @@
 
 8. Use the `text box` syntax to declare multiline string literals.
 
-9.  ith the `System.out` object, you can display output in a terminal window. A `Scanner` tied to `System.in` lets you read terminal input.
+9. ith the `System.out` object, you can display output in a terminal window. A `Scanner` tied to `System.in` lets you read terminal input.
 
 10. `Arrays` and `collections` can be used to collect elements of the same type.
 
@@ -76,3 +76,5 @@
     * [Functional Decomposition 2](https://www.youtube.com/watch?v=cv-aOsqaTeA)
 22. Variable Arguments
     * [Varargs](https://www.youtube.com/watch?v=9EzGgz5th_s)
+23. Hexadecimal
+24. Octal numbers
