@@ -1,10 +1,13 @@
 import java.nio.charset.StandardCharsets;
 import java.util.Random;
 import java.math.BigDecimal;
+import java.util.Scanner;
 
 // Fundamental Programming Structures
 
 public class Main {
+  public static final int DAYS_PER_WEEK = 7;
+
   public static void main (String[] args) {
     // 1. Our First Program
     String str = "Hello, Word!";
@@ -34,7 +37,27 @@ public class Main {
         // The special codes ’\n’, ’\r’, ’\t’, ’\b’ denote a line feed, carriage return, tab, and backspace
       // The boolean Type
         // The boolean type has two values, false and true
+
     // 3. Variables
+      // Each variable can only hold values of a specific type
+      // Variable Declarations
+        int total = 0, count; // count is an uninitialized integer
+        Random generator2 = new Random();
+        var generator3 = new Random(); // to avoid this repetions use var keyword
+      // Identifiers
+        // The name of a variable, method, or class is called an identifier
+        // By convention, names of variables and methods start with a lowercase letter, and names of classes start with an uppercase letter
+      // Initialization
+        // When you declare a variable in a method, you must initialize it before you can use it
+        var in = new Scanner(System.in);
+        System.out.println("How old are you?");
+        int age = in.nextInt();
+        System.out.println("You are " + age + " years old!");
+      // Constants
+        // The final keyword denotes a value that cannot be changed once it has been assigned
+        final int DAYS_PER_WEEK = 7;
+        // By convention, uppercase letters are used for names of constants
+
   }
 }
 
@@ -48,6 +71,7 @@ multiline comment (e.g)
 documentation comment (e.g)
 */
 
+// System.out.println(Main.DAYS_PER_WEEK);
 
 
 // 4. Arithmetic Operations
