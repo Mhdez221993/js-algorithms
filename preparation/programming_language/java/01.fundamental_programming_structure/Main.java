@@ -61,6 +61,8 @@ public class Main {
       //  A floating-point division by zero yields an infinite value or NaN
       // The mathematical operators quietly return wrong results when a computation overflows.
       // System.out.println(Math.multiplyExact(1000000000, 3);
+      // The call BigDecimal.valueOf(n, e) returns a BigDecimal instance with value n × 10–e
+
 
   }
 }
