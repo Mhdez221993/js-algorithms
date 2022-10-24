@@ -78,4 +78,10 @@
     * [Varargs](https://www.youtube.com/watch?v=9EzGgz5th_s)
 23. Hexadecimal
 24. Octal numbers
-24. [BigDecimal Class in Java](https://www.geeksforgeeks.org/bigdecimal-class-java/)
+    * [Octal Number System](https://www.youtube.com/watch?v=MGu-P4OOnh0)
+24. BigDecimal
+    * [BigDecimal Class in Java](https://www.geeksforgeeks.org/bigdecimal-class-java/)
+25. BigInteger
+    * [Big Integer Class](https://www.javatpoint.com/java-biginteger)
+26. Unsigned int in Java
+    * [An unsigned int](https://programming.guide/java/unsigned-int.html)

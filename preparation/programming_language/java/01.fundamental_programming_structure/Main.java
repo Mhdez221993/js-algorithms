@@ -63,25 +63,18 @@ public class Main {
       // System.out.println(Math.multiplyExact(1000000000, 3);
       // The call BigDecimal.valueOf(n, e) returns a BigDecimal instance with value n × 10–e
 
+    // 5. Strings
+      System.out.println("Java\u2122");
+      String str1 = "Next year, you will be " + (age + 1);
+      System.out.println(str1);
+      String names = String.join(", ", "Peter", "Paul", "Mary");
+      System.out.println(names);
+      String location = str1.substring(7, 12);
+      String[] result = str1.split(", ");
+      // For example, input.split("\\s+") splits input at white space
+      location.equals("World");
+      // When comparing a string against a literal string, it is a good idea to put the literal string first
+      "world".equalsIgnoreCase(location);
 
   }
 }
-
-// single line comment (e.g)
-
-/*
-multiline comment (e.g)
-*/
-
-/**
-documentation comment (e.g)
-*/
-
-// System.out.println(Main.DAYS_PER_WEEK);
-
-
-// 5. Strings
-// 6. Input and Output
-// 7. Control Flow
-// .8. Arrays and Array Lists
-// 9. Functional Decomposition
