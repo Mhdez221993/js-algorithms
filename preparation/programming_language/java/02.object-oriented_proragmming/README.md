@@ -38,7 +38,10 @@
     * [Java overloaded constructors](https://www.youtube.com/watch?v=Xngu-8pt_TA)
     * [Constructor Overloading in Java](https://www.geeksforgeeks.org/constructor-overloading-java/)
 7. Static methods
+    * [Static Class Methods](https://www.youtube.com/watch?v=bvNU24rvhgA&t=71s)
+    * [Static Method in Java With Examples](https://www.geeksforgeeks.org/static-method-in-java-with-examples/#:~:text=A%20static%20method%20in%20Java,the%20class's%20object%20(instance).)
 8. Static variables
+    * [Static Variable in Java](https://www.guru99.com/java-static-variable-methods.html)
 9. record class
 10. packages
 11. import declarations
