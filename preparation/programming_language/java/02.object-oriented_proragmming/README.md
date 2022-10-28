@@ -52,6 +52,8 @@
     * [Import Statement in Java](https://www.geeksforgeeks.org/import-statement-in-java/)
     * [Imports & Packages](https://www.youtube.com/watch?v=ipMdsje9J6s)
 12. inner class
+    * [How to Make and Access Inner Classes](https://www.youtube.com/watch?v=Etk4zQHBplI)
+    * [Java Inner Classes](https://www.w3schools.com/java/java_inner_classes.asp)
 13. Javadoc
 15. chain method calls
 16. Call by Value
