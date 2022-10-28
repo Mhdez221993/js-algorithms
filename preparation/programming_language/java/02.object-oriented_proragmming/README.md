@@ -58,6 +58,8 @@
     * [Introduction to Javadoc](https://www.baeldung.com/javadoc)
     * [A Simple Overview](https://www.youtube.com/watch?v=GM3P5vAOjx8)
 15. chain method calls
+    * [Java method chaining ⛓️](https://www.youtube.com/watch?v=rmk0LKv7sSY)
+    * [Method Chaining In Java with Examples](https://www.geeksforgeeks.org/method-chaining-in-java-with-examples/)
 16. Call by Value
 17.  Calling One Constructor from Another
 18. Final Instance Variables
