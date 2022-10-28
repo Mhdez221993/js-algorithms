@@ -46,6 +46,8 @@
     * [Record Classes](https://docs.oracle.com/en/java/javase/15/language/records.html)
     * [What is a Java Record?](https://www.youtube.com/watch?v=fezAD2UYFak&t=164s)
 10. packages
+    * [Java Packages](https://www.w3schools.com/java/java_packages.asp)
+    * [Java packages 📦](https://www.youtube.com/watch?v=NZ7NfZD8T2Y)
 11. import declarations
 12. inner class
 13. Javadoc
