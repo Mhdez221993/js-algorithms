@@ -43,6 +43,8 @@
 8. Static variables
     * [Static Variable in Java](https://www.guru99.com/java-static-variable-methods.html)
 9. record class
+    * [Record Classes](https://docs.oracle.com/en/java/javase/15/language/records.html)
+    * [What is a Java Record?](https://www.youtube.com/watch?v=fezAD2UYFak&t=164s)
 10. packages
 11. import declarations
 12. inner class
