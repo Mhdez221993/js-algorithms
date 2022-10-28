@@ -67,6 +67,8 @@
     * [How do I call one constructor from another in Java?](https://stackoverflow.com/questions/285177/how-do-i-call-one-constructor-from-another-in-java)
     * [Calling another constructor from a constructor in Java](https://www.youtube.com/watch?v=mjuHYaO9MJQ)
 18. Final Instance Variables
+    * [Multiple Constructors and Final Instance Variable](https://www.youtube.com/watch?v=-pufgv7NK6o)
+    * [Instance variable as final in Java](https://www.geeksforgeeks.org/instance-variable-final-java/)
 19. Constructor with No Arguments
 20. Constructors: Canonical, Custom, and Compact
 21. Factory Methods
