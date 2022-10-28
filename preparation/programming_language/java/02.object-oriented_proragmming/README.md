@@ -77,6 +77,7 @@
     * [The Factory Method Pattern Explained and Implemented in Java](https://www.youtube.com/watch?v=EdFq_JIThqM)
     * [Factory method design pattern in Java](https://www.geeksforgeeks.org/factory-method-design-pattern-in-java/)
 22. The jar Command
+    * [jar-The Java Archive Tool](https://docs.oracle.com/javase/7/docs/technotes/tools/windows/jar.html)
 23. JAR files
     * [Java Create Jar Files](https://www.javatpoint.com/java-create-jar-files)
     * [What is JAR File and its real use case](https://www.youtube.com/watch?v=3SA_Kzs0aPo)
