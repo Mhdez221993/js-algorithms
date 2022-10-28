@@ -78,6 +78,8 @@
     * [Factory method design pattern in Java](https://www.geeksforgeeks.org/factory-method-design-pattern-in-java/)
 22. The jar Command
 23. JAR files
+    * [Java Create Jar Files](https://www.javatpoint.com/java-create-jar-files)
+    * [What is JAR File and its real use case](https://www.youtube.com/watch?v=3SA_Kzs0aPo)
 24. The Class Path
 25. Static Imports
 26. Static Nested Classes
