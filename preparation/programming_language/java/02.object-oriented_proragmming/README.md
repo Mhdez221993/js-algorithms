@@ -82,6 +82,8 @@
     * [Java Create Jar Files](https://www.javatpoint.com/java-create-jar-files)
     * [What is JAR File and its real use case](https://www.youtube.com/watch?v=3SA_Kzs0aPo)
 24. The Class Path
+    * [What is the classpath?](https://www.youtube.com/watch?v=3xSJ1zNX7UE)
+    * [What is a classpath and how do I set it?](https://stackoverflow.com/questions/2396493/what-is-a-classpath-and-how-do-i-set-it)
 25. Static Imports
 26. Static Nested Classes
 27. Special Syntax Rules for Inner Classes
