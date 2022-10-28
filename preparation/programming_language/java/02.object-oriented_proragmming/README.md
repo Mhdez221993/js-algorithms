@@ -87,9 +87,7 @@
 25. Static Imports
     * [Static import in Java](https://www.geeksforgeeks.org/static-import-java/)
 26. Static Nested Classes
+    * [Java static nested class](https://www.javatpoint.com/static-nested-class#:~:text=Java%20static%20nested%20class,the%20outer%20class%2C%20including%20private.)
+    * [Java - Static Nested Class](https://www.youtube.com/watch?v=20lDyfuR7Bg)
 27. Special Syntax Rules for Inner Classes
-28. Documentation Comments
-29. Class Comments
-30. Method Comments
-31. Links
-32. Comment Extraction
+28. Comment Extraction
