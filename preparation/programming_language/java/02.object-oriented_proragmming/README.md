@@ -85,6 +85,7 @@
     * [What is the classpath?](https://www.youtube.com/watch?v=3xSJ1zNX7UE)
     * [What is a classpath and how do I set it?](https://stackoverflow.com/questions/2396493/what-is-a-classpath-and-how-do-i-set-it)
 25. Static Imports
+    * [Static import in Java](https://www.geeksforgeeks.org/static-import-java/)
 26. Static Nested Classes
 27. Special Syntax Rules for Inner Classes
 28. Documentation Comments
