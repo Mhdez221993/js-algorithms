@@ -25,9 +25,13 @@
 ## Research
 
 1. mainstream programming language
+    * [Mainstream Language](https://wiki.c2.com/?MainstreamLanguage)
 2. Mutator methods
+    * [Accessor and Mutator Methods](https://www.youtube.com/watch?v=ehGg4aVJD9M)
 3. accessor methods
 4. references to objects
+    * [Reference Variable in Java](https://www.geeksforgeeks.org/reference-variable-in-java/)
+    * [Objects and References](https://www.youtube.com/watch?v=N8IeMYsdgAY)
 5. this reference
 6. overloaded constructors
 7. Static methods
@@ -36,7 +40,7 @@
 10. packages
 11. import declarations
 12. inner class
-13. javadoc
+13. Javadoc
 15. chain method calls
 16. Call by Value
 17.  Calling One Constructor from Another
