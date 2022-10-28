@@ -74,6 +74,8 @@
     * [Calling a Constructor without parameters](https://stackoverflow.com/questions/26534601/calling-a-constructor-without-parameters)
 20. Constructors: Canonical, Custom, and Compact
 21. Factory Methods
+    * [The Factory Method Pattern Explained and Implemented in Java](https://www.youtube.com/watch?v=EdFq_JIThqM)
+    * [Factory method design pattern in Java](https://www.geeksforgeeks.org/factory-method-design-pattern-in-java/)
 22. The jar Command
 23. JAR files
 24. The Class Path
