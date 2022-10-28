@@ -70,6 +70,8 @@
     * [Multiple Constructors and Final Instance Variable](https://www.youtube.com/watch?v=-pufgv7NK6o)
     * [Instance variable as final in Java](https://www.geeksforgeeks.org/instance-variable-final-java/)
 19. Constructor with No Arguments
+    * [No Argument Constructor](https://www.youtube.com/watch?v=lCFYwZsbegY)
+    * [Calling a Constructor without parameters](https://stackoverflow.com/questions/26534601/calling-a-constructor-without-parameters)
 20. Constructors: Canonical, Custom, and Compact
 21. Factory Methods
 22. The jar Command
