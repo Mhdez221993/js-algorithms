@@ -64,6 +64,8 @@
     * [Java is ALWAYS Pass By Value. Here's Why](https://www.youtube.com/watch?v=-5NC5_sI-vQ)
     * [Call by Value and Call by Reference in Java](https://www.javatpoint.com/call-by-value-and-call-by-reference-in-java)
 17.  Calling One Constructor from Another
+    * [How do I call one constructor from another in Java?](https://stackoverflow.com/questions/285177/how-do-i-call-one-constructor-from-another-in-java)
+    * [Calling another constructor from a constructor in Java](https://www.youtube.com/watch?v=mjuHYaO9MJQ)
 18. Final Instance Variables
 19. Constructor with No Arguments
 20. Constructors: Canonical, Custom, and Compact
