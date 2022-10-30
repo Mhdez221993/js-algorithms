@@ -94,3 +94,5 @@
     * [String pool](https://www.javatpoint.com/string-pool-in-java)
 30. What code is written by the compiler if you concatenate any string by + (string concatenation operator)?
     * [String Concatenation by + (String concatenation) operator](https://www.javatpoint.com/string-concatenation-in-java)
+31. What is the difference between StringBuffer and StringBuilder class?
+    * [Difference between StringBuffer and StringBuilder](https://www.javatpoint.com/difference-between-stringbuffer-and-stringbuilder)
