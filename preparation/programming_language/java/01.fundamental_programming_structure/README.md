@@ -85,3 +85,8 @@
     * [Big Integer Class](https://www.javatpoint.com/java-biginteger)
 26. Unsigned int in Java
     * [An unsigned int](https://programming.guide/java/unsigned-int.html)
+27. Why are String objects immutable?
+    * [Why String is Immutable or Final in Java](https://www.javatpoint.com/why-string-is-immutable-or-final-in-java#:~:text=The%20String%20is%20immutable%20in,it%20makes%20the%20String%20immutable.)
+    * [Java Strings are Immutable](https://www.youtube.com/watch?v=Bj9Mx_Lx3q4)
+27. How to create an immutable class?
+    * [Example to create Immutable class](https://www.javatpoint.com/how-to-create-immutable-class)
