@@ -92,3 +92,5 @@
     * [Example to create Immutable class](https://www.javatpoint.com/how-to-create-immutable-class)
 29. What is string constant pool?
     * [String pool](https://www.javatpoint.com/string-pool-in-java)
+30. What code is written by the compiler if you concatenate any string by + (string concatenation operator)?
+    * [String Concatenation by + (String concatenation) operator](https://www.javatpoint.com/string-concatenation-in-java)
