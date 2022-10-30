@@ -88,5 +88,7 @@
 27. Why are String objects immutable?
     * [Why String is Immutable or Final in Java](https://www.javatpoint.com/why-string-is-immutable-or-final-in-java#:~:text=The%20String%20is%20immutable%20in,it%20makes%20the%20String%20immutable.)
     * [Java Strings are Immutable](https://www.youtube.com/watch?v=Bj9Mx_Lx3q4)
-27. How to create an immutable class?
+28. How to create an immutable class?
     * [Example to create Immutable class](https://www.javatpoint.com/how-to-create-immutable-class)
+29. What is string constant pool?
+    * [String pool](https://www.javatpoint.com/string-pool-in-java)
