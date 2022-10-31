@@ -96,3 +96,5 @@
     * [String Concatenation by + (String concatenation) operator](https://www.javatpoint.com/string-concatenation-in-java)
 31. What is the difference between StringBuffer and StringBuilder class?
     * [Difference between StringBuffer and StringBuilder](https://www.javatpoint.com/difference-between-stringbuffer-and-stringbuilder)
+32. Bitwise Operators
+    [Part 1](https://www.youtube.com/watch?v=lKGQU-d1Y6E)
