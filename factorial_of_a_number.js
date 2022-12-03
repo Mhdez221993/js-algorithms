@@ -15,3 +15,5 @@ function factorial2(n) {
 }
 
 console.log(factorial2(0));
+
+// Big O(n)
