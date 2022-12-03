@@ -1,5 +1,8 @@
 # Data Structure And Algorithms
 
+
+JavaScript Algorithms and Data Structures
+
 ## Getting Started
 
 - To get a local copy open your terminal and run the following commands:
