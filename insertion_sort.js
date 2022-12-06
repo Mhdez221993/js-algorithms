@@ -12,6 +12,7 @@ function insertion_sort(array) {
 
   return array;
 }
+// Big O(n^2)
 
 let arr = [8, 20, -2, 4, -6];
 console.log(insertion_sort(arr));
