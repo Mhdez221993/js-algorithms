@@ -21,6 +21,7 @@ function merge(leftArr, rightArr) {
 
   return [...sortedArr, ...leftArr, ...rightArr];
 }
+// Big O(nlogn)
 
 const arr = [8, 20, -2, 4, -6];
 console.log(mege_sort(arr));
