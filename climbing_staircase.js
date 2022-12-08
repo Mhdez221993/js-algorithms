@@ -12,5 +12,7 @@ function climbing_staircase_with_loop(n) {
   return stairs[n - 1];
 }
 
+// Big O(n)
+
 console.log(climbing_staircase(4));
 console.log(climbing_staircase_with_loop(4));
