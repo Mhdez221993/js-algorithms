@@ -2,7 +2,9 @@ function solve_n_queen(board, col) {
   if (col >= board.length) return true;
 
   for (let i = 0; i < arr.length; i++) {
+    // n
     if (isSafe(board, i, col)) {
+      // n
       board[i][col] = 1;
 
       if (solve_n_queen(board, col + 1)) return true;
@@ -13,6 +15,8 @@ function solve_n_queen(board, col) {
 
   return false;
 }
+
+// Big O(n^2)
 
 function isSafe(board, row, col) {
   let n = board.length;
