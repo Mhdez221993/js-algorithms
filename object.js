@@ -8,3 +8,7 @@ let obj = {
 
 obj.sayName();
 console.log(obj["may_name"]);
+
+console.log(obj);
+delete obj.name;
+console.log(obj);
