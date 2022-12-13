@@ -143,6 +143,25 @@ class LinkedList {
   }
 
   // O(n)
+  reverse() {
+    if (this.isEmpty()) {
+      return null;
+    }
+
+    let curr = this.head;
+    let prev = null;
+    while (curr) {
+      let next = curr.next;
+      curr.next = prev;
+      prev = curr;
+
+      curr = next;
+    }
+
+    this.head = prev;
+  }
+
+  // O(n)
   print() {
     if (this.isEmpty()) {
       console.log("List is empty!");
@@ -167,10 +186,7 @@ const list = new LinkedList();
 list.append(10);
 list.append(30);
 list.append(40);
+list.print();
 
-// console.log(list.getZise());
-
-// console.log(list.removeValue(30));
-
-// list.print();
-console.log(list.search(40));
+list.reverse();
+list.print();
