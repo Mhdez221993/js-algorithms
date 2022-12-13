@@ -48,6 +48,7 @@ class LinkedList {
     this.size++;
   }
 
+  // O(n)
   insert(value, index) {
     if (index < 0 || index > this.size) {
       return "Wrong index";
@@ -69,6 +70,7 @@ class LinkedList {
     this.size++;
   }
 
+  // O(n)
   remove(index) {
     if (index < 0 || index >= this.size) {
       return;
@@ -120,6 +122,27 @@ class LinkedList {
     return null;
   }
 
+  // O(n)
+  search(val) {
+    if (this.isEmpty()) {
+      return -1;
+    }
+
+    let i = 0;
+    let curr = this.head;
+    while (curr) {
+      if (curr.value === val) {
+        return i;
+      }
+
+      curr = curr.next;
+      i++;
+    }
+
+    return -1;
+  }
+
+  // O(n)
   print() {
     if (this.isEmpty()) {
       console.log("List is empty!");
@@ -138,16 +161,16 @@ class LinkedList {
 
 const list = new LinkedList();
 
-console.log(list.getZise());
-console.log(list.isEmpty());
+// console.log(list.getZise());
+// console.log(list.isEmpty());
 
 list.append(10);
 list.append(30);
 list.append(40);
 
-console.log(list.getZise());
+// console.log(list.getZise());
 
-console.log(list.removeValue(30));
+// console.log(list.removeValue(30));
 
-list.print();
-console.log(list.getZise());
+// list.print();
+console.log(list.search(40));
