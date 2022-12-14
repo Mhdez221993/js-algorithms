@@ -48,9 +48,41 @@ class LinkedList {
     this.size++;
   }
 
-  removeFromFront() {}
+  removeFromFront() {
+    if (this.isEmpty()) {
+      return null;
+    }
 
-  removeFromBack() {}
+    const value = this.head.value;
+    this.head = this.head.next;
+    this.size--;
+
+    return value;
+  }
+
+  removeFromBack() {
+    if (this.isEmpty()) {
+      return null;
+    }
+
+    const value = this.head.value;
+
+    if (this.size === 1) {
+      this.tail = null;
+      this.head = null;
+    } else {
+      let curr = this.head;
+      while (curr.next !== this.tail) {
+        curr = curr.next;
+      }
+
+      curr.next = null;
+      this.tail = curr;
+    }
+
+    this.size--;
+    return value;
+  }
 
   // O(n)
   print() {
@@ -77,7 +109,7 @@ const list = new LinkedList();
 list.append(10);
 list.append(30);
 list.append(40);
-list.print();
 
-list.reverse();
+list.removeFromBack();
+
 list.print();
