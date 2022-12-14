@@ -101,19 +101,4 @@ class LinkedList {
   }
 }
 
-const list = new LinkedList();
-
-// console.log(list.getZise());
-// console.log(list.isEmpty());
-
-list.append(10);
-list.append(30);
-list.append(40);
-
-list.prepend(9);
-list.prepend(8);
-
-list.removeFromBack();
-list.removeFromFront();
-
-list.print();
+module.exports = LinkedList;
