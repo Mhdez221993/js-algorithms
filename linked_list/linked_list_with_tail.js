@@ -35,7 +35,18 @@ class LinkedList {
   }
 
   // O(1)
-  append(value) {}
+  append(value) {
+    const node = new Node(value);
+    if (this.isEmpty()) {
+      this.head = node;
+      this.tail = node;
+    } else {
+      this.tail.next = node;
+      this.tail = node;
+    }
+
+    this.size++;
+  }
 
   removeFromFront() {}
 
