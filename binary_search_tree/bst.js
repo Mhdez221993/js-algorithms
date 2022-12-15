@@ -41,6 +41,20 @@ class BinarySearchTree {
     }
   }
 
+  search(root, value) {
+    if (!root) {
+      return false;
+    } else {
+      if (root.value === value) {
+        return true;
+      } else if (value < root.value) {
+        return this.search(root.left, value);
+      } else {
+        return this.search(root.right, value);
+      }
+    }
+  }
+
   display() {
     console.log(this.root);
   }
@@ -56,3 +70,6 @@ bst.insert(2);
 bst.insert(4);
 
 bst.display();
+
+console.log(bst.search(bst.root, 4));
+console.log(bst.search(bst.root, 40));
