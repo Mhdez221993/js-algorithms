@@ -71,6 +71,14 @@ class BinarySearchTree {
     }
   }
 
+  postOrder(root) {
+    if (root) {
+      this.postOrder(root.left);
+      this.postOrder(root.right);
+      console.log(root.value);
+    }
+  }
+
   display() {
     console.log(this.root);
   }
@@ -90,4 +98,4 @@ bst.insert(7);
 // console.log(bst.search(bst.root, 4));
 // console.log(bst.search(bst.root, 40));
 
-bst.inOrder(bst.root);
+bst.postOrder(bst.root);
