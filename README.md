@@ -17,6 +17,14 @@ npm install
 node fileName.js
 ```
 
+## Next
+
+* Priority queues
+* Circular linked lists
+* AVL trees, red-black trees and tries
+* Direct acyclic graphs
+* Prim's, Kruskal's and Floyd's algorithms
+
 ## Authors
 
 👤 **Moises Hernandez Coronado**
