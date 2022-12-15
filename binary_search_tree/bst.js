@@ -95,6 +95,14 @@ class BinarySearchTree {
     }
   }
 
+  min(root) {
+    if (!root.left) {
+      return root.value;
+    } else {
+      return this.min(root.left);
+    }
+  }
+
   display() {
     console.log(this.root);
   }
@@ -114,4 +122,4 @@ bst.insert(7);
 // console.log(bst.search(bst.root, 4));
 // console.log(bst.search(bst.root, 40));
 
-bst.breadth_first_search(bst.root);
+console.log(bst.min(bst.root));
