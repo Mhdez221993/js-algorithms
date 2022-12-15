@@ -33,7 +33,7 @@ class HashTable {
         console.log(i, this.table[i]);
       }
     }
-    console.log("");
+    console.log();
   }
 }
 
